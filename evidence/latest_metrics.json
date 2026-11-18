@@ -1,0 +1,62 @@
+[
+  {
+    "group": "DEV-A",
+    "mode": "full",
+    "visible": 19,
+    "valid": 19,
+    "hit10": 16,
+    "joint": 16,
+    "severe": 0,
+    "max_error": 92.06136763640802,
+    "median_error": 4.91723972680136,
+    "full_sequence_valid": 551
+  },
+  {
+    "group": "DEV-A",
+    "mode": "raw_only",
+    "visible": 19,
+    "valid": 19,
+    "hit10": 16,
+    "joint": 16,
+    "severe": 0,
+    "max_error": 92.06136763640802,
+    "median_error": 4.91723972680136,
+    "full_sequence_valid": 551
+  },
+  {
+    "group": "DEV-B",
+    "mode": "full",
+    "visible": 15,
+    "valid": 15,
+    "hit10": 10,
+    "joint": 1,
+    "severe": 0,
+    "max_error": 65.90915232547832,
+    "median_error": 8.629564748879448,
+    "full_sequence_valid": 520
+  },
+  {
+    "group": "DEV-B",
+    "mode": "raw_only",
+    "visible": 15,
+    "valid": 15,
+    "hit10": 10,
+    "joint": 2,
+    "severe": 0,
+    "max_error": 65.90915232547832,
+    "median_error": 8.629564748879448,
+    "full_sequence_valid": 520
+  },
+  {
+    "group": "REG-C",
+    "mode": "full",
+    "visible": 20,
+    "valid": 20,
+    "hit10": 6,
+    "joint": 6,
+    "severe": 0,
+    "max_error": 39.41962727174728,
+    "median_error": 14.518376493278405,
+    "full_sequence_valid": 562
+  }
+]

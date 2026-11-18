@@ -1,0 +1,6 @@
+{
+  "latest_run": "raw_notch_trace_v2_20261118_r02",
+  "detector_sha256": "13d1c9e309e783cef0eaed3be62d615a2d94d4c6d83826eca8658337d69e6c0d",
+  "dev_predictions_sha256": "3874e4e8f14cdd062aeadde16979ee3183c89971927396492e8645ffebf9adde",
+  "locked_predictions_sha256": "390e587d1293b1b962540dd53c7db5aead19422afd1b0f79c4c2277aca3f4b54"
+}

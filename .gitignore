@@ -1,0 +1,12 @@
+output/
+data/
+__pycache__/
+*.pyc
+*.npz
+*.bmp
+*.mp4
+*.zip
+*.dll
+.env
+build/
+

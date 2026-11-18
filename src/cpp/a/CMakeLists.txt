@@ -1,0 +1,13 @@
+set(OPENCV_ROOT "D:/opencv-4.4.0" CACHE PATH "OpenCV 4.4.0 Windows distribution")
+set(cv "${OPENCV_ROOT}/build")
+add_library(CrackV4 SHARED CrackV4.cpp)
+target_include_directories(CrackV4 PRIVATE internal include "${cv}/include")
+target_compile_definitions(CrackV4 PRIVATE CRACK_V4_EXPORTS NOMINMAX)
+target_compile_options(CrackV4 PRIVATE /O2 /fp:precise /utf-8)
+target_link_libraries(CrackV4 PRIVATE "${cv}/x64/vc15/lib/opencv_world440.lib")
+add_custom_command(TARGET CrackV4 POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different
+  "${cv}/x64/vc15/bin/opencv_world440.dll" "$<TARGET_FILE_DIR:CrackV4>")
+add_executable(CrackV4Example example/main.cpp)
+target_include_directories(CrackV4Example PRIVATE include "${cv}/include")
+target_compile_options(CrackV4Example PRIVATE /utf-8)
+target_link_libraries(CrackV4Example PRIVATE CrackV4 "${cv}/x64/vc15/lib/opencv_world440.lib")
