@@ -1,0 +1,53 @@
+{
+  "run": "notch_identity_v3_20261118_r01",
+  "primary": "s3t",
+  "decision": "PRODUCTION_NO_GO",
+  "frames": {
+    "DEV-A": 551,
+    "DEV-B": 520,
+    "REG-C": 562
+  },
+  "visible": 54,
+  "frozen_module_sha256": {
+    "research/notch_identity_v3/detector.py": "6247edba5bf4545e492c5634dc00037f72d69d3769530b90c78fda03c296d156",
+    "research/notch_identity_v3/terminal.py": "341f17b4fe9a932b18114d18a5c1cd9910f6263d16b9560eebf26f263c2f5c37",
+    "research/notch_identity_v3/topology.py": "9652914c47305a3db2988dc9448d3b626acddf599a884a60399a04bc3ce76ea8",
+    "research/notch_identity_v3/probes.py": "9c96cf9c343c4f681d0b82b1d10ee383415a9adca2bf44922f95bfca24d17fdd"
+  },
+  "r02_detector_sha256": "13d1c9e309e783cef0eaed3be62d615a2d94d4c6d83826eca8658337d69e6c0d",
+  "original_sealed_prediction_sha256": {
+    "dev": "c57e5b84976ce536dfec9d4dc096cf21703b37a82431fee5b42bd719969ac8dc",
+    "locked": "f6b33688ea69a7fbaaa2f7d7a75fa30224bb806b5d9b3b31e2781f8e0823f55c"
+  },
+  "public_prediction_gzip_sha256": "c937ba6a77a107d41d32d36710b5ab0f0f8ca165baff6e1f7deaac694c27634a",
+  "synthetic_csv_sha256": "7d2a52cef8d89e2ef5bef75da72370fe77fca2732c2d436d4c7dd621c07d98c4",
+  "development_replay": {
+    "frames": 6,
+    "stage_mode_checks": 48,
+    "card_checks": 24
+  },
+  "local_delivery_check": {
+    "frames": 1633,
+    "visible_overlays": 54,
+    "report_links": "verified",
+    "frozen_sources": "match",
+    "videos": [
+      {
+        "group": "DEV-A",
+        "frames": 551,
+        "sha": "0257ee574c51a499c54b38ba09f075ca3d7bde9c41cacbe228ccca706d60d3d0"
+      },
+      {
+        "group": "DEV-B",
+        "frames": 520,
+        "sha": "ef62cc61812168a1cbc6e29f120c4415ae38da2b5c88f7fc1ccd36892d5fc274"
+      },
+      {
+        "group": "REG-C",
+        "frames": 562,
+        "sha": "61a494dac3946c1601b38ec6c585e3e7b915cb614b6de5a9912847d2d1b8c78b"
+      }
+    ]
+  },
+  "publication": "Public group aliases, local file names and input-image hashes omitted from frame records. Prediction paths and diagnostics preserved."
+}
