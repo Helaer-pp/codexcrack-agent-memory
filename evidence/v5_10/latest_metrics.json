@@ -1,0 +1,60 @@
+{
+ "run": "v510_vertex_r02",
+ "full": [
+  {
+   "group": "group_a",
+   "placement": "original",
+   "frames": 551,
+   "visible": 19,
+   "hit5": 12,
+   "hit10": 18,
+   "joint": 18,
+   "severe": 0,
+   "median": "2.95",
+   "max_error": "12.10",
+   "fps": 10.11
+  },
+  {
+   "group": "three_point_bend",
+   "placement": "original",
+   "frames": 520,
+   "visible": 15,
+   "hit5": 5,
+   "hit10": 10,
+   "joint": 10,
+   "severe": 0,
+   "median": "8.18",
+   "max_error": "40.41",
+   "fps": 2.53
+  },
+  {
+   "group": "group_c",
+   "placement": "original",
+   "frames": 562,
+   "visible": 20,
+   "hit5": 15,
+   "hit10": 18,
+   "joint": 18,
+   "severe": 0,
+   "median": "1.23",
+   "max_error": "18.15",
+   "fps": 24.61
+  },
+  {
+   "group": "group_c",
+   "placement": "bright",
+   "frames": 562,
+   "visible": 20,
+   "hit5": 15,
+   "hit10": 18,
+   "joint": 18,
+   "severe": 0,
+   "median": "1.23",
+   "max_error": "18.15",
+   "fps": 26.51
+  }
+ ],
+ "joint_unique": 46,
+ "replicated_s1": 160,
+ "freeze": "cd5df055871018d64479763073e65ffb058d879e646bfb9df50706a92368c285"
+}

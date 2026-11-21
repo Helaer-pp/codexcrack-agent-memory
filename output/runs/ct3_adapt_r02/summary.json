@@ -1,0 +1,105 @@
+{
+  "frames": 136,
+  "v1_confirmed": 114,
+  "adapted_confirmed": 117,
+  "added": [
+    [
+      12,
+      [
+        505.98626346660217,
+        587.2502629021527
+      ],
+      "short_seed"
+    ],
+    [
+      67,
+      [
+        576.5424550806192,
+        558.4645749497364
+      ],
+      "verified_local_tail"
+    ],
+    [
+      91,
+      [
+        604.0998013175118,
+        543.0459448090245
+      ],
+      "verified_local_tail"
+    ]
+  ],
+  "controls": [
+    {
+      "case": "real_control",
+      "previous": [
+        627.8158581912503,
+        532.5817011641614
+      ],
+      "adapted": [
+        627.8158581912503,
+        532.5817011641614
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "remove_distal",
+      "previous": [
+        491.3,
+        598.64
+      ],
+      "adapted": [
+        491.3,
+        598.64
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "static_scratch_both",
+      "previous": [
+        487.08,
+        595.29
+      ],
+      "adapted": [
+        487.08,
+        595.29
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "competing_parallel",
+      "previous": [
+        627.6655911115066,
+        532.6773153847682
+      ],
+      "adapted": [
+        627.6655911115066,
+        532.6773153847682
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "interrupted_visible_path",
+      "previous": [
+        628.3120457144962,
+        532.4545289584557
+      ],
+      "adapted": [
+        628.3120457144962,
+        532.4545289584557
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "new_collinear_scratch_only",
+      "previous": [
+        617.6624665765911,
+        536.6356893936766
+      ],
+      "adapted": [
+        617.6624665765911,
+        536.6356893936766
+      ],
+      "action": "previous"
+    }
+  ]
+}

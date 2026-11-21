@@ -1,0 +1,14 @@
+{
+ "stage": "S2",
+ "frame_placements": 2605,
+ "unique_frames": 2043,
+ "bench_frame_comparisons": 520,
+ "failed_frame_placements": 22,
+ "videos": {
+  "group_a": 551,
+  "three_point_bend": 520,
+  "group_c": 562,
+  "group_h": 410
+ },
+ "freeze_sha": "ab09b0fb5db4de695e8846f1b24d16afa6ce0c4efd3ef0a5326fec7aa711f8a2"
+}

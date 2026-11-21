@@ -1,0 +1,20 @@
+test_branch_rightmost (unified_crack_tip_60q.tests.Contracts.test_branch_rightmost) ... ok
+test_budget (unified_crack_tip_60q.tests.Contracts.test_budget) ... ok
+test_current_tip_and_retreat (unified_crack_tip_60q.tests.Contracts.test_current_tip_and_retreat) ... ok
+test_degraded_points_and_size (unified_crack_tip_60q.tests.Contracts.test_degraded_points_and_size) ... ok
+test_gap_observed_end (unified_crack_tip_60q.tests.Contracts.test_gap_observed_end) ... ok
+test_independent_reference_masks (unified_crack_tip_60q.tests.Contracts.test_independent_reference_masks) ... ok
+test_long_lost_reinitialization (unified_crack_tip_60q.tests.Contracts.test_long_lost_reinitialization) ... ok
+test_missing_prev_weak_fixed (unified_crack_tip_60q.tests.Contracts.test_missing_prev_weak_fixed) ... ok
+test_no_metadata_interface (unified_crack_tip_60q.tests.Contracts.test_no_metadata_interface) ... ok
+test_noise_not_tip (unified_crack_tip_60q.tests.Contracts.test_noise_not_tip) ... ok
+test_opening_fixed_axis (unified_crack_tip_60q.tests.Contracts.test_opening_fixed_axis) ... ok
+test_raw_one_two_pixels (unified_crack_tip_60q.tests.Contracts.test_raw_one_two_pixels) ... ok
+test_swap_and_determinism (unified_crack_tip_60q.tests.Contracts.test_swap_and_determinism) ... ok
+test_tie_is_uncertain (unified_crack_tip_60q.tests.Contracts.test_tie_is_uncertain) ... ok
+test_very_dark_disconnected_scratch (unified_crack_tip_60q.tests.Contracts.test_very_dark_disconnected_scratch) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.814s
+
+OK

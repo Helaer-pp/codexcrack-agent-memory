@@ -1,0 +1,32 @@
+CrackV4 OpenCV 4.4.0 版接入说明
+
+本次编译实际使用 D:/opencv-4.4.0，库内部也是4.4.0。
+将include加入包含目录，lib加入链接目录，附加依赖CrackV4.lib。
+将bin内全部DLL复制至软件EXE目录。使用x64 Release /MD。
+本版不需要opencv_world4120.dll；opencv_world440.dll与指定目录版本相同。
+
+调用方式与上一版一致：
+#include "CrackV4.hpp"
+CrackV4Detector detector; // 类成员/长期存活对象，一路序列一个实例
+CrackV4SetNumThreads(4); // 处理开始前设置一次
+detector.initialize(referenceGray, refP1, refP2,
+    CrackV4Detector::ReferenceMode::Auto, mmPerPixel);
+CrackV4Result result{};
+cv::Point2d tip=detector.getCrackTipPointCirculate(currentGray, curP1, curP2, &result);
+
+参考图初始化一次；按时序输入原始CV_8UC1灰度图和对应的当前两个基准点。
+两个点使用原图坐标、保持顺序，不需要手动裁剪ROI。
+通过tip_confirmed和length_confirmed分别判断尖端及完整长度是否确认。
+未确认的对应数值为0；length_mm为真实长度，detector_ms为计算毫秒数。
+捕获std::exception处理配准等错误；同一实例顺序调用，不在每帧重新初始化。
+更换试验或参考帧时重新initialize；对象销毁自动释放DLL实例。
+
+重新编译（PowerShell，注意包含版本号的-D参数需要整体引号）：
+cmake -S src -B build440 -G "Visual Studio 17 2022" -A x64 -T v142 '-DOpenCV_DIR=D:/opencv-4.4.0/build' '-DCRACK_V4_OPENCV_VERSION=4.4.0' '-DCRACK_V4_PROFILE=OFF'
+cmake --build build440 --config Release --parallel 1 -- /nr:false
+
+独立示例：
+bin\CrackV4Example.exe examples\reference.bmp examples\current.bmp 150 280 150 400 150 280 150 400
+
+本包DLL运行无需Python。validate_fresh.py是可选的Python/原生对照验证工具，需原始图像。
+严格等价性未通过，详见编译与回归报告.txt；不要将本版与4.12版的结果混用为相同数值结果。

@@ -1,0 +1,21 @@
+from pathlib import Path
+import sys,os,json,hashlib,ast,difflib,importlib.metadata
+sys.dont_write_bytecode=True
+R=Path(__file__).resolve().parents[1];OLD=R.parent
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def save(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,ensure_ascii=False,indent=2),encoding='utf8')
+f=R/'src/python/crackv4/frozen_a.py';s=f.read_text(encoding='utf8');tree=ast.parse(s)
+for n in sorted([n for n in tree.body if isinstance(n,ast.FunctionDef)and n.name in ['dev','git']],key=lambda n:n.lineno,reverse=True):
+ lines=s.splitlines(keepends=True);s=''.join(lines[:n.lineno-1]+lines[n.end_lineno:])
+f.write_text(s,encoding='utf8')
+original=(OLD/'crack_v4_cpp/frozen_dp_tip_20261030/tests/common.py').read_text(encoding='utf8')
+def cls(src):return ast.dump(next(n for n in ast.parse(src).body if isinstance(n,ast.ClassDef)and n.name=='Baseline'),include_attributes=False)
+assert cls(s)==cls(original)
+raw=OLD/'A_prime_reference_joint_20261105/run01/02_source/experiments/local_reference.py';active=R/'research/aprime/experiments/local_reference.py';assert sha(raw)==sha(active)
+abiold=OLD/'crack_v4_cpp/frozen_dp_tip_20261030/tests/abi.py';abinew=R/'src/python/crackv4/abi.py';assert sha(abiold)==sha(abinew)
+save(R/'docs/maintenance/active_migration_identity.json',dict(production_core_and_DLL_not_modified=True,baseline_python_class_AST_identical=True,ABI_module_byte_identical=True,reference_math_byte_identical=True,reference_math_sha256=sha(active),path_changes_only=True,removed_unused_python_helpers=['dev','git']))
+(R/'docs/maintenance/python_bridge_port.diff').write_text(''.join(difflib.unified_diff(original.splitlines(True),s.splitlines(True),fromfile='historical/common.py',tofile='src/python/crackv4/frozen_a.py')),encoding='utf8')
+versions={name:importlib.metadata.version(name)for name in ['numpy','opencv-python','Pillow','psutil']}
+(R/'requirements-lock.txt').write_text('\n'.join(k+'=='+v for k,v in versions.items())+'\n',encoding='utf8');save(R/'config/environment.json',dict(Python=sys.version,packages=versions,native_opencv='4.4.0',compiler='Installed VS2022 with v142; CMake configure log records actual selection'))
+save(R/'docs/maintenance/legacy_path_map.json',dict(project_root_before=str(OLD),active_project_root=str(R),latest_results={str(OLD/'A_prime_reference_joint_20261105/run01'):'output/aprime_20261105/run01'},original_frozen_source={str(OLD/'crack_v4_cpp/frozen_dp_tip_20261030/baseline/src'):'baseline/frozen_a/src'},original_DLL={str(OLD/'output/frozen_dp_tip_measurement_study/02_source/binaries/A/CrackV4.dll'):'baseline/frozen_a/bin/CrackV4.dll'},historical_loose_files='archive/history_source_and_numeric_20261105.zip::<old project-relative path>',old_packages='docs/maintenance/file_disposition.csv maps by SHA',external_original_images='F: paths remain read-only; not relocated',historical_absolute_paths='Frozen evidence retains original strings; use migration map, never run it as current code.'))
+print('ACTIVE SETUP identity tests passed',flush=True)

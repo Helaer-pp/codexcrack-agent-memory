@@ -1,0 +1,11 @@
+# 缺口起源独立可行性检查
+
+结论：NO_CONFIRMED_AUTOMATIC_NOTCH_PROVIDER / ORIGIN_UNRESOLVED。本轮没有独立的物理缺口出口/方向标注或可核验的物理点位来源，因此不能把P派生xleft、connection回溯率、黑色口状区域或人工路径起点直接当作认证缺口。
+
+统一检查规则仅复核已有输入：是否有独立缺口元数据；P1/P2派生起源矩形；原图与V1变换参考；原V2 current-only backward connection的实际采样坐标及材料/暗谷条件。没有新算子、新阈值、手工按组定位或缺口检测器。150输入均按相同规则处理，原始连接和拒绝值见raw_seed_lineage及候选JSON。物理元数据缺失时统一ORIGIN_UNRESOLVED，不输出伪造的自动缺口坐标。
+
+开发组H18张人工可见路径均在完整ROI，却在固定起源带右侧约52–58px开始；原图可见暗口状结构，是否为实验定义的预制缺口、其最右端是否是可见裂纹真实起源，仍需独立确认。未标注连接段与不可见连接段不能从“无起源交集”互相替代。所有18张都有全几何图和可见段局部放大。
+
+GROUP_A/CT2的若干可追踪当前暗线起点被connection门拒绝。原回溯经过暗口状区域、低材料响应或低暗谷响应时，分数下降不自动等价为“物理不连接”；这正是下一项唯一值得隔离检验的语义。图像相似或参考中已有暗线也不构成旧划痕身份真值。
+
+困难案例全部来自冻结候选，见hard_case_pairs.csv、hard_cases_gallery.html。无独立身份标签时保持IDENTIFIABILITY_UNRESOLVED，不能宣布纯单帧信息必然不足。manual_review_manifest.csv中的30张未标注观察仅供将来复核，未计真实FPR或新增主分母。

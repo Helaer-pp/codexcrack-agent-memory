@@ -1,0 +1,14 @@
+{
+  "group": "three_point_bend",
+  "mode": "auto",
+  "frames": 520,
+  "verified_video_frames": 520,
+  "exact_A_frames": 520,
+  "A": 445,
+  "V1": 448,
+  "latest": 463,
+  "gap_add": 3,
+  "adapt_add": 15,
+  "missing": 57,
+  "complete_lengths": 428
+}

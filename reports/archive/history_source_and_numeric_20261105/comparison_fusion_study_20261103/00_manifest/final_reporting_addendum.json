@@ -1,0 +1,10 @@
+{
+  "utc": "2026-11-03T08:28:49.332929+00:00",
+  "source_sha256": "9f3025d53b08b2cbff3e1432b4e7e9f83bd5b49aff45bfec48713979ed1066ed",
+  "native_A_rows_exact": 2515,
+  "native_A_current_latency_rows": 2510,
+  "A_over_budget": 0,
+  "reports_only": true,
+  "primary_source_and_A_guards_pass": true,
+  "output_selection_changes": false
+}

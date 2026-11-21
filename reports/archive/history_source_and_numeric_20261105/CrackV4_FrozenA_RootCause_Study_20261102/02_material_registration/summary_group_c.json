@@ -1,0 +1,22 @@
+{
+  "group": "group_c",
+  "current": 561,
+  "attempted": 13344,
+  "texture_eligible": 13344,
+  "matched": 3390,
+  "independent_validation_pass": 1111,
+  "heldout_matched": 1111,
+  "first_failure_counts": {
+    "CLIPPED_OR_LOW_DYNAMIC_RANGE": 4605,
+    "VALID_MATCH": 3390,
+    "AMBIGUOUS_PEAK": 2764,
+    "GEOMETRIC_CONFLICT": 2583,
+    "FB_INCONSISTENT": 1,
+    "NCC_BELOW_THRESHOLD": 1
+  },
+  "photo_interpretations": {
+    "BASELINE_GATE_PASS": 561
+  },
+  "baseline_reproduction": "PASS",
+  "real_error": "N/A"
+}

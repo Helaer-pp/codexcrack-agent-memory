@@ -1,0 +1,113 @@
+{
+ "frames": 562,
+ "comparison": {
+  "V5.7 r03 / full": {
+   "n": 20,
+   "tips": 20,
+   "hit5": 12,
+   "hit10": 17,
+   "joint": 17,
+   "severe": 0,
+   "median": 2.31,
+   "max": 16.95
+  },
+  "V5.7 r03 / raw_only": {
+   "n": 20,
+   "tips": 20,
+   "hit5": 9,
+   "hit10": 12,
+   "joint": 12,
+   "severe": 1,
+   "median": 6.87,
+   "max": 106.02
+  },
+  "V5.8 r04 / full": {
+   "n": 20,
+   "tips": 20,
+   "hit5": 0,
+   "hit10": 0,
+   "joint": 0,
+   "severe": 20,
+   "median": 141.53,
+   "max": 661.62
+  },
+  "V5.8 r04 / raw_only": {
+   "n": 20,
+   "tips": 20,
+   "hit5": 0,
+   "hit10": 0,
+   "joint": 0,
+   "severe": 20,
+   "median": 1934.21,
+   "max": 2074.75
+  },
+  "r05 原输入复算 / full": {
+   "n": 20,
+   "tips": 20,
+   "hit5": 0,
+   "hit10": 0,
+   "joint": 0,
+   "severe": 20,
+   "median": 141.53,
+   "max": 661.62
+  },
+  "r05 原输入复算 / raw_only": {
+   "n": 20,
+   "tips": 20,
+   "hit5": 0,
+   "hit10": 0,
+   "joint": 0,
+   "severe": 20,
+   "median": 1934.21,
+   "max": 2074.75
+  },
+  "r06 逐帧行亮度裁剪 / full": {
+   "n": 20,
+   "tips": 7,
+   "hit5": 5,
+   "hit10": 5,
+   "joint": 5,
+   "severe": 0,
+   "median": 1.4,
+   "max": 31.79
+  },
+  "r06 逐帧行亮度裁剪 / raw_only": {
+   "n": 20,
+   "tips": 6,
+   "hit5": 1,
+   "hit10": 4,
+   "joint": 4,
+   "severe": 0,
+   "median": 8.92,
+   "max": 25.25
+  },
+  "r07 外边界随动＋亮区点 / full": {
+   "n": 20,
+   "tips": 16,
+   "hit5": 8,
+   "hit10": 8,
+   "joint": 8,
+   "severe": 5,
+   "median": 9.34,
+   "max": 275.5
+  },
+  "r07 外边界随动＋亮区点 / raw_only": {
+   "n": 20,
+   "tips": 15,
+   "hit5": 5,
+   "hit10": 9,
+   "joint": 9,
+   "severe": 0,
+   "median": 8.96,
+   "max": 27.53
+  }
+ },
+ "anchor_checks": 2248,
+ "paired_jitter": 160,
+ "max_drift": 278.9767015361677,
+ "valid_lengths": 505,
+ "detector_fps": {
+  "full": 18.379519916735994,
+  "raw_only": 89.21369163727597
+ }
+}

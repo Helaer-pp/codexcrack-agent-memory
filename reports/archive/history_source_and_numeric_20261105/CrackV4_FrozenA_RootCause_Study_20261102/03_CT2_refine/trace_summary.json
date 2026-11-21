@@ -1,0 +1,40 @@
+{
+  "tip_disagreement": {
+    "n": 367,
+    "P50": 1.5020652449210923,
+    "P95": 127.21387823793437,
+    "P99": 131.9824279267895,
+    "Max": 133.90231215330087
+  },
+  "categories": {
+    "INDETERMINATE": 19,
+    "SEED_OR_ROI_CHANGE": 359,
+    "COORDINATE_SHIFT": 33,
+    "BRANCH_SWITCH": 56
+  },
+  "motion_branches": {
+    "rigid_SVD_refinement": 321,
+    "translation_fallback": 117,
+    "no_phase_patch_accepted": 29
+  },
+  "selected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    17,
+    18,
+    19,
+    58,
+    83,
+    84,
+    85
+  ],
+  "causal_changed": 11,
+  "causal_exact_off": 14,
+  "selected_count": 14,
+  "unexplained": 19
+}

@@ -1,0 +1,7 @@
+{
+  "action": "DIAGNOSTIC_REPAIR_FIRST",
+  "frozen_from": "DEV only; no fifth inputs",
+  "strong_geometry_to_branch_cases": [],
+  "evidence": "CT2 motion intervention with matched history and exact same-motion positive controls; independent material observations still insufficient",
+  "not_a_release": true
+}

@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-03T08:18:12.439563+00:00",
+  "source_sha256": "71ec69511a66eaa87738f76be91c89f3ae20b9bf84def801e085e0a3d361abef",
+  "type": "REPORTING_COMPLETION_PREREGISTERED_FORMULAS",
+  "added_after_main_source_lock": true,
+  "selection_or_detection_changes": false,
+  "rows_adjacent": 26720,
+  "rows_bilateral": 2796
+}

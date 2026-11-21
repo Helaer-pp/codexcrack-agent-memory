@@ -1,0 +1,68 @@
+{
+  "groups": [
+    {
+      "id": "group_a",
+      "role": "EXPOSED_DEVELOPMENT_REGRESSION",
+      "images": "D:/datasets\\裂纹数据\\CT裂纹\\开发组A\\测试-1",
+      "anchors": "data/anchors/开发组A_基准点坐标.txt",
+      "mode": "clean",
+      "frames": 551,
+      "physical_GT": null,
+      "used_for_parameter_tuning": false
+    },
+    {
+      "id": "group_c",
+      "role": "VALIDATION_ONLY_EXPOSED_NO_TUNING",
+      "images": "D:/datasets\\1-引伸计\\1-裂纹\\2-验证组C\\1",
+      "anchors": "data/anchors/验证组C_基准点坐标.txt",
+      "mode": "clean",
+      "frames": 562,
+      "physical_GT": null,
+      "used_for_parameter_tuning": false
+    },
+    {
+      "id": "ct2",
+      "role": "EXPOSED_DEVELOPMENT_REGRESSION",
+      "images": "D:/datasets\\裂纹数据\\CT裂纹\\CT2",
+      "anchors": "data/anchors/CT2_基准点坐标.txt",
+      "mode": "auto",
+      "frames": 468,
+      "physical_GT": null,
+      "used_for_parameter_tuning": false
+    },
+    {
+      "id": "group_h",
+      "role": "EXPOSED_DEVELOPMENT_REGRESSION",
+      "images": "D:/datasets\\裂纹数据\\CT裂纹\\开发组HMT",
+      "anchors": "data/anchors/开发组H_基准点坐标.txt",
+      "mode": "clean",
+      "frames": 410,
+      "physical_GT": null,
+      "used_for_parameter_tuning": false
+    },
+    {
+      "id": "group_x",
+      "role": "EXCLUDED_FROM_ALL_FUTURE_DEVELOPMENT_AND_VALIDATION",
+      "images": "D:/datasets\\2026.3.4-3.5排除组X测试图片\\白板\\白板样组1\\val",
+      "anchors": "data/anchors/排除组X白板1_基准点坐标.txt",
+      "mode": "auto",
+      "frames": 524,
+      "physical_GT": null,
+      "used_for_parameter_tuning": false
+    },
+    {
+      "id": "three_point_bend",
+      "role": "EXPOSED_VALIDATION_NO_TUNING",
+      "images": "D:/datasets\\1-引伸计\\1-裂纹\\2-验证组C\\三点弯\\三点弯",
+      "anchors": "data/anchors/三点弯_基准点坐标.txt",
+      "mode": "auto",
+      "frames": 520,
+      "physical_GT": null,
+      "used_for_parameter_tuning": false
+    }
+  ],
+  "usage_policy": "config/dataset_usage_policy.json",
+  "new_real_holdout_available": false,
+  "phase": "PHASE_UNKNOWN",
+  "external_original_images": "READ_ONLY_INPUTS; generated data only in output/"
+}

@@ -1,0 +1,21 @@
+{
+  "group": "three_point_bend",
+  "total": 520,
+  "shared": 463,
+  "unknown": 57,
+  "outside": 0,
+  "none": 302,
+  "mixed": 0,
+  "all8": 161,
+  "same8": 161,
+  "co_confirmed": 161,
+  "varying_coordinates": 0,
+  "variation_with_all_tips_shared": 0,
+  "max_px": 0.0,
+  "p95_frame_span_px": 0.0,
+  "worst_frame": null,
+  "miss_range": [
+    302,
+    302
+  ]
+}

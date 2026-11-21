@@ -1,0 +1,160 @@
+{
+  "modes": {
+    "A": {
+      "images": 410,
+      "current": 409,
+      "full": 344,
+      "coverage": 0.8410757946210269,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 409,
+        "P50": 38.40569999010768,
+        "P95": 47.20907999435439,
+        "P99": 49.66192400257569,
+        "Max": 52.68179999256972,
+        "over_budget": 0
+      },
+      "baseline_native_timing": {
+        "n": 409,
+        "P50": 37.34329999133479,
+        "P95": 44.92214000201784,
+        "P99": 46.76235199556686,
+        "Max": 49.22610000357963,
+        "over_budget": 0
+      },
+      "over_budget": []
+    },
+    "AM": {
+      "images": 410,
+      "current": 409,
+      "full": 344,
+      "coverage": 0.8410757946210269,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 409,
+        "P50": 38.6626000108663,
+        "P95": 48.025240006973036,
+        "P99": 50.21207599260379,
+        "Max": 340.7786000025226,
+        "over_budget": 1
+      },
+      "baseline_native_timing": {
+        "n": 409,
+        "P50": 37.46599999431055,
+        "P95": 44.90858000062872,
+        "P99": 46.506552002974786,
+        "Max": 48.43850000179373,
+        "over_budget": 0
+      },
+      "over_budget": [
+        {
+          "frame_id": 298,
+          "image_filename": "20250314155346387-381.bmp",
+          "process_core_ms": 340.7786000025226
+        }
+      ]
+    },
+    "AT": {
+      "images": 410,
+      "current": 409,
+      "full": 344,
+      "coverage": 0.8410757946210269,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 409,
+        "P50": 38.802299997769296,
+        "P95": 48.42793999705464,
+        "P99": 50.37200400722214,
+        "Max": 278.63310000975616,
+        "over_budget": 1
+      },
+      "baseline_native_timing": {
+        "n": 409,
+        "P50": 37.58190000371542,
+        "P95": 45.121860000654124,
+        "P99": 46.99697999283672,
+        "Max": 48.75410000386182,
+        "over_budget": 0
+      },
+      "over_budget": [
+        {
+          "frame_id": 190,
+          "image_filename": "20250314151003705-187.bmp",
+          "process_core_ms": 278.63310000975616
+        }
+      ]
+    },
+    "AE": {
+      "images": 410,
+      "current": 409,
+      "full": 344,
+      "coverage": 0.8410757946210269,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 409,
+        "P50": 38.861199995153584,
+        "P95": 48.286199997528456,
+        "P99": 50.2429320034571,
+        "Max": 53.17670000658836,
+        "over_budget": 0
+      },
+      "baseline_native_timing": {
+        "n": 409,
+        "P50": 37.483799998881295,
+        "P95": 44.96193999075331,
+        "P99": 47.07099199178629,
+        "Max": 49.784100003307685,
+        "over_budget": 0
+      },
+      "over_budget": []
+    },
+    "ATE": {
+      "images": 410,
+      "current": 409,
+      "full": 344,
+      "coverage": 0.8410757946210269,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 409,
+        "P50": 38.55189999740105,
+        "P95": 48.08030000422148,
+        "P99": 49.456847992842086,
+        "Max": 50.87720000301488,
+        "over_budget": 0
+      },
+      "baseline_native_timing": {
+        "n": 409,
+        "P50": 37.17999999935273,
+        "P95": 44.47732000262476,
+        "P99": 46.05107200157363,
+        "Max": 48.05339999438729,
+        "over_budget": 0
+      },
+      "over_budget": []
+    }
+  },
+  "A_differences": [],
+  "decode_ms": 21583.926099992823,
+  "private_bytes_preloaded": 5835251712,
+  "private_bytes_after": 5678284800
+}

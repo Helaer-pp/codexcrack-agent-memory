@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D6DD2B01-75B5-4FC3-84D1-8523EDB024EA}</ProjectGuid>
+    <RootNamespace>GrayDetectionV2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <SourceRoot Condition="Exists('$(MSBuildProjectDirectory)\src\cpp\v63')">$(MSBuildProjectDirectory)</SourceRoot>
+    <SourceRoot Condition="'$(SourceRoot)'==''">$(MSBuildProjectDirectory)\..</SourceRoot>
+    <CppRoot>$(SourceRoot)\src\cpp</CppRoot>
+    <OpenCV440Root Condition="'$(OpenCV440Root)'==''">$(SourceRoot)\third_party\opencv440</OpenCV440Root>
+    <OutputRoot>$(SourceRoot)\output</OutputRoot>
+    <TargetName>GrayDetectionV2</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(OutputRoot)\build\GrayDetectionV2_vs\$(Platform)\$(Configuration)\obj\</IntDir>
+    <OutDir>$(OutputRoot)\build\GrayDetectionV2_vs\$(Platform)\$(Configuration)\bin\</OutDir>
+    <GenDir>$(IntDir)generated</GenDir>
+    <CMakeExe Condition="'$(CMakeExe)'=='' and Exists('$(VSInstallDir)Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe')">$(VSInstallDir)Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe</CMakeExe>
+    <CMakeExe Condition="'$(CMakeExe)'==''">cmake.exe</CMakeExe>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(CppRoot)\a\include;$(CppRoot)\a\internal;$(OpenCV440Root)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CRACK_V63_BACKEND;CRACK_V512_BACKEND;CRACK_V4_EXPORTS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ForcedIncludeFiles>$(GenDir)\GrayDetectionV2_build.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ModuleDefinitionFile>$(GenDir)\GrayDetectionV2.def</ModuleDefinitionFile>
+      <AdditionalDependencies>$(OpenCV440Root)\lib\opencv_world440.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(CppRoot)\a\CrackV4.cpp" />
+    <ClCompile Include="$(CppRoot)\v510\registration.cpp" />
+    <ClCompile Include="$(CppRoot)\v512\material.cpp" />
+    <ClCompile Include="$(CppRoot)\v63\geometry.cpp;$(CppRoot)\v63\mapping.cpp;$(CppRoot)\v63\evidence.cpp;$(CppRoot)\v63\tracking.cpp" />
+    <ClInclude Include="$(CppRoot)\a\include\*.h;$(CppRoot)\a\include\*.hpp;$(CppRoot)\a\internal\*.h;$(CppRoot)\a\*.inc;$(CppRoot)\v510\internal.hpp;$(CppRoot)\v512\internal.hpp;$(CppRoot)\v63\internal.hpp;$(CppRoot)\v63\adapter.inc" />
+    <None Include="VERSION.txt;GrayDetectionV2.rc.in;generate_sdk.cmake;README.md" />
+    <ResourceCompile Include="$(GenDir)\GrayDetectionV2.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Target Name="GenerateSDKHeaders" BeforeTargets="PrepareForBuild">
+    <Exec Command="&quot;$(CMakeExe)&quot; &quot;-DSOURCE_DIR=$(CppRoot)&quot; &quot;-DGEN_DIR=$(GenDir)&quot; -P &quot;$(MSBuildProjectDirectory)\generate_sdk.cmake&quot;" />
+  </Target>
+  <Target Name="PublishVersionedSDK" AfterTargets="Build">
+    <ReadLinesFromFile File="$(MSBuildProjectDirectory)\VERSION.txt"><Output TaskParameter="Lines" PropertyName="SDKVersion" /></ReadLinesFromFile>
+    <PropertyGroup><ReleaseDir>$(OutputRoot)\releases\GrayDetectionV2-$(SDKVersion.Trim())</ReleaseDir></PropertyGroup>
+    <MakeDir Directories="$(ReleaseDir)" />
+    <Copy SourceFiles="$(GenDir)\GrayDetectionV2.hpp;$(OutDir)GrayDetectionV2.lib;$(TargetPath)" DestinationFolder="$(ReleaseDir)" SkipUnchangedFiles="true" />
+    <Message Text="SDK $(SDKVersion): $(ReleaseDir)" Importance="high" />
+  </Target>
+</Project>

@@ -1,0 +1,41 @@
+[
+  {
+    "group": "group_a",
+    "frames": 551,
+    "exhausted": 551,
+    "raw_cap": 0,
+    "edge_proposal_cap": 0,
+    "root_cap": 546,
+    "route_state_cap": 0,
+    "candidate_cap": 545,
+    "roi_cap": 0,
+    "recheck_cap": 0,
+    "track_cap": 7
+  },
+  {
+    "group": "three_point_bend",
+    "frames": 520,
+    "exhausted": 93,
+    "raw_cap": 0,
+    "edge_proposal_cap": 0,
+    "root_cap": 0,
+    "route_state_cap": 0,
+    "candidate_cap": 0,
+    "roi_cap": 0,
+    "recheck_cap": 0,
+    "track_cap": 93
+  },
+  {
+    "group": "group_c",
+    "frames": 562,
+    "exhausted": 0,
+    "raw_cap": 0,
+    "edge_proposal_cap": 0,
+    "root_cap": 0,
+    "route_state_cap": 0,
+    "candidate_cap": 0,
+    "roi_cap": 0,
+    "recheck_cap": 0,
+    "track_cap": 0
+  }
+]

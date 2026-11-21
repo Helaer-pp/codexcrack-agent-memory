@@ -1,0 +1,8 @@
+{
+  "valid_paths": 1787,
+  "max_tip_API_quantization_residual_px": 0.007032973946581196,
+  "max_arc_API_quantization_residual_px": 0.004996793464414395,
+  "max_inverse_roundtrip_px": 9.094947017729282e-13,
+  "confirmed_numeric_software_bug": false,
+  "M_decision": "NO_CHANGE"
+}

@@ -1,0 +1,10 @@
+{
+  "all_summary_rows_checked": 11781,
+  "native_checkpoints": 66,
+  "native_fields_exact": true,
+  "visible_gt_reads": "Full native JSON, lineage and numeric arrays unchanged",
+  "unscored_fields": "Status, official coordinates and budget from sealed CSV; GT errors/Oracle remain undefined",
+  "original_source_sha": "2afedafcd79d58aec2f32d4a8e43caedf4db86bede3d129a8a6de05c04de92bd",
+  "optimized_source_sha": "09963e5817833d31411dc0bfabd7f44f7a432f9a2fea4ebe85d9c175ff374edf",
+  "raw_predictions_modified": false
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "method": "OLD_V3",
+    "n": 132,
+    "geometry": 69,
+    "joint": 69,
+    "false_accept": 0,
+    "max_accepted_error": 0.26119572623487175
+  },
+  {
+    "method": "AP3",
+    "n": 132,
+    "geometry": 70,
+    "joint": 70,
+    "false_accept": 0,
+    "max_accepted_error": 0.32227482058753604
+  }
+]

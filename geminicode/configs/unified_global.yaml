@@ -1,0 +1,76 @@
+# Unified Crack Tip Detection Configuration (UCTIP-60Q-v1.0)
+schema_version: "UCTIP-1.0"
+config_id: "unified_global_v1_0"
+
+geometry:
+  p1p2_inset_ratio_y: 0.166667   # Upper/lower edges shifted by 1/6 p1p2 gauge length
+  initial_roi_width_px: 520
+  roi_margin_x_left: 40
+  notch_detect_window_w: 120
+  safe_roi_max_width_ratio: 0.85
+
+raw_multiscale_valley:
+  scales: [1.0, 2.0]
+  profile_half_len: 7
+  profile_step: 1.0
+  angles_deg: [-45, -30, -15, 0, 15, 30, 45]
+  valley_depth_min: 2.5
+  valley_contrast_min: 0.03
+  min_segment_length_px: 3
+  subpixel_refine: true
+  denoise_enabled: false  # 1px raw line protection
+
+registration:
+  patch_size: 64
+  patch_grid_step: 32
+  ncc_threshold: 0.60
+  min_trusted_patches: 4
+  max_translation_px: 60
+  max_photometric_drift: 35.0
+  valid_ratio_threshold: 0.25
+
+connectivity:
+  max_direct_gap_px: 4.0
+  max_inferred_gap_px: 16.0
+  angle_diff_max_deg: 45.0
+  gap_penalty_factor: 1.5
+  preserve_distinct_terminal_margin_px: 5.0
+
+scoring:
+  raw_valley_weight: 1.0
+  contrast_weight: 0.8
+  fixed_diff_weight: 1.2
+  prev_diff_weight: 0.8
+  continuity_weight: 1.0
+  gap_penalty_weight: 1.2
+  origin_proximity_weight: 0.6
+  track_history_bonus: 0.5
+  min_branch_score: 2.0
+  uncertainty_margin: 0.35
+
+multitrack:
+  max_lost_frames: 5
+  history_hysteresis_bonus: 0.4
+  branch_split_dist_min_px: 6.0
+  branch_confirmation_observations: 2
+
+dynamic_roi:
+  forward_scout_margin_px: 45
+  expansion_step_px: 180
+  max_expansions_per_frame: 10
+  max_total_roi_width_px: 2400
+  lateral_expansion_step_px: 30
+  max_lateral_expansions: 4
+
+tip_selection:
+  rule: "MAX_VALID_IMAGE_X"
+  endpoint_margin_px: 2.0
+  anomaly_jump_threshold_px: 45.0
+  anomaly_recheck_samples: 5
+
+budget:
+  max_pixels_scanned: 1500000
+  max_segments: 2048
+  max_graph_edges: 8192
+  max_candidate_paths: 64
+  max_processing_time_ms: 12000

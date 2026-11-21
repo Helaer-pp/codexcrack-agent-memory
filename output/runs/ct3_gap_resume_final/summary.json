@@ -1,0 +1,37 @@
+{
+  "frozen_results_identical": 136,
+  "candidate_sha256": "4d6f083c81b061185bc3e166f189ae9e592e8f9d739ede87f966f0c53ad513fc",
+  "sources": {
+    "none": 22,
+    "A": 49,
+    "resumed": 65
+  },
+  "gap_reasons": {
+    "no_unique_restart": 1,
+    "recovered": 65,
+    "terminal_strength": 5,
+    "possible_forward_continuation": 2
+  },
+  "frame109": {
+    "frame": 109,
+    "image": "2066.bmp",
+    "anchors": [
+      [
+        464.786,
+        546.371
+      ],
+      [
+        465.298,
+        624.565
+      ]
+    ],
+    "source": "resumed",
+    "tip_px": [
+      627.8158581912503,
+      532.5817011641614
+    ],
+    "length_px": null,
+    "A_stop": "gap_unresolved",
+    "recovery": "recovered"
+  }
+}

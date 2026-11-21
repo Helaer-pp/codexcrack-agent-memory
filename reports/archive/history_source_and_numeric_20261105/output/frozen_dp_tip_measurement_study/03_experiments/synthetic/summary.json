@@ -1,0 +1,286 @@
+{
+  "dev": {
+    "A": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 195,
+      "missed": 33,
+      "false_tip_over8": 5,
+      "conditional_synthetic_tip_MAE": 5.36169942842373,
+      "conditional_synthetic_tip_distribution": {
+        "n": 195,
+        "P50": 3.2350514167618387,
+        "P95": 4.1108794084879765,
+        "P99": 65.26334600195922,
+        "Max": 231.77491883290563,
+        "over_budget": 2
+      },
+      "conditional_synthetic_length_error": {
+        "n": 195,
+        "P50": 6.357846277773717,
+        "P95": 7.532322463475219,
+        "P99": 62.246670640204755,
+        "Max": 229.48667753652475,
+        "over_budget": 2
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 0
+    },
+    "AM": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 195,
+      "missed": 33,
+      "false_tip_over8": 5,
+      "conditional_synthetic_tip_MAE": 5.36169942842373,
+      "conditional_synthetic_tip_distribution": {
+        "n": 195,
+        "P50": 3.2350514167618387,
+        "P95": 4.1108794084879765,
+        "P99": 65.26334600195922,
+        "Max": 231.77491883290563,
+        "over_budget": 2
+      },
+      "conditional_synthetic_length_error": {
+        "n": 195,
+        "P50": 6.357846277773717,
+        "P95": 7.532322463475219,
+        "P99": 62.246670640204755,
+        "Max": 229.48667753652475,
+        "over_budget": 2
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 0
+    },
+    "AT": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 195,
+      "missed": 33,
+      "false_tip_over8": 5,
+      "conditional_synthetic_tip_MAE": 5.36169942842373,
+      "conditional_synthetic_tip_distribution": {
+        "n": 195,
+        "P50": 3.2350514167618387,
+        "P95": 4.1108794084879765,
+        "P99": 65.26334600195922,
+        "Max": 231.77491883290563,
+        "over_budget": 2
+      },
+      "conditional_synthetic_length_error": {
+        "n": 195,
+        "P50": 6.357846277773717,
+        "P95": 7.532322463475219,
+        "P99": 62.246670640204755,
+        "Max": 229.48667753652475,
+        "over_budget": 2
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 0
+    },
+    "AE": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 195,
+      "missed": 33,
+      "false_tip_over8": 5,
+      "conditional_synthetic_tip_MAE": 5.36169942842373,
+      "conditional_synthetic_tip_distribution": {
+        "n": 195,
+        "P50": 3.2350514167618387,
+        "P95": 4.1108794084879765,
+        "P99": 65.26334600195922,
+        "Max": 231.77491883290563,
+        "over_budget": 2
+      },
+      "conditional_synthetic_length_error": {
+        "n": 195,
+        "P50": 6.357846277773717,
+        "P95": 7.532322463475219,
+        "P99": 62.246670640204755,
+        "Max": 229.48667753652475,
+        "over_budget": 2
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 0
+    },
+    "ATE": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 195,
+      "missed": 33,
+      "false_tip_over8": 5,
+      "conditional_synthetic_tip_MAE": 5.36169942842373,
+      "conditional_synthetic_tip_distribution": {
+        "n": 195,
+        "P50": 3.2350514167618387,
+        "P95": 4.1108794084879765,
+        "P99": 65.26334600195922,
+        "Max": 231.77491883290563,
+        "over_budget": 2
+      },
+      "conditional_synthetic_length_error": {
+        "n": 195,
+        "P50": 6.357846277773717,
+        "P95": 7.532322463475219,
+        "P99": 62.246670640204755,
+        "Max": 229.48667753652475,
+        "over_budget": 2
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 0
+    }
+  },
+  "test": {
+    "A": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 203,
+      "missed": 25,
+      "false_tip_over8": 12,
+      "conditional_synthetic_tip_MAE": 11.285987840983642,
+      "conditional_synthetic_tip_distribution": {
+        "n": 203,
+        "P50": 3.22994851642653,
+        "P95": 60.828475716723695,
+        "P99": 231.80443643249717,
+        "Max": 231.8171704166885,
+        "over_budget": 8
+      },
+      "conditional_synthetic_length_error": {
+        "n": 203,
+        "P50": 6.347846277773726,
+        "P95": 57.98861852858619,
+        "P99": 229.74147753652477,
+        "Max": 229.77667753652477,
+        "over_budget": 8
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 0
+    },
+    "AM": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 203,
+      "missed": 25,
+      "false_tip_over8": 12,
+      "conditional_synthetic_tip_MAE": 11.285987840983642,
+      "conditional_synthetic_tip_distribution": {
+        "n": 203,
+        "P50": 3.22994851642653,
+        "P95": 60.828475716723695,
+        "P99": 231.80443643249717,
+        "Max": 231.8171704166885,
+        "over_budget": 8
+      },
+      "conditional_synthetic_length_error": {
+        "n": 203,
+        "P50": 6.347846277773726,
+        "P95": 57.98861852858619,
+        "P99": 229.74147753652477,
+        "Max": 229.77667753652477,
+        "over_budget": 8
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 0
+    },
+    "AT": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 203,
+      "missed": 25,
+      "false_tip_over8": 12,
+      "conditional_synthetic_tip_MAE": 11.285987840983642,
+      "conditional_synthetic_tip_distribution": {
+        "n": 203,
+        "P50": 3.22994851642653,
+        "P95": 60.828475716723695,
+        "P99": 231.80443643249717,
+        "Max": 231.8171704166885,
+        "over_budget": 8
+      },
+      "conditional_synthetic_length_error": {
+        "n": 203,
+        "P50": 6.347846277773726,
+        "P95": 57.98861852858619,
+        "P99": 229.74147753652477,
+        "Max": 229.77667753652477,
+        "over_budget": 8
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 0
+    },
+    "AE": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 203,
+      "missed": 25,
+      "false_tip_over8": 13,
+      "conditional_synthetic_tip_MAE": 11.416049306958001,
+      "conditional_synthetic_tip_distribution": {
+        "n": 203,
+        "P50": 3.22994851642653,
+        "P95": 60.828475716723695,
+        "P99": 231.80443643249717,
+        "Max": 231.8171704166885,
+        "over_budget": 8
+      },
+      "conditional_synthetic_length_error": {
+        "n": 203,
+        "P50": 6.347846277773726,
+        "P95": 57.98861852858619,
+        "P99": 229.74147753652477,
+        "Max": 229.77667753652477,
+        "over_budget": 8
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 1
+    },
+    "ATE": {
+      "n": 240,
+      "known_tip": 228,
+      "confirmed": 203,
+      "missed": 25,
+      "false_tip_over8": 13,
+      "conditional_synthetic_tip_MAE": 11.416049306958001,
+      "conditional_synthetic_tip_distribution": {
+        "n": 203,
+        "P50": 3.22994851642653,
+        "P95": 60.828475716723695,
+        "P99": 231.80443643249717,
+        "Max": 231.8171704166885,
+        "over_budget": 8
+      },
+      "conditional_synthetic_length_error": {
+        "n": 203,
+        "P50": 6.347846277773726,
+        "P95": 57.98861852858619,
+        "P99": 229.74147753652477,
+        "Max": 229.77667753652477,
+        "over_budget": 8
+      },
+      "negative_new_growth_false": 0,
+      "negative_count": 12,
+      "negative_T_evaluable": 0,
+      "applied": 1
+    }
+  }
+}

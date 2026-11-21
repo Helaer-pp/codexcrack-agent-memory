@@ -1,0 +1,17 @@
+{
+  "reference_dll_matched_frames": 100,
+  "total_frames": 100,
+  "portable_build_info": {
+    "2.2.0.0": "GrayDetectionV2 V6.3 S2; API GrayDetectionV2; native C++17; OpenCV 4.4.0; DLL 2.2.0.0",
+    "2.2.0.1": "GrayDetectionV2 V6.3 S2; API GrayDetectionV2; native C++17; OpenCV 4.4.0; DLL 2.2.0.1"
+  },
+  "windows_file_and_product_versions": [
+    "2.2.0.0",
+    "2.2.0.1"
+  ],
+  "sdk_sha256": {
+    "GrayDetectionV2.hpp": "22cfe79698138ebbea485fc5dbbbb5e85869d4e7afce760c8ab32ed6d7709992",
+    "GrayDetectionV2.lib": "2845156aca697f50b2495f67bdf2a0f80be8a685c06832b15afc52cdec5717d0",
+    "GrayDetectionV2.dll": "5203abca72373b918649ea536f2a1dc1a30ca2179b5f33a90d4979c2f9750b05"
+  }
+}

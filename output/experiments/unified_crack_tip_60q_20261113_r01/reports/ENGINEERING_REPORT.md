@@ -1,0 +1,11 @@
+# 工程交付
+
+新实现位于research/unified_crack_tip_60q，旧生产和研究源码没有就地修改。15项合成合同通过：RAW1/2px、分支最右、后退与大跳跃同帧复查、LOST恢复和过期重建、暗划痕/孤点、P互换/降级、参考独立不可用、gap观测端点、平局不确定、预算null及无GT接口。结果文件见synthetic_tests.txt及engineering_preflight.json。另有5个追加风险探针：4通过、1失败；static_detached_dark_stroke_near_origin错误输出VALID(240,115)。该图中靠近不确定起源的静态独立暗线被当作裂纹，证明当前身份条件不足；不能把15个基本合同通过称为所有安全测试通过。完整图和原生结果见synthetic_risk_probes_extended/及synthetic_risk_probes_extended.json。
+
+开发组全量证据/11模式/离线分母/顺序重放已执行，以manifests/DEV_inference_seal.json和diagnostics/DEV_determinism_and_source.csv为机器证据。验证组C尚须预验证冻结后执行；最终状态见FINAL_DECISION.md。仅Python实现，无C++ parity。数值在numpy/scipy/OpenCV/numba当前环境核验，不承诺其他平台位级一致。git目录不存在，environment.json记录真实错误。
+
+无标签冒烟先发现方向联合导致纹理碎片爆炸、路径重复扩展；以方向估计、组件结构、词典序有向段搜索修正，RAW数值仍保留。预声明只使用GROUP_A276、三点弯260，smoke历史产物不覆盖。资源上限调整发生在全量注册/标签评价前。独立消融先增加并发，随后将剩余GROUP_A模式拆为三个执行批次，另改gzip压缩级别，仅影响调度/IO；调度中断的未完成文件在orchestration_interrupted_attempt*隔离，完整帧恢复，原四模块hash不变。随后在独立engine_fast.py中批量计算相同采样点的历史KDTree查询及布尔计数；133个跨模式真实检查点和15项合成测试的全部原生结果、状态、调试掩膜及血缘一致后，才恢复剩余计算。原engine.py未改，已完成结果不覆盖；新增结果带五文件hash，旧结果保留四文件hash，兼容核对仅接受这两套准确来源。参数/判定未变，无GT读取。注册与断点见DEV_execution_backend_registration.json、worker_reschedule4.json和qa/batch_backend_*；耗时按两后端分列，不能混为同一性能基准。
+
+内存受输入ROI/骨架/段与图上限约束，但邻居枚举发生于图边截断之前，尚无操作系统级硬内存上限保证。此为高密度极端输入的明确工程局限；生产批准还需有界流式边提案与资源压力测试，不能仅凭本数据未OOM认定完全通过。配准窗口数量单独有界；无效引用不进入证据。原生holdout_ncc实际为拟合后的交错子集一致性，子集已参与整块模板匹配，不是独立留出验证；不能扩大为物理配准真实性证据。
+
+图册已通过Node DOM加载、8图层、候选分页/筛选和空选择合同，对比图经逐帧视频编码/解码检查，部分图像已抽样查看；全部PNG与数值完整性以最终final_integrity记录为准。实际浏览器尝试因内置浏览器不能连到本地服务、且工具策略禁止file://而受阻；没有绕过策略，也不声称完成真实浏览器交互验收，见qa/browser_interaction_attempt.json。

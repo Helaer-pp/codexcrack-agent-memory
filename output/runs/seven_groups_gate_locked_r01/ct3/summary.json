@@ -1,0 +1,14 @@
+{
+  "group": "ct3",
+  "mode": "auto",
+  "frames": 136,
+  "verified_video_frames": 136,
+  "exact_A_frames": 136,
+  "A": 49,
+  "V1": 114,
+  "latest": 125,
+  "gap_add": 65,
+  "adapt_add": 11,
+  "missing": 11,
+  "complete_lengths": 0
+}

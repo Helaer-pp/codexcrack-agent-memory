@@ -1,0 +1,16 @@
+{
+  "name": "CodexCrack",
+  "schema": 1,
+  "root": ".",
+  "production": "A",
+  "production_dll": "output/releases/A_Win64_OpenCV440/bin/CrackV4.dll",
+  "production_sdk": "output/releases/A_Win64_OpenCV440.zip",
+  "previous_a_backup": "output/backups/A_before_roi_tip.zip",
+  "research": "A_PRIME3_RESEARCH_ONLY_KEEP_A",
+  "default_output": "output",
+  "archived_code_is_runtime_dependency": false,
+  "python_executable": "D:/ProgramData/anaconda3/python.exe",
+  "cmake_executable": "D:/CMake/bin/cmake.exe",
+  "opencv_native": "third_party/opencv440",
+  "latest_results": "output/runs/ct3_roi_tip_r01/验证报告.md"
+}

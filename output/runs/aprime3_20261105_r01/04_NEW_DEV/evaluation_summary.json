@@ -1,0 +1,21 @@
+{
+  "frames": 918,
+  "observable": 648,
+  "A_correct": 553,
+  "full_correct": 553,
+  "old_oracle": 583,
+  "new_oracle": 621,
+  "old_oracle_losses": 0,
+  "max_K": 12,
+  "A_original_preserved": true,
+  "activated_pairs": 18,
+  "activated_pair_frames": 54,
+  "activated_backgrounds": 3,
+  "old_coverage": 0.6300693648599256,
+  "new_coverage": 0.6295121876860947,
+  "geometry_supported_queries": 1980,
+  "geometry_false_accepts": 0,
+  "gate_A": true,
+  "gate_activation": true,
+  "gate_C": false
+}

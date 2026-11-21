@@ -1,0 +1,91 @@
+fixture_gray,length,mode,tip,expected,equal
+0,8,unipolar,,,True
+0,8,displaced_line,,,True
+0,8,unchanged,,,True
+0,9,unipolar,,,True
+0,9,displaced_line,,,True
+0,9,unchanged,,,True
+0,10,unipolar,"[80.0, 80.0]","[80, 80]",True
+0,10,displaced_line,,,True
+0,10,unchanged,,,True
+0,11,unipolar,"[81.0, 80.0]","[81, 80]",True
+0,11,displaced_line,,,True
+0,11,unchanged,,,True
+0,12,unipolar,"[82.0, 80.0]","[82, 80]",True
+0,12,displaced_line,,,True
+0,12,unchanged,,,True
+0,13,unipolar,"[83.0, 80.0]","[83, 80]",True
+0,13,displaced_line,,,True
+0,13,unchanged,,,True
+0,14,unipolar,"[84.0, 80.0]","[84, 80]",True
+0,14,displaced_line,"[84.0, 80.0]","[84, 80]",True
+0,14,unchanged,,,True
+0,15,unipolar,"[85.0, 80.0]","[85, 80]",True
+0,15,displaced_line,"[85.0, 80.0]","[85, 80]",True
+0,15,unchanged,,,True
+0,16,unipolar,"[86.0, 80.0]","[86, 80]",True
+0,16,displaced_line,"[86.0, 80.0]","[86, 80]",True
+0,16,unchanged,,,True
+0,17,unipolar,"[87.0, 80.0]","[87, 80]",True
+0,17,displaced_line,"[87.0, 80.0]","[87, 80]",True
+0,17,unchanged,,,True
+0,18,unipolar,"[88.0, 80.0]","[88, 80]",True
+0,18,displaced_line,"[88.0, 80.0]","[88, 80]",True
+0,18,unchanged,,,True
+0,19,unipolar,"[89.0, 80.0]","[89, 80]",True
+0,19,displaced_line,"[89.0, 80.0]","[89, 80]",True
+0,19,unchanged,,,True
+0,20,unipolar,"[90.0, 80.0]","[90, 80]",True
+0,20,displaced_line,"[90.0, 80.0]","[90, 80]",True
+0,20,unchanged,,,True
+0,21,unipolar,"[91.0, 80.0]","[91, 80]",True
+0,21,displaced_line,"[91.0, 80.0]","[91, 80]",True
+0,21,unchanged,,,True
+0,22,unipolar,"[92.0, 80.0]","[92, 80]",True
+0,22,displaced_line,"[92.0, 80.0]","[92, 80]",True
+0,22,unchanged,,,True
+22,8,unipolar,,,True
+22,8,displaced_line,,,True
+22,8,unchanged,,,True
+22,9,unipolar,,,True
+22,9,displaced_line,,,True
+22,9,unchanged,,,True
+22,10,unipolar,"[80.0, 80.0]","[80, 80]",True
+22,10,displaced_line,"[80.0, 80.0]","[80, 80]",True
+22,10,unchanged,,,True
+22,11,unipolar,"[81.0, 80.0]","[81, 80]",True
+22,11,displaced_line,"[81.0, 80.0]","[81, 80]",True
+22,11,unchanged,,,True
+22,12,unipolar,"[82.0, 80.0]","[82, 80]",True
+22,12,displaced_line,"[82.0, 80.0]","[82, 80]",True
+22,12,unchanged,,,True
+22,13,unipolar,"[83.0, 80.0]","[83, 80]",True
+22,13,displaced_line,"[83.0, 80.0]","[83, 80]",True
+22,13,unchanged,,,True
+22,14,unipolar,"[84.0, 80.0]","[84, 80]",True
+22,14,displaced_line,"[84.0, 80.0]","[84, 80]",True
+22,14,unchanged,,,True
+22,15,unipolar,"[85.0, 80.0]","[85, 80]",True
+22,15,displaced_line,"[85.0, 80.0]","[85, 80]",True
+22,15,unchanged,,,True
+22,16,unipolar,"[86.0, 80.0]","[86, 80]",True
+22,16,displaced_line,"[86.0, 80.0]","[86, 80]",True
+22,16,unchanged,,,True
+22,17,unipolar,"[87.0, 80.0]","[87, 80]",True
+22,17,displaced_line,"[87.0, 80.0]","[87, 80]",True
+22,17,unchanged,,,True
+22,18,unipolar,"[88.0, 80.0]","[88, 80]",True
+22,18,displaced_line,"[88.0, 80.0]","[88, 80]",True
+22,18,unchanged,,,True
+22,19,unipolar,"[89.0, 80.0]","[89, 80]",True
+22,19,displaced_line,"[89.0, 80.0]","[89, 80]",True
+22,19,unchanged,,,True
+22,20,unipolar,"[90.0, 80.0]","[90, 80]",True
+22,20,displaced_line,"[90.0, 80.0]","[90, 80]",True
+22,20,unchanged,,,True
+22,21,unipolar,"[91.0, 80.0]","[91, 80]",True
+22,21,displaced_line,"[91.0, 80.0]","[91, 80]",True
+22,21,unchanged,,,True
+22,22,unipolar,"[92.0, 80.0]","[92, 80]",True
+22,22,displaced_line,"[92.0, 80.0]","[92, 80]",True
+22,22,unchanged,,,True

@@ -1,0 +1,22 @@
+#include "detector.hpp"
+#include "CrackV4.h"
+using namespace r05h;
+namespace {
+cv::Mat1b view(const CrackV4Image*i){if(!i||!i->data||i->width<16||i->height<16||i->stride<i->width)throw std::runtime_error("invalid image");return cv::Mat1b(i->height,i->width,const_cast<unsigned char*>(i->data),size_t(i->stride));}
+std::array<P,2> anchors(const CrackV4Point*p){if(!p)throw std::runtime_error("missing anchors");return {P(p[0].x,p[0].y),P(p[1].x,p[1].y)};}
+void point(std::ostream&o,P p){o<<'['<<p.x<<','<<p.y<<']';}
+void refJson(std::ostream&o,const ReferenceEvidence&e){o<<"{\"state\":\""<<e.state<<"\",\"classification\":\""<<e.classification<<"\",\"source\":\""<<e.source<<"\",\"valid_sides\":"<<e.validSides<<",\"residual\":"<<e.residual<<",\"current\":"<<e.current<<",\"previous\":"<<e.previous<<",\"bonus\":"<<e.bonus<<",\"ms\":"<<e.ms<<",\"shift\":";point(o,e.shift);o<<",\"matches\":[";for(size_t i=0;i<e.matches.size();++i){if(i)o<<',';auto&m=e.matches[i];o<<"{\"valid\":"<<m.valid<<",\"correlation\":"<<m.correlation<<",\"uniqueness\":"<<m.margin<<",\"texture\":"<<m.texture<<",\"cycle\":"<<m.cycle<<",\"boundary\":"<<m.boundary<<",\"reason\":\""<<m.reason<<"\",\"shift\":";point(o,m.shift);o<<'}';}o<<"]}";}
+std::string describe(Pipeline&d){auto&v=d.result;auto&r=d.core.r;std::ostringstream o;o<<std::setprecision(10)<<std::boolalpha;
+ o<<"{\"frame\":"<<r.frame<<",\"status\":\""<<v.status<<"\",\"reason\":\""<<v.reason<<"\",\"observed\":"<<v.hasObserved<<",\"observed_tip\":";if(v.hasObserved)point(o,v.observed);else o<<"null";o<<",\"working_tip\":";if(v.hasWorking)point(o,v.working);else o<<"null";
+ o<<",\"search_complete\":"<<v.searchComplete<<",\"confidence\":"<<v.confidence<<",\"first_lock_quality\":"<<v.rootQuality<<",\"physical_notch\":"<<d.notch<<",\"history_written\":"<<v.historyWritten<<",\"past_history_frame\":"<<v.historyFrame<<",\"seed_count\":"<<r.seeds.size()<<",\"selected_stop\":"<<v.selected<<",\"origin\":";point(o,r.origin);o<<",\"forward\":";point(o,r.forward);o<<",\"spacing\":"<<r.spacing;
+ o<<",\"runtime_breakdown\":{\"total_native_ms\":"<<v.totalMs<<",\"root_ms\":"<<v.rootMs<<",\"tracking_ms\":"<<v.trackMs<<",\"terminal_ms\":"<<v.terminalMs<<",\"reference_ms\":"<<v.referenceMs<<",\"state_ms\":"<<v.stateMs<<"},\"counts\":{\"scans\":"<<r.scans.size()<<",\"nodes\":"<<r.nodes.size()<<",\"unique_pixels\":"<<r.uniquePixels<<",\"samples\":"<<r.totalSamples<<",\"weak_observations\":"<<r.weakObservations<<",\"reacquisitions\":"<<r.gapReacquisitions<<"},\"navigation\":";refJson(o,v.navigation);
+ o<<",\"main_path\":[";for(size_t i=0;i<v.path.size();++i){if(i)o<<',';auto&n=r.nodes[v.path[i]];o<<"{\"id\":"<<n.id<<",\"xy\":";point(o,n.p);o<<",\"visible\":"<<n.visible<<",\"strength\":"<<n.strength<<",\"width\":"<<n.width<<",\"gap\":"<<n.missing<<'}';}o<<"],\"visible_segments\":[";
+ bool open=false,comma=false;for(int id:v.path){auto&n=r.nodes[id];if(n.visible){if(!open){if(comma)o<<',';o<<'[';open=true;comma=true;}else o<<',';point(o,n.p);}else if(open){o<<']';open=false;}}if(open)o<<']';o<<"],\"inferred_gaps\":[";comma=false;for(size_t i=1;i<v.path.size();++i){auto&a=r.nodes[v.path[i-1]],&b=r.nodes[v.path[i]];if(!a.visible||!b.visible){if(comma)o<<',';comma=true;o<<'[';point(o,a.p);o<<',';point(o,b.p);o<<']';}}o<<"],\"alternative_stops\":[";
+ for(size_t i=0;i<v.stops.size();++i){if(i)o<<',';auto&q=v.stops[i];o<<"{\"node\":"<<q.node<<",\"xy\":";point(o,q.tip);o<<",\"before\":"<<q.before<<",\"after_fraction\":"<<q.after<<",\"current\":"<<q.current<<",\"identity\":"<<q.identity<<",\"terminal\":"<<q.terminal<<",\"reference_component\":"<<q.reference<<",\"score\":"<<q.score<<",\"gap\":"<<q.gap<<",\"boundary\":"<<q.boundary<<",\"reason\":\""<<q.cause<<"\",\"reference\":";refJson(o,q.ref);o<<'}';}o<<"]}";return o.str();}
+}
+extern "C" {
+__declspec(dllexport) void* R05HCreate(const CrackV4Image*ref,const CrackV4Point*pp){try{cv::setNumThreads(4);return new Pipeline(view(ref),anchors(pp));}catch(...){return nullptr;}}
+__declspec(dllexport) int R05HProcess(void*h,const CrackV4Image*im,const CrackV4Point*pp,int variant){try{if(!h||variant<0||variant>3)return -1;auto a=anchors(pp);static_cast<Pipeline*>(h)->process(view(im),cv::Point2f(a[0]),cv::Point2f(a[1]),variant);return 0;}catch(...){return -2;}}
+__declspec(dllexport) const char* R05HRead(void*h){if(!h)return "{}";auto&d=*static_cast<Pipeline*>(h);d.json=describe(d);return d.json.c_str();}
+__declspec(dllexport) void R05HDestroy(void*h){delete static_cast<Pipeline*>(h);}
+}

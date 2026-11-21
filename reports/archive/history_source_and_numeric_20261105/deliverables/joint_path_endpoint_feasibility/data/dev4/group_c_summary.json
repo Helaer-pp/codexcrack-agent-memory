@@ -1,0 +1,416 @@
+{
+  "group": "group_c",
+  "images": 562,
+  "modes": {
+    "M0_BASE_STABLE": {
+      "current_frames": 561,
+      "tip": 543,
+      "full": 543,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 5.232900002738461,
+        "p95": 6.984699997701682,
+        "p99": 7.464999996591358,
+        "max": 8.331300006830133,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 5.2266,
+        "p95": 6.9696,
+        "p99": 7.449399999999998,
+        "max": 8.3173,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 0.738300004741177,
+        "p95": 1.2061000015819445,
+        "p99": 1.3376200018683444,
+        "max": 1.6676999948685989,
+        "over66": 0
+      },
+      "max_frame_id": 512,
+      "over_budget": [],
+      "initialization_ms": 5.6593,
+      "statuses": {
+        "no_candidate": 16,
+        "terminal_supported": 483,
+        "weak_terminal_support": 2,
+        "possible_forward_continuation": 61
+      },
+      "multi_candidates": 0
+    },
+    "M1_BASE_FAILED_RESEARCH": {
+      "current_frames": 561,
+      "tip": 543,
+      "full": 543,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 6.16049999371171,
+        "p95": 8.07550000899937,
+        "p99": 8.851919995504431,
+        "max": 9.672100000898354,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 6.1535,
+        "p95": 8.0325,
+        "p99": 8.83706,
+        "max": 9.6536,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 2.828199998475611,
+        "p95": 4.2224999924656,
+        "p99": 5.229959997814145,
+        "max": 14.191900001605973,
+        "over66": 0
+      },
+      "max_frame_id": 539,
+      "over_budget": [],
+      "initialization_ms": 5.893,
+      "statuses": {
+        "no_candidate": 16,
+        "terminal_supported": 478,
+        "weak_terminal_support": 2,
+        "possible_forward_continuation": 60,
+        "local_relocated_terminal": 6
+      },
+      "multi_candidates": 0
+    },
+    "OFF_COMPAT": {
+      "current_frames": 561,
+      "tip": 543,
+      "full": 543,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 5.310599997756071,
+        "p95": 6.653000004007481,
+        "p99": 7.4434200010728055,
+        "max": 8.724799990886822,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 5.3035,
+        "p95": 6.6451,
+        "p99": 7.425899999999996,
+        "max": 8.7104,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 0.7427000091411173,
+        "p95": 1.1668000079225749,
+        "p99": 1.3942799938376989,
+        "max": 7.550599999376573,
+        "over66": 0
+      },
+      "max_frame_id": 510,
+      "over_budget": [],
+      "initialization_ms": 7.006,
+      "statuses": {
+        "no_candidate": 16,
+        "terminal_supported": 483,
+        "weak_terminal_support": 2,
+        "possible_forward_continuation": 61
+      },
+      "multi_candidates": 0
+    },
+    "V3_REJECTED": {
+      "current_frames": 561,
+      "tip": 448,
+      "full": 448,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 5.362199997762218,
+        "p95": 6.822199997259304,
+        "p99": 7.644500007154419,
+        "max": 8.62139998935163,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 5.3535,
+        "p95": 6.8096,
+        "p99": 7.633499999999999,
+        "max": 8.6043,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 0.7157999934861436,
+        "p95": 1.1243999906582758,
+        "p99": 1.3274399942019952,
+        "max": 1.592300002812408,
+        "over66": 0
+      },
+      "max_frame_id": 540,
+      "over_budget": [],
+      "initialization_ms": 6.7642,
+      "statuses": {
+        "no_candidate": 16,
+        "current_trace_continues": 45,
+        "current_trace_terminal_uncertain": 48,
+        "current_trace_terminal_supported": 452,
+        "trace_support_lost": 1
+      },
+      "multi_candidates": 0
+    },
+    "M2_EVIDENCE_ONLY": {
+      "current_frames": 561,
+      "tip": 543,
+      "full": 543,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 7.7385000040521845,
+        "p95": 10.19859999360051,
+        "p99": 12.034880003193386,
+        "max": 13.276700003189035,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 7.731,
+        "p95": 10.1906,
+        "p99": 12.02027999999999,
+        "max": 13.2649,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 2.2973000013735145,
+        "p95": 3.5642000002553686,
+        "p99": 4.96133999840822,
+        "max": 10.932499993941747,
+        "over66": 0
+      },
+      "max_frame_id": 509,
+      "over_budget": [],
+      "initialization_ms": 6.7528,
+      "statuses": {
+        "no_candidate": 16,
+        "terminal_supported": 483,
+        "weak_terminal_support": 2,
+        "possible_forward_continuation": 61
+      },
+      "multi_candidates": 0
+    },
+    "M3_LLR_BG": {
+      "current_frames": 561,
+      "tip": 541,
+      "full": 541,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 8.012299993424676,
+        "p95": 10.153499999432825,
+        "p99": 11.33021999849006,
+        "max": 13.699799994355999,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 8.0057,
+        "p95": 10.1456,
+        "p99": 11.309719999999995,
+        "max": 13.6775,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 2.183899996452965,
+        "p95": 3.5386999952606857,
+        "p99": 4.646659997524692,
+        "max": 18.07330000156071,
+        "over66": 0
+      },
+      "max_frame_id": 540,
+      "over_budget": [],
+      "initialization_ms": 5.8453,
+      "statuses": {
+        "no_candidate": 16,
+        "possible_forward_continuation": 143,
+        "terminal_supported": 403
+      },
+      "multi_candidates": 0
+    },
+    "M4_JOINT_K1": {
+      "current_frames": 561,
+      "tip": 360,
+      "full": 360,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 7.857000004150905,
+        "p95": 10.940800013486296,
+        "p99": 12.024100005510263,
+        "max": 14.627699987613596,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 7.8479,
+        "p95": 10.9322,
+        "p99": 12.00554,
+        "max": 14.6141,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 2.3689999943599105,
+        "p95": 3.770199997234158,
+        "p99": 4.44539999880362,
+        "max": 13.832399999955669,
+        "over66": 0
+      },
+      "max_frame_id": 540,
+      "over_budget": [],
+      "initialization_ms": 6.973,
+      "statuses": {
+        "no_candidate": 16,
+        "joint_stop_forward_conflict": 170,
+        "joint_absorbing_stop": 362,
+        "joint_tip_uncertain": 14
+      },
+      "multi_candidates": 0
+    },
+    "M5_JOINT_K2": {
+      "current_frames": 561,
+      "tip": 360,
+      "full": 360,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 8.975199991255067,
+        "p95": 13.394699999480508,
+        "p99": 14.594680001027877,
+        "max": 17.800400004489347,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 8.9674,
+        "p95": 13.3815,
+        "p99": 14.578139999999994,
+        "max": 17.7798,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 2.5205999991158023,
+        "p95": 4.05960000352934,
+        "p99": 4.801219998626036,
+        "max": 16.03750001231674,
+        "over66": 0
+      },
+      "max_frame_id": 540,
+      "over_budget": [],
+      "initialization_ms": 6.254,
+      "statuses": {
+        "no_candidate": 16,
+        "joint_stop_forward_conflict": 170,
+        "joint_absorbing_stop": 362,
+        "joint_tip_uncertain": 14
+      },
+      "multi_candidates": 389
+    },
+    "M5_JOINT_K3": {
+      "current_frames": 561,
+      "tip": 360,
+      "full": 360,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 9.929899999406189,
+        "p95": 14.277500013122335,
+        "p99": 15.543620000244111,
+        "max": 17.827400006353855,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 9.9217,
+        "p95": 14.2692,
+        "p99": 15.526279999999993,
+        "max": 17.7982,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 2.642899999045767,
+        "p95": 4.336400001193397,
+        "p99": 5.2526799961924535,
+        "max": 12.610999998287298,
+        "over66": 0
+      },
+      "max_frame_id": 477,
+      "over_budget": [],
+      "initialization_ms": 6.444,
+      "statuses": {
+        "no_candidate": 16,
+        "joint_stop_forward_conflict": 170,
+        "joint_absorbing_stop": 362,
+        "joint_tip_uncertain": 14
+      },
+      "multi_candidates": 389
+    },
+    "ANCHOR_NO_REFINE": {
+      "current_frames": 561,
+      "tip": 521,
+      "full": 521,
+      "errors": 0,
+      "timing": {
+        "n": 561,
+        "p50": 4.29670000448823,
+        "p95": 5.5705999984638765,
+        "p99": 6.115140000474637,
+        "max": 7.310000000870787,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 561,
+        "p50": 4.2885,
+        "p95": 5.5642,
+        "p99": 6.105079999999998,
+        "max": 7.297,
+        "over66": 0
+      },
+      "queries": {
+        "n": 561,
+        "p50": 0.7330000080401078,
+        "p95": 1.109399992856197,
+        "p99": 1.339740003459155,
+        "max": 1.499700010754168,
+        "over66": 0
+      },
+      "max_frame_id": 476,
+      "over_budget": [],
+      "initialization_ms": 6.0509,
+      "statuses": {
+        "no_candidate": 17,
+        "possible_forward_continuation": 70,
+        "terminal_supported": 453,
+        "gap_unresolved": 21,
+        "path_quality_uncertain": 1
+      },
+      "multi_candidates": 0
+    }
+  },
+  "compatibility_differences": [],
+  "invariant_violations": [],
+  "decode_ms": 93571.39860000461,
+  "private_memory_preloaded_start": 15850283008,
+  "private_memory_peak": 15866339328,
+  "private_memory_after_handles_close": 15591059456,
+  "real_gt_available": false,
+  "fifth_read": false
+}

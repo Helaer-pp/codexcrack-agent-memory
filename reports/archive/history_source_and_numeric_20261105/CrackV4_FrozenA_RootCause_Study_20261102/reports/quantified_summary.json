@@ -1,0 +1,327 @@
+{
+  "groups": [
+    "group_a",
+    "group_c",
+    "ct2",
+    "group_h",
+    "group_x"
+  ],
+  "photometry": [
+    {
+      "group": "group_a",
+      "current": 550,
+      "legacy_photo_pass": 0,
+      "CASE_P1_current_line_rule_limitation": 490,
+      "CASE_P2_local_encoding_flat": 0,
+      "CASE_P3_insufficient": 60,
+      "reference_gate_was_not_relaxed": true,
+      "physical_accuracy": "N/A"
+    },
+    {
+      "group": "group_c",
+      "current": 561,
+      "legacy_photo_pass": 561,
+      "CASE_P1_current_line_rule_limitation": 0,
+      "CASE_P2_local_encoding_flat": 0,
+      "CASE_P3_insufficient": 0,
+      "reference_gate_was_not_relaxed": true,
+      "physical_accuracy": "N/A"
+    },
+    {
+      "group": "ct2",
+      "current": 467,
+      "legacy_photo_pass": 0,
+      "CASE_P1_current_line_rule_limitation": 467,
+      "CASE_P2_local_encoding_flat": 0,
+      "CASE_P3_insufficient": 0,
+      "reference_gate_was_not_relaxed": true,
+      "physical_accuracy": "N/A"
+    },
+    {
+      "group": "group_h",
+      "current": 409,
+      "legacy_photo_pass": 0,
+      "CASE_P1_current_line_rule_limitation": 354,
+      "CASE_P2_local_encoding_flat": 0,
+      "CASE_P3_insufficient": 55,
+      "reference_gate_was_not_relaxed": true,
+      "physical_accuracy": "N/A"
+    },
+    {
+      "group": "group_x",
+      "current": 523,
+      "legacy_photo_pass": 0,
+      "CASE_P1_current_line_rule_limitation": 210,
+      "CASE_P2_local_encoding_flat": 0,
+      "CASE_P3_insufficient": 313,
+      "reference_gate_was_not_relaxed": true,
+      "physical_accuracy": "N/A"
+    }
+  ],
+  "matching": {
+    "group_a": {
+      "group": "group_a",
+      "current": 550,
+      "attempted": 12808,
+      "texture_eligible": 9416,
+      "matched": 3,
+      "independent_validation_pass": 0,
+      "heldout_matched": 0,
+      "first_failure_counts": {
+        "CLIPPED_OR_LOW_DYNAMIC_RANGE": 11419,
+        "VALID_MATCH": 3,
+        "NCC_BELOW_THRESHOLD": 547,
+        "GEOMETRIC_CONFLICT": 839
+      },
+      "photo_interpretations": {
+        "CASE_P3_INSUFFICIENT_EVIDENCE": 60,
+        "CASE_P1_OVERCONSERVATIVE_FOR_CURRENT_LINE": 490
+      },
+      "baseline_reproduction": "PASS",
+      "real_error": "N/A"
+    },
+    "group_c": {
+      "group": "group_c",
+      "current": 561,
+      "attempted": 13344,
+      "texture_eligible": 13344,
+      "matched": 3390,
+      "independent_validation_pass": 1111,
+      "heldout_matched": 1111,
+      "first_failure_counts": {
+        "CLIPPED_OR_LOW_DYNAMIC_RANGE": 4605,
+        "VALID_MATCH": 3390,
+        "AMBIGUOUS_PEAK": 2764,
+        "GEOMETRIC_CONFLICT": 2583,
+        "FB_INCONSISTENT": 1,
+        "NCC_BELOW_THRESHOLD": 1
+      },
+      "photo_interpretations": {
+        "BASELINE_GATE_PASS": 561
+      },
+      "baseline_reproduction": "PASS",
+      "real_error": "N/A"
+    },
+    "ct2": {
+      "group": "ct2",
+      "current": 467,
+      "attempted": 11208,
+      "texture_eligible": 9027,
+      "matched": 0,
+      "independent_validation_pass": 0,
+      "heldout_matched": 0,
+      "first_failure_counts": {
+        "CLIPPED_OR_LOW_DYNAMIC_RANGE": 5558,
+        "AMBIGUOUS_PEAK": 467,
+        "NCC_BELOW_THRESHOLD": 4669,
+        "GEOMETRIC_CONFLICT": 485,
+        "LOW_TEXTURE": 29
+      },
+      "photo_interpretations": {
+        "CASE_P1_OVERCONSERVATIVE_FOR_CURRENT_LINE": 467
+      },
+      "baseline_reproduction": "PASS",
+      "real_error": "N/A"
+    },
+    "group_h": {
+      "group": "group_h",
+      "current": 409,
+      "attempted": 9448,
+      "texture_eligible": 0,
+      "matched": 0,
+      "independent_validation_pass": 0,
+      "heldout_matched": 0,
+      "first_failure_counts": {
+        "CLIPPED_OR_LOW_DYNAMIC_RANGE": 7812,
+        "OUT_OF_BOUNDS": 1636
+      },
+      "photo_interpretations": {
+        "CASE_P3_INSUFFICIENT_EVIDENCE": 55,
+        "CASE_P1_OVERCONSERVATIVE_FOR_CURRENT_LINE": 354
+      },
+      "baseline_reproduction": "PASS",
+      "real_error": "N/A"
+    },
+    "group_x": {
+      "group": "group_x",
+      "current": 523,
+      "attempted": 12288,
+      "texture_eligible": 12219,
+      "matched": 3393,
+      "independent_validation_pass": 1377,
+      "heldout_matched": 1694,
+      "first_failure_counts": {
+        "VALID_MATCH": 3393,
+        "CLIPPED_OR_LOW_DYNAMIC_RANGE": 8842,
+        "AMBIGUOUS_PEAK": 18,
+        "GEOMETRIC_CONFLICT": 20,
+        "NCC_BELOW_THRESHOLD": 9,
+        "SEARCH_EDGE_OR_RANGE": 6
+      },
+      "photo_interpretations": {
+        "CASE_P3_INSUFFICIENT_EVIDENCE": 313,
+        "CASE_P1_OVERCONSERVATIVE_FOR_CURRENT_LINE": 210
+      },
+      "baseline_reproduction": "PASS",
+      "real_error": "N/A"
+    }
+  },
+  "path": [
+    {
+      "group": "group_a",
+      "current": 550,
+      "A_full": 496,
+      "A_tip": 497,
+      "body_risk_all": 0,
+      "body_risk_A_full": 0,
+      "legacy_joint_evaluable": 0,
+      "body_risk_full_evaluable": 0,
+      "new_physical_tip_error": "N/A"
+    },
+    {
+      "group": "group_c",
+      "current": 561,
+      "A_full": 543,
+      "A_tip": 543,
+      "body_risk_all": 1,
+      "body_risk_A_full": 1,
+      "legacy_joint_evaluable": 226,
+      "body_risk_full_evaluable": 1,
+      "new_physical_tip_error": "N/A"
+    },
+    {
+      "group": "ct2",
+      "current": 467,
+      "A_full": 403,
+      "A_tip": 403,
+      "body_risk_all": 118,
+      "body_risk_A_full": 118,
+      "legacy_joint_evaluable": 0,
+      "body_risk_full_evaluable": 0,
+      "new_physical_tip_error": "N/A"
+    },
+    {
+      "group": "group_h",
+      "current": 409,
+      "A_full": 344,
+      "A_tip": 345,
+      "body_risk_all": 67,
+      "body_risk_A_full": 59,
+      "legacy_joint_evaluable": 0,
+      "body_risk_full_evaluable": 0,
+      "new_physical_tip_error": "N/A"
+    },
+    {
+      "group": "group_x",
+      "current": 523,
+      "A_full": 263,
+      "A_tip": 269,
+      "body_risk_all": 249,
+      "body_risk_A_full": 52,
+      "legacy_joint_evaluable": 0,
+      "body_risk_full_evaluable": 0,
+      "new_physical_tip_error": "N/A"
+    }
+  ],
+  "performance": [
+    {
+      "group": "group_a",
+      "n": 550,
+      "P50": 9.1841,
+      "P95": 11.658389999999999,
+      "P99": 13.336993,
+      "Max": 14.0875,
+      "over_66_67": 0,
+      "native_threads": 4
+    },
+    {
+      "group": "group_c",
+      "n": 561,
+      "P50": 5.9113,
+      "P95": 7.4106,
+      "P99": 8.716939999999997,
+      "Max": 9.6578,
+      "over_66_67": 0,
+      "native_threads": 4
+    },
+    {
+      "group": "ct2",
+      "n": 467,
+      "P50": 18.6896,
+      "P95": 24.40337,
+      "P99": 27.46262799999998,
+      "Max": 30.7015,
+      "over_66_67": 0,
+      "native_threads": 4
+    },
+    {
+      "group": "group_h",
+      "n": 409,
+      "P50": 39.8913,
+      "P95": 47.07862,
+      "P99": 48.601932000000005,
+      "Max": 50.4742,
+      "over_66_67": 0,
+      "native_threads": 4
+    },
+    {
+      "group": "group_x",
+      "n": 523,
+      "P50": 32.5643,
+      "P95": 45.149499999999996,
+      "P99": 51.25095399999997,
+      "Max": 58.6374,
+      "over_66_67": 0,
+      "native_threads": 4
+    }
+  ],
+  "CT2": {
+    "tip_disagreement": {
+      "n": 367,
+      "P50": 1.5020652449210923,
+      "P95": 127.21387823793437,
+      "P99": 131.9824279267895,
+      "Max": 133.90231215330087
+    },
+    "categories": {
+      "INDETERMINATE": 19,
+      "SEED_OR_ROI_CHANGE": 359,
+      "COORDINATE_SHIFT": 33,
+      "BRANCH_SWITCH": 56
+    },
+    "motion_branches": {
+      "rigid_SVD_refinement": 321,
+      "translation_fallback": 117,
+      "no_phase_patch_accepted": 29
+    },
+    "selected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      17,
+      18,
+      19,
+      58,
+      83,
+      84,
+      85
+    ],
+    "causal_changed": 11,
+    "causal_exact_off": 14,
+    "selected_count": 14,
+    "unexplained": 19
+  },
+  "priority": {
+    "action": "DIAGNOSTIC_REPAIR_FIRST",
+    "frozen_from": "DEV only; no fifth inputs",
+    "strong_geometry_to_branch_cases": [],
+    "evidence": "CT2 motion intervention with matched history and exact same-motion positive controls; independent material observations still insufficient",
+    "not_a_release": true
+  },
+  "real_accuracy": "N/A",
+  "production_modified": false
+}

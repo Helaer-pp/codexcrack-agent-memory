@@ -1,0 +1,160 @@
+{
+  "modes": {
+    "A": {
+      "images": 551,
+      "current": 550,
+      "full": 496,
+      "coverage": 0.9018181818181819,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 550,
+        "P50": 9.058449999429286,
+        "P95": 11.311735005438095,
+        "P99": 13.323192998796001,
+        "Max": 14.324100004159845,
+        "over_budget": 0
+      },
+      "baseline_native_timing": {
+        "n": 550,
+        "P50": 7.908200001111254,
+        "P95": 9.794374991179211,
+        "P99": 11.304994002421152,
+        "Max": 12.212999994517304,
+        "over_budget": 0
+      },
+      "over_budget": []
+    },
+    "AM": {
+      "images": 551,
+      "current": 550,
+      "full": 496,
+      "coverage": 0.9018181818181819,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 550,
+        "P50": 9.212800003297161,
+        "P95": 11.726890003774315,
+        "P99": 14.001743001281282,
+        "Max": 108.47559999092482,
+        "over_budget": 1
+      },
+      "baseline_native_timing": {
+        "n": 550,
+        "P50": 7.965100005094428,
+        "P95": 9.919544998410856,
+        "P99": 11.595103995496174,
+        "Max": 13.231199991423637,
+        "over_budget": 0
+      },
+      "over_budget": [
+        {
+          "frame_id": 235,
+          "image_filename": "20240328172112310-2352.bmp",
+          "process_core_ms": 108.47559999092482
+        }
+      ]
+    },
+    "AT": {
+      "images": 551,
+      "current": 550,
+      "full": 496,
+      "coverage": 0.9018181818181819,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 550,
+        "P50": 9.28859999839915,
+        "P95": 11.639624993404139,
+        "P99": 13.809164000122104,
+        "Max": 15.82879999477882,
+        "over_budget": 0
+      },
+      "baseline_native_timing": {
+        "n": 550,
+        "P50": 7.948400001623668,
+        "P95": 9.714260000328068,
+        "P99": 11.390906006563453,
+        "Max": 13.138700000126846,
+        "over_budget": 0
+      },
+      "over_budget": []
+    },
+    "AE": {
+      "images": 551,
+      "current": 550,
+      "full": 496,
+      "coverage": 0.9018181818181819,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 550,
+        "P50": 9.385549994476605,
+        "P95": 11.684675001015421,
+        "P99": 14.404676999838548,
+        "Max": 15.506900002947077,
+        "over_budget": 0
+      },
+      "baseline_native_timing": {
+        "n": 550,
+        "P50": 8.10549999732757,
+        "P95": 9.859434993995817,
+        "P99": 11.717518001823912,
+        "Max": 12.737900004140101,
+        "over_budget": 0
+      },
+      "over_budget": []
+    },
+    "ATE": {
+      "images": 551,
+      "current": 550,
+      "full": 496,
+      "coverage": 0.9018181818181819,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 550,
+        "P50": 9.489050004049204,
+        "P95": 12.108589998388197,
+        "P99": 14.278522996901302,
+        "Max": 152.7286000055028,
+        "over_budget": 1
+      },
+      "baseline_native_timing": {
+        "n": 550,
+        "P50": 8.115150005323812,
+        "P95": 10.02140000127838,
+        "P99": 11.353845000267027,
+        "Max": 12.80850000330247,
+        "over_budget": 0
+      },
+      "over_budget": [
+        {
+          "frame_id": 329,
+          "image_filename": "20240328172507573-3292.bmp",
+          "process_core_ms": 152.7286000055028
+        }
+      ]
+    }
+  },
+  "A_differences": [],
+  "decode_ms": 1751.494799987995,
+  "private_bytes_preloaded": 3077287936,
+  "private_bytes_after": 3817132032
+}

@@ -1,0 +1,417 @@
+{
+  "group": "group_h",
+  "images": 410,
+  "modes": {
+    "M0_BASE_STABLE": {
+      "current_frames": 409,
+      "tip": 345,
+      "full": 344,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 38.39789998892229,
+        "p95": 45.846380005241365,
+        "p99": 47.85598800401203,
+        "max": 51.701099990168586,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 38.3769,
+        "p95": 45.82697999999999,
+        "p99": 47.834972,
+        "max": 51.6813,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 0.9291000023949891,
+        "p95": 2.575340002658774,
+        "p99": 3.205807995400392,
+        "max": 3.860199998598546,
+        "over66": 0
+      },
+      "max_frame_id": 402,
+      "over_budget": [],
+      "initialization_ms": 10.5916,
+      "statuses": {
+        "no_candidate": 47,
+        "terminal_supported": 268,
+        "possible_forward_continuation": 69,
+        "gap_unresolved": 16,
+        "weak_terminal_support": 10
+      },
+      "multi_candidates": 0
+    },
+    "M1_BASE_FAILED_RESEARCH": {
+      "current_frames": 409,
+      "tip": 345,
+      "full": 344,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 39.09619999467395,
+        "p95": 49.25370000128167,
+        "p99": 51.17776399070863,
+        "max": 57.33630000031553,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 39.0764,
+        "p95": 49.06193999999997,
+        "p99": 51.113576,
+        "max": 57.3071,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 2.9962999979034066,
+        "p95": 10.099180001998317,
+        "p99": 11.489304003771398,
+        "max": 16.969499993138015,
+        "over66": 0
+      },
+      "max_frame_id": 402,
+      "over_budget": [],
+      "initialization_ms": 10.3441,
+      "statuses": {
+        "no_candidate": 47,
+        "terminal_supported": 268,
+        "possible_forward_continuation": 69,
+        "gap_unresolved": 16,
+        "weak_terminal_support": 10
+      },
+      "multi_candidates": 0
+    },
+    "OFF_COMPAT": {
+      "current_frames": 409,
+      "tip": 345,
+      "full": 344,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 38.37159999238793,
+        "p95": 45.570680001401335,
+        "p99": 47.836435995996005,
+        "max": 50.139800005126745,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 38.351,
+        "p95": 45.55089999999999,
+        "p99": 47.81345600000001,
+        "max": 50.1181,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 0.9246999979950488,
+        "p95": 2.700440003536641,
+        "p99": 3.354084008024074,
+        "max": 3.7296000082278624,
+        "over66": 0
+      },
+      "max_frame_id": 389,
+      "over_budget": [],
+      "initialization_ms": 10.8181,
+      "statuses": {
+        "no_candidate": 47,
+        "terminal_supported": 268,
+        "possible_forward_continuation": 69,
+        "gap_unresolved": 16,
+        "weak_terminal_support": 10
+      },
+      "multi_candidates": 0
+    },
+    "V3_REJECTED": {
+      "current_frames": 409,
+      "tip": 295,
+      "full": 294,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 38.69839999242686,
+        "p95": 46.32111999380868,
+        "p99": 48.251860000891625,
+        "max": 49.32879999978468,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 38.6807,
+        "p95": 46.27238,
+        "p99": 48.22614400000001,
+        "max": 49.3077,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 0.9737000073073432,
+        "p95": 2.7049399999668804,
+        "p99": 3.08705201081466,
+        "max": 3.5470000002533197,
+        "over66": 0
+      },
+      "max_frame_id": 393,
+      "over_budget": [],
+      "initialization_ms": 10.7609,
+      "statuses": {
+        "no_candidate": 47,
+        "current_trace_terminal_supported": 298,
+        "trace_support_lost": 6,
+        "current_trace_terminal_uncertain": 38,
+        "current_trace_continues": 21
+      },
+      "multi_candidates": 0
+    },
+    "M2_EVIDENCE_ONLY": {
+      "current_frames": 409,
+      "tip": 345,
+      "full": 344,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 39.8678000055952,
+        "p95": 51.80378000077326,
+        "p99": 53.80709200864658,
+        "max": 55.1019999984419,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 39.8503,
+        "p95": 51.74794,
+        "p99": 53.786300000000004,
+        "max": 55.0802,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 2.8061999910278246,
+        "p95": 10.653920003096573,
+        "p99": 11.296515989815816,
+        "max": 15.00339999620337,
+        "over66": 0
+      },
+      "max_frame_id": 382,
+      "over_budget": [],
+      "initialization_ms": 9.6015,
+      "statuses": {
+        "no_candidate": 47,
+        "terminal_supported": 268,
+        "possible_forward_continuation": 69,
+        "gap_unresolved": 16,
+        "weak_terminal_support": 10
+      },
+      "multi_candidates": 0
+    },
+    "M3_LLR_BG": {
+      "current_frames": 409,
+      "tip": 361,
+      "full": 356,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 36.27090000372846,
+        "p95": 40.558979992056265,
+        "p99": 43.29129599558655,
+        "max": 60.23069999355357,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 36.2538,
+        "p95": 40.53028,
+        "p99": 43.265832,
+        "max": 60.2081,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 0.447900005383417,
+        "p95": 0.6857800035504624,
+        "p99": 0.8614760002819822,
+        "max": 2.1058999991510063,
+        "over66": 0
+      },
+      "max_frame_id": 317,
+      "over_budget": [],
+      "initialization_ms": 9.9681,
+      "statuses": {
+        "no_candidate": 47,
+        "terminal_supported": 102,
+        "weak_terminal_support": 22,
+        "possible_forward_continuation": 239
+      },
+      "multi_candidates": 0
+    },
+    "M4_JOINT_K1": {
+      "current_frames": 409,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 36.241400011931546,
+        "p95": 40.33865999663248,
+        "p99": 42.69509200879838,
+        "max": 63.339299988001585,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 36.2219,
+        "p95": 40.31927999999999,
+        "p99": 42.672568,
+        "max": 63.32,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 0.4533000028459355,
+        "p95": 0.6828200101153924,
+        "p99": 1.0320000007050116,
+        "max": 1.7860000079963356,
+        "over66": 0
+      },
+      "max_frame_id": 317,
+      "over_budget": [],
+      "initialization_ms": 10.2674,
+      "statuses": {
+        "no_candidate": 47,
+        "joint_tip_uncertain": 124,
+        "joint_stop_forward_conflict": 239
+      },
+      "multi_candidates": 0
+    },
+    "M5_JOINT_K2": {
+      "current_frames": 409,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 36.2299999978859,
+        "p95": 40.335199999390156,
+        "p99": 43.77595199679492,
+        "max": 46.004600008018315,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 36.2115,
+        "p95": 40.31223999999999,
+        "p99": 43.75323200000002,
+        "max": 45.9808,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 0.4552000027615577,
+        "p95": 0.6746800092514602,
+        "p99": 1.2142359971767296,
+        "max": 2.187899997807108,
+        "over66": 0
+      },
+      "max_frame_id": 384,
+      "over_budget": [],
+      "initialization_ms": 10.1792,
+      "statuses": {
+        "no_candidate": 47,
+        "joint_tip_uncertain": 124,
+        "joint_stop_forward_conflict": 239
+      },
+      "multi_candidates": 0
+    },
+    "M5_JOINT_K3": {
+      "current_frames": 409,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 36.320100000011735,
+        "p95": 40.52736000448931,
+        "p99": 43.86137599940413,
+        "max": 47.02049998741131,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 36.3005,
+        "p95": 40.50552,
+        "p99": 43.83950800000001,
+        "max": 46.9974,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 0.44829999387729913,
+        "p95": 0.6734599970513954,
+        "p99": 1.3388039899291493,
+        "max": 2.1588000090559945,
+        "over66": 0
+      },
+      "max_frame_id": 384,
+      "over_budget": [],
+      "initialization_ms": 10.2817,
+      "statuses": {
+        "no_candidate": 47,
+        "joint_tip_uncertain": 124,
+        "joint_stop_forward_conflict": 239
+      },
+      "multi_candidates": 0
+    },
+    "ANCHOR_NO_REFINE": {
+      "current_frames": 409,
+      "tip": 351,
+      "full": 351,
+      "errors": 0,
+      "timing": {
+        "n": 409,
+        "p50": 37.851200002478436,
+        "p95": 45.66091999586205,
+        "p99": 48.75616801262368,
+        "max": 56.90320000576321,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 409,
+        "p50": 37.8351,
+        "p95": 45.6365,
+        "p99": 48.737288,
+        "max": 56.8818,
+        "over66": 0
+      },
+      "queries": {
+        "n": 409,
+        "p50": 0.9944000048562884,
+        "p95": 2.642620002734475,
+        "p99": 3.30699599464424,
+        "max": 6.964500003959984,
+        "over66": 0
+      },
+      "max_frame_id": 385,
+      "over_budget": [],
+      "initialization_ms": 10.5142,
+      "statuses": {
+        "no_candidate": 40,
+        "possible_forward_continuation": 78,
+        "terminal_supported": 262,
+        "weak_terminal_support": 13,
+        "gap_unresolved": 17
+      },
+      "multi_candidates": 0
+    }
+  },
+  "compatibility_differences": [],
+  "invariant_violations": [],
+  "decode_ms": 23538.432200002717,
+  "private_memory_preloaded_start": 3862323200,
+  "private_memory_peak": 4074258432,
+  "private_memory_after_handles_close": 3779465216,
+  "real_gt_available": false,
+  "fifth_read": false
+}

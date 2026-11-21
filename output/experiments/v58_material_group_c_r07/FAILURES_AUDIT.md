@@ -1,0 +1,29 @@
+# 验证组C V5.8 r07 失败帧分析
+
+full 共 12 个联合失败帧，raw_only 共 11 个。每一行使用该模式自己的预测图和分支累计得分曲线。横坐标使用原图像素。仅用于离线归因。
+
+| 帧 | 模式 | 误差 px | 判断依据 | 分支候选（编号、状态、端点） | 证据 |
+|---:|---|---:|---|---|---|
+| 1 | full | 无输出 | 候选未发布，终止码 NO_CONFIRMED_PREEXISTING。最近分支候选距标注 1.26 px。 | [(0, 'NO_CONFIRMED_PREEXISTING', [2268, 2300]), (1, 'NO_CONFIRMED_PREEXISTING', [2275, 2337])] | [四栏图](visuals/frames/0001.jpg) · [累计曲线](failure_curves/0001_full.png) |
+| 1 | raw_only | 无输出 | 候选未发布，终止码 INSUFFICIENT_TOTAL。最近分支候选距标注 1.26 px。 | [(0, 'INSUFFICIENT_TOTAL', [2269, 2299]), (1, 'INSUFFICIENT_TOTAL', [2275, 2337])] | [四栏图](visuals/raw_failures/0001.jpg) · [累计曲线](failure_curves/0001_raw_only.png) |
+| 7 | full | 无输出 | 候选未发布，终止码 NO_CONFIRMED_PREEXISTING。最近分支候选距标注 0.84 px。 | [(0, 'NO_CONFIRMED_PREEXISTING', [2268, 2302]), (1, 'NO_CONFIRMED_PREEXISTING', [2273, 2339])] | [四栏图](visuals/frames/0007.jpg) · [累计曲线](failure_curves/0007_full.png) |
+| 7 | raw_only | 无输出 | 候选未发布，终止码 INSUFFICIENT_TOTAL。最近分支候选距标注 1.29 px。 | [(0, 'INSUFFICIENT_TOTAL', [2268, 2302]), (1, 'INSUFFICIENT_TOTAL', [2274, 2339])] | [四栏图](visuals/raw_failures/0007.jpg) · [累计曲线](failure_curves/0007_raw_only.png) |
+| 38 | full | 无输出 | 候选未发布，终止码 NO_CONFIRMED_PREEXISTING。最近分支候选距标注 18.15 px。 | [(0, 'NO_CONFIRMED_PREEXISTING', [2267, 2305]), (1, 'NO_CONFIRMED_PREEXISTING', [2273, 2339])] | [四栏图](visuals/frames/0038.jpg) · [累计曲线](failure_curves/0038_full.png) |
+| 38 | raw_only | 无输出 | 候选未发布，终止码 INSUFFICIENT_TOTAL。最近分支候选距标注 18.15 px。 | [(0, 'INSUFFICIENT_TOTAL', [2268, 2303]), (1, 'INSUFFICIENT_TOTAL', [2273, 2339])] | [四栏图](visuals/raw_failures/0038.jpg) · [累计曲线](failure_curves/0038_raw_only.png) |
+| 54 | full | 无输出 | 候选未发布，终止码 NO_CONFIRMED_PREEXISTING。最近分支候选距标注 29.89 px。 | [(0, 'NO_CONFIRMED_PREEXISTING', [2267, 2303]), (1, 'NO_CONFIRMED_PREEXISTING', [2273, 2340])] | [四栏图](visuals/frames/0054.jpg) · [累计曲线](failure_curves/0054_full.png) |
+| 54 | raw_only | 无输出 | 候选未发布，终止码 INSUFFICIENT_TOTAL。最近分支候选距标注 29.89 px。 | [(0, 'INSUFFICIENT_TOTAL', [2267, 2303]), (1, 'INSUFFICIENT_TOTAL', [2273, 2340])] | [四栏图](visuals/raw_failures/0054.jpg) · [累计曲线](failure_curves/0054_raw_only.png) |
+| 69 | full | 31.79 | 选中分支 1，尖端横向偏差 -30.6、纵向偏差 +8.6 px。在标注前提前终止。 | [(0, 'INSUFFICIENT_TOTAL', [2268, 2302]), (1, 'VALID', [2273, 2340])] | [四栏图](visuals/frames/0069.jpg) · [累计曲线](failure_curves/0069_full.png) |
+| 69 | raw_only | 无输出 | 候选未发布，终止码 INSUFFICIENT_TOTAL。最近分支候选距标注 31.79 px。 | [(0, 'INSUFFICIENT_TOTAL', [2268, 2305]), (1, 'INSUFFICIENT_TOTAL', [2273, 2340])] | [四栏图](visuals/raw_failures/0069.jpg) · [累计曲线](failure_curves/0069_raw_only.png) |
+| 95 | full | 25.25 | 选中分支 1，尖端横向偏差 -24.6、纵向偏差 -5.6 px。在标注前提前终止。 | [(0, 'SHORT_PATH', [2268, 2303]), (1, 'VALID', [2303, 2331])] | [四栏图](visuals/frames/0095.jpg) · [累计曲线](failure_curves/0095_full.png) |
+| 95 | raw_only | 25.25 | 选中分支 1，尖端横向偏差 -24.6、纵向偏差 -5.6 px。在标注前提前终止。 | [(0, 'INSUFFICIENT_TOTAL', [2268, 2304]), (1, 'VALID', [2303, 2331])] | [四栏图](visuals/raw_failures/0095.jpg) · [累计曲线](failure_curves/0095_raw_only.png) |
+| 232 | raw_only | 16.02 | 选中分支 1，尖端横向偏差 -16.0、纵向偏差 +0.7 px。在标注前提前终止。 | [(0, 'INSUFFICIENT_TOTAL', [2267, 2308]), (1, 'VALID', [2404, 2345])] | [四栏图](visuals/raw_failures/0232.jpg) · [累计曲线](failure_curves/0232_raw_only.png) |
+| 324 | raw_only | 27.53 | 选中分支 1，尖端横向偏差 +22.3、纵向偏差 -16.2 px。终点越过标注。 | [(0, 'INSUFFICIENT_TOTAL', [2268, 2305]), (1, 'VALID', [2486, 2330])] | [四栏图](visuals/raw_failures/0324.jpg) · [累计曲线](failure_curves/0324_raw_only.png) |
+| 335 | raw_only | 23.40 | 选中分支 1，尖端横向偏差 +16.8、纵向偏差 -16.2 px。终点越过标注。 | [(0, 'INSUFFICIENT_TOTAL', [2268, 2306]), (1, 'VALID', [2487, 2329])] | [四栏图](visuals/raw_failures/0335.jpg) · [累计曲线](failure_curves/0335_raw_only.png) |
+| 345 | full | 275.50 | 选中分支 1，尖端横向偏差 +268.5、纵向偏差 -61.8 px。桥接前尖端 [2470, 2346]，距标注 3.5 px；桥接后 [2742, 2284]。 | [(0, 'VALID', [2470, 2346]), (1, 'VALID', [2742, 2284])] | [四栏图](visuals/frames/0345.jpg) · [累计曲线](failure_curves/0345_full.png) |
+| 345 | raw_only | 19.33 | 选中分支 1，尖端横向偏差 +12.5、纵向偏差 -14.8 px。终点越过标注。 | [(0, 'INSUFFICIENT_TOTAL', [2268, 2307]), (1, 'VALID', [2486, 2331])] | [四栏图](visuals/raw_failures/0345.jpg) · [累计曲线](failure_curves/0345_raw_only.png) |
+| 363 | full | 266.25 | 选中分支 1，尖端横向偏差 +259.0、纵向偏差 -61.8 px。桥接前尖端 [2470, 2346]，距标注 13.0 px；桥接后 [2742, 2284]。 | [(0, 'VALID', [2470, 2346]), (1, 'VALID', [2742, 2284])] | [四栏图](visuals/frames/0363.jpg) · [累计曲线](failure_curves/0363_full.png) |
+| 363 | raw_only | 16.12 | 选中分支 1，尖端横向偏差 +3.0、纵向偏差 -15.8 px。路径与标注重合不足。 | [(0, 'INSUFFICIENT_TOTAL', [2267, 2305]), (1, 'VALID', [2486, 2330])] | [四栏图](visuals/raw_failures/0363.jpg) · [累计曲线](failure_curves/0363_raw_only.png) |
+| 456 | full | 254.68 | 选中分支 1，尖端横向偏差 +247.1、纵向偏差 -61.7 px。桥接前尖端 [2490, 2344]，距标注 3.9 px；桥接后 [2741, 2282]。 | [(0, 'VALID', [2490, 2344]), (1, 'VALID', [2741, 2282])] | [四栏图](visuals/frames/0456.jpg) · [累计曲线](failure_curves/0456_full.png) |
+| 469 | full | 256.20 | 选中分支 1，尖端横向偏差 +248.7、纵向偏差 -61.5 px。桥接前尖端 [2493, 2345]，距标注 0.6 px；桥接后 [2742, 2284]。 | [(0, 'VALID', [2493, 2345]), (1, 'VALID', [2742, 2284])] | [四栏图](visuals/frames/0469.jpg) · [累计曲线](failure_curves/0469_full.png) |
+| 480 | full | 254.46 | 选中分支 1，尖端横向偏差 +247.0、纵向偏差 -61.1 px。桥接前尖端 [2490, 2344]，距标注 5.1 px；桥接后 [2742, 2284]。 | [(0, 'VALID', [2490, 2344]), (1, 'VALID', [2742, 2284])] | [四栏图](visuals/frames/0480.jpg) · [累计曲线](failure_curves/0480_full.png) |
+| 510 | full | 13.96 | 选中分支 1，尖端横向偏差 +13.9、纵向偏差 -0.6 px。终点越过标注。 | [(0, 'VALID', [2504, 2345]), (1, 'VALID', [2504, 2345])] | [四栏图](visuals/frames/0510.jpg) · [累计曲线](failure_curves/0510_full.png) |

@@ -1,0 +1,9 @@
+{
+  "frames": 540,
+  "A_correct": 359,
+  "oracle_correct": 379,
+  "Aprime2_correct": 359,
+  "stop_pattern_frames": 13,
+  "automatic_relocation": false,
+  "conclusion": "PATTERN_IS_NOT_SUFFICIENT_PHYSICAL_OWNERSHIP_EVIDENCE"
+}

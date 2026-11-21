@@ -1,0 +1,21 @@
+{
+  "group": "ct3",
+  "total": 136,
+  "shared": 125,
+  "unknown": 11,
+  "outside": 0,
+  "none": 2,
+  "mixed": 0,
+  "all8": 123,
+  "same8": 123,
+  "co_confirmed": 123,
+  "varying_coordinates": 0,
+  "variation_with_all_tips_shared": 0,
+  "max_px": 0.0,
+  "p95_frame_span_px": 0.0,
+  "worst_frame": null,
+  "miss_range": [
+    2,
+    2
+  ]
+}

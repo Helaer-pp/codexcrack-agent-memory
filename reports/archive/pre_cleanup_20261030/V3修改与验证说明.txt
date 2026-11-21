@@ -1,0 +1,83 @@
+裂纹算法V3：区域起始、多帧证据和独立测量有效性
+
+一、代码与调用
+主入口仍为crack_measurement.py（图像结果）和crack_video.py（序列视频及数据）。修改文件顶部路径、参考点和标定后运行。
+公共API：from adaptive_crack import AdaptiveConfig, AdaptiveCrackDetector
+detector=AdaptiveCrackDetector(reference, AdaptiveConfig(anchors=((x0,y0),(x1,y1)), reference_mode="clean", mm_per_pixel=ratio))
+result=detector.process(current, current_anchors=((cx0,cy0),(cx1,cy1)))
+current_anchors可省略，保持自动平移配准；提供时仍使用两个同ID跟踪点及局部配准，不用标距变化缩放裂纹长度。
+reference_mode支持clean/cracked/auto。cracked必须初始化出可测完整初始裂纹；否则报错，不默认为零。
+每个试验序列新建一个detector，图像按时序每帧调用一次。重复提交同一张图片不能代替真实的多帧观察。
+默认视频目录改为crack_sequence_output_v3，保护原有视频。
+
+二、算法改动
+检测核心regional_crack.py；V2冻结为root_guided_v2_snapshot.py；早期算法仍为adaptive_crack_legacy.py。
+1. 根据参考点定义初始ROI，提取缺口入口连通暗区的逐行边界；用多个可能入口的动态规划代替单根部点约束。
+2. 仍使用参考/当前局部差分、黑帽线响应、原有静态标记排除及局部噪声阈值。
+3. 压制参考缺口边缘的窄带变化，起始候选使用朝向材料的入口段，避免沿缺口侧壁延长路径。
+4. 逐段旋转窗口、重叠采样、长间隙保护和前方检查保持原有主体。
+5. 短弱候选在最近5帧中需至少3帧位置和方向一致；当前帧始终需要真实像素证据。强证据可以单帧确认。
+6. 形状长宽比在完整观测段上判定，避免用固定长度种子误拒较宽长裂纹。
+7. 从观测路径向后与缺口边界相交，只允许短边界推断，不再向单根部点强制拉直线。
+8. 尖端确认与完整长度确认独立，不能确定入口时仍可输出尖端。
+
+三、输出含义
+result.tip_confirmed / measurement.tip_original_xy：当前图像及（必要时）历史证据是否支持尖端；不是人工真值认证。
+result.length_confirmed / measurement.complete_length_px：完整长度是否可输出；未确认的complete_length_px和total_length_mm为null。
+measurement.observed_centerline_length_px：实际追踪的可见段弧长，不能自动等同完整裂纹长度。
+兼容旧代码的estimated_root_to_tip_length_px始终为数值：未确认入口时只等于观测段长度。新调用方必须检查length_confirmed，或直接读取complete_length_px/total_length_mm。
+视频、图像面板及简表导出已适配独立有效性，尖端有效但长度无效时保留坐标、长度留空。参考帧零长度仍输出0。
+候选待确认和完全未检出都保留逐帧记录，不用上一帧路径或强制单调长度补全。
+默认配置temporal_window=5、temporal_hits=3、strong_peak=15。它们是待不同场景验证的配置，不是普适物理阈值。
+
+四、真实序列重算（无逐帧点文件，自动配准；首帧clean）
+
+验证组C：562帧；长度单位mm；标定0.010753469541668892
+V2状态：{'reference': 1, 'no_new_candidate': 35, 'tracking_incomplete': 514, 'weak_candidate': 1, 'main_segment_detected': 11}
+V3状态：{'reference': 1, 'no_new_candidate': 13, 'candidate_pending': 3, 'weak_candidate': 31, 'main_segment_detected': 514}
+V3尖端确认545帧，完整长度确认545帧；V2有尖端但V3无尖端的帧数：0。
+核心耗时ms：{'p50': 21.862350055016577, 'p95': 29.137640120461576, 'maximum': 37.156400037929416}
+读盘加核心耗时ms：{'p50': 44.866600073874, 'p95': 56.824580091051715, 'maximum': 67.53460015170276}
+视频校验：{
+  "crack_effects_v3.mp4": {
+    "decoded_frames": 562,
+    "fps": 15.0,
+    "duration_s": 37.466667,
+    "bytes": 27641776
+  },
+  "v2_vs_v3.mp4": {
+    "decoded_frames": 562,
+    "fps": 15.0,
+    "duration_s": 37.466667,
+    "bytes": 54470852
+  }
+}
+
+开发组A测试-1：551帧；长度单位pixel；标定None
+V2状态：{'reference': 1, 'no_new_candidate': 51, 'weak_candidate': 7, 'main_segment_detected': 492}
+V3状态：{'reference': 1, 'no_new_candidate': 43, 'candidate_pending': 5, 'tip_only_detected': 97, 'weak_candidate': 9, 'main_segment_detected': 396}
+V3尖端确认502帧，完整长度确认405帧；V2有尖端但V3无尖端的帧数：0。
+核心耗时ms：{'p50': 32.91069995611906, 'p95': 48.106699949130416, 'maximum': 59.43899997510016}
+读盘加核心耗时ms：{'p50': 36.55539988540113, 'p95': 52.157599944621325, 'maximum': 63.99670010432601}
+视频校验：{
+  "crack_effects_v3.mp4": {
+    "decoded_frames": 551,
+    "fps": 15.0,
+    "duration_s": 36.733333,
+    "bytes": 31392368
+  },
+  "v2_vs_v3.mp4": {
+    "decoded_frames": 551,
+    "fps": 15.0,
+    "duration_s": 36.733333,
+    "bytes": 61094886
+  }
+}
+
+五、验证边界
+34项回归测试：坐标、旋转、不同画幅、标距变化不缩放长度、已有裂纹参考、长缺口、图像边界、弱候选因果确认、旧纹理、错误单根部、独立尖端/长度和导出等。
+两组重算均未丢失V2已有的尖端输出，但状态数量不是准确率；尚无逐帧人工真值，不能声称所有新增结果都正确。
+开发组A97帧保留尖端但完整长度未确认，是入口证据不足时的保守输出，不回填为有效长度。
+15fps是导出播放帧率。核心P95均低于66.7ms，但读盘偶有超时，绘图、编码与采集传输未计入，不能保证完整软件持续15Hz。
+沿用的5/9/13像素线滤波尺度仍有限：测试中18像素均匀暗宽带可能无法提取。此次没有改动该线响应尺度。
+持续出现的新划痕、污点若与裂纹图像表现相同，仍可能误判。没有对疲劳闭合做修正，也不声称通用解决所有材料表面。

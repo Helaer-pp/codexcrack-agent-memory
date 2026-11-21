@@ -1,0 +1,24 @@
+{
+  "gates": {
+    "DEV_mechanism": true,
+    "coverage": false,
+    "FP_no_increase": true,
+    "protected_A_no_revocation": false,
+    "protected_A_no_damage": false,
+    "MAE_2d": false,
+    "P95_2d": false,
+    "paired_improvement": false,
+    "all_positive_risk": false,
+    "false_tail_fixed": false,
+    "true_long_not_cut": true,
+    "protected_family_weak_fading_tip": false,
+    "protected_family_S_curve": false,
+    "protected_family_curve55": false,
+    "protected_family_curve75": false
+  },
+  "pass_effect_gate": false,
+  "new_CPP_allowed": false,
+  "real_holdout_available": false,
+  "real_tip_GT_available": false,
+  "decision": "KEEP_A / C_RESEARCH_ONLY"
+}

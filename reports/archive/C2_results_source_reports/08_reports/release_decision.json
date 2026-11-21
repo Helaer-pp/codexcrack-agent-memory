@@ -1,0 +1,14 @@
+{
+  "decision": "KEEP_A / C2_RESEARCH_ONLY",
+  "DEV_effect_passed": false,
+  "TEST_effect_passed": false,
+  "TEST_damaged_A_correct": 2,
+  "CPP_C2": "NOT_BUILT",
+  "real_holdout": "NOT_AVAILABLE",
+  "physical_precision": "N/A",
+  "A_DLL_sha256": "c23498fcc660469927f63244b8e98e39b1eb86d542ec9a7b069d61fcf813654b",
+  "production_modified": false,
+  "TEST_once_only": true,
+  "TEST_after_DEV_failure": "FROZEN_EXPLORATORY_VALIDATION",
+  "guard_checked_utc": "2026-11-04T14:51:54.225604+00:00"
+}

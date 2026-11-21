@@ -1,0 +1,21 @@
+{
+  "group": "ct2",
+  "current": 467,
+  "attempted": 11208,
+  "texture_eligible": 9027,
+  "matched": 0,
+  "independent_validation_pass": 0,
+  "heldout_matched": 0,
+  "first_failure_counts": {
+    "CLIPPED_OR_LOW_DYNAMIC_RANGE": 5558,
+    "AMBIGUOUS_PEAK": 467,
+    "NCC_BELOW_THRESHOLD": 4669,
+    "GEOMETRIC_CONFLICT": 485,
+    "LOW_TEXTURE": 29
+  },
+  "photo_interpretations": {
+    "CASE_P1_OVERCONSERVATIVE_FOR_CURRENT_LINE": 467
+  },
+  "baseline_reproduction": "PASS",
+  "real_error": "N/A"
+}

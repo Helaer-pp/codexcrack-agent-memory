@@ -1,0 +1,10 @@
+# Tested existing environment snapshot, not a validated clean pip resolver lock.
+# OpenCV 4.12 wheel declares NumPy >=2 on Python>=3.9; this installed 1.26.4
+# combination was actually exercised. Do not overwrite the installed toolchain.
+numpy==1.26.4
+scipy==1.17.1
+opencv-python==4.12.0.88
+pandas==2.2.2
+matplotlib==3.10.9
+Pillow==10.4.0
+psutil==5.9.0

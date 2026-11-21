@@ -1,0 +1,34 @@
+[
+  {
+    "group": "group_a",
+    "frames": 551,
+    "all_points_observed": true,
+    "safe_pixels_max": 586671,
+    "skeleton_max": 62870,
+    "segments_max": 30085,
+    "pairs_max": 1935292,
+    "accepted_edges_max": 102852,
+    "raw_budget_frames": 0,
+    "graph_pair_or_edge_budget_frames": 0,
+    "fixed_valid_area_mean": 0.08345113841410345,
+    "prev_valid_area_mean": 0.21716624074277377,
+    "prepare_p50": 1.4988204999999653,
+    "prepare_p95": 1.8106524500003616
+  },
+  {
+    "group": "three_point_bend",
+    "frames": 520,
+    "all_points_observed": true,
+    "safe_pixels_max": 1879440,
+    "skeleton_max": 144777,
+    "segments_max": 91780,
+    "pairs_max": 237784,
+    "accepted_edges_max": 30255,
+    "raw_budget_frames": 0,
+    "graph_pair_or_edge_budget_frames": 0,
+    "fixed_valid_area_mean": 0.08285966003299537,
+    "prev_valid_area_mean": 0.07178997186306,
+    "prepare_p50": 2.1050413500001923,
+    "prepare_p95": 2.494878299999436
+  }
+]

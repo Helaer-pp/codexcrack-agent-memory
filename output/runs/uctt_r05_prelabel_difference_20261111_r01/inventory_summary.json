@@ -1,0 +1,86 @@
+[
+  {
+    "dataset_id": "group_a",
+    "listed": 551,
+    "decoded": 551,
+    "unique_sha": 551,
+    "image_sizes": {
+      "1856x2072": 551
+    },
+    "point_mapping": "exact source num match",
+    "reference_order": 0,
+    "reference_sha256": "8987bc02c9a9b5e53bff3bbf2f6c54d0cb9ae37afcdc5b390ae7bb18e0dfa4f4"
+  },
+  {
+    "dataset_id": "group_c",
+    "listed": 562,
+    "decoded": 562,
+    "unique_sha": 562,
+    "image_sizes": {
+      "5120x5120": 562
+    },
+    "point_mapping": "exact source num match",
+    "reference_order": 0,
+    "reference_sha256": "cfe718b7a6e4f255e999a00bba270a619576c8c62bc969d9f21edc912fb80862"
+  },
+  {
+    "dataset_id": "ct2",
+    "listed": 468,
+    "decoded": 468,
+    "unique_sha": 468,
+    "image_sizes": {
+      "5120x5120": 468
+    },
+    "point_mapping": "exact source num match",
+    "reference_order": 0,
+    "reference_sha256": "8e012531e3c53bc36c8f544f7533e4aa38e7268bf719caf7fed78542d28a7f51"
+  },
+  {
+    "dataset_id": "group_h",
+    "listed": 410,
+    "decoded": 410,
+    "unique_sha": 410,
+    "image_sizes": {
+      "5112x1406": 410
+    },
+    "point_mapping": "exact source num match",
+    "reference_order": 0,
+    "reference_sha256": "4c37352e54b5ab9646b757183e05363ad26d8677b7ce4389eb0847b885cac74e"
+  },
+  {
+    "dataset_id": "group_x",
+    "listed": 524,
+    "decoded": 524,
+    "unique_sha": 524,
+    "image_sizes": {
+      "3036x4024": 524
+    },
+    "point_mapping": "exact source num match",
+    "reference_order": 0,
+    "reference_sha256": "d4f8dfedd3108cf66a13dbc3051d8b40aa63882d7f0ff9eb43dc18df95b32c73"
+  },
+  {
+    "dataset_id": "three_point_bend",
+    "listed": 520,
+    "decoded": 520,
+    "unique_sha": 520,
+    "image_sizes": {
+      "5120x5120": 520
+    },
+    "point_mapping": "exact source num match",
+    "reference_order": 0,
+    "reference_sha256": "1858e6060df41cf883659537051a7bcfd23b357d22a0b217bee9cf68de958db0"
+  },
+  {
+    "dataset_id": "ct3",
+    "listed": 136,
+    "decoded": 136,
+    "unique_sha": 136,
+    "image_sizes": {
+      "2024x1032": 136
+    },
+    "point_mapping": "frozen explicit mapping only",
+    "reference_order": 0,
+    "reference_sha256": "7ad3d6de2e9f710a02377db2b833c75f34b22a92d3dc80c13bc74ce7c3afae8e"
+  }
+]

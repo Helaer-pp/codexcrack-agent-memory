@@ -1,0 +1,21 @@
+{
+  "group": "group_c",
+  "total": 562,
+  "shared": 543,
+  "unknown": 19,
+  "outside": 0,
+  "none": 0,
+  "mixed": 10,
+  "all8": 533,
+  "same8": 14,
+  "co_confirmed": 539,
+  "varying_coordinates": 525,
+  "variation_with_all_tips_shared": 525,
+  "max_px": 192.92970130847226,
+  "p95_frame_span_px": 128.92098522599838,
+  "worst_frame": 308,
+  "miss_range": [
+    2,
+    8
+  ]
+}

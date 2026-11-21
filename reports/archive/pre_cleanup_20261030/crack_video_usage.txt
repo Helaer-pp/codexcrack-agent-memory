@@ -1,0 +1,78 @@
+连续裂纹扩展视频与 CSV
+=====================
+
+软件界面版：运行后还会在 software_ui/ 下输出使用用户软件截图背景、右侧列表自动滚动的视频。
+仅更换界面的入口为 crack_software_video.py，详见 software_ui_video_usage.txt。
+
+更新：支持 TRACKED_POINTS_CSV、REFERENCE_IMAGE_PATH、REFERENCE_MODE。
+逐帧点 CSV 与已有裂纹参考帧的用法见同目录 tracked_crack_usage.txt。
+另输出仅四列业务数据 crack_data.csv。
+
+直接打开 crack_video.py，修改顶部 IMAGE_PATH 为原始图像文件夹，然后运行。
+第一张自然排序图像自动作为固定参考帧，无需裁剪、无需手工输入 ROI。
+ANCHOR_POINTS 是参考帧缺口两侧的原图像素坐标；更换试验时需要相应修改。
+VIDEO_FPS 控制视频播放速度，默认 15 fps，不代表试验采样频率。
+MM_PER_PIXEL = 1.0753469541668892e-02，单位 mm/pixel，为用户提供的标定比例。
+换算公式：实际长度 mm = 像素弧长 × MM_PER_PIXEL。
+视频和曲线显示 mm，尖端与起点仍显示原图像素坐标。
+默认输出在脚本旁的 crack_sequence_output_mm_sharp 文件夹，可修改 OUTPUT_DIR。
+清晰版只对显示裁剪框作整数像素平移，局部画面使用最近邻放大，
+不对原始像素作平滑或人工锐化；可能看到像素块和不足 1 像素的残余平移。
+局部图上的路径按实际裁剪原点与原图浮点坐标绘制，测量不受显示取整影响。
+视频使用 H.264、CRF 10；可修改 VIDEO_CRF（越低画质越高、文件通常越大）。
+
+输出文件
+--------
+crack_growth.mp4：1920×1040，原图、裂纹路径、尖端坐标三联图。
+crack_growth_closeup.mp4：1280×720，固定放大范围并平移配准，附逐帧长度曲线。
+crack_growth_closeup_raw.mp4：同一画面但不叠加裂纹线和圆圈，便于观察原始裂纹。
+crack_frame_data.csv：每张输入图像对应一行，含长度、尖端、位移、检测状态等。
+crack_centerline_data.csv：每帧中心线的逐点坐标、累计弧长及路径段类型。
+length_vs_frame.png：全部帧的长度曲线，弱候选与未完成追踪另行标示。
+sequence_manifest.json：输入顺序、测量详情、播放设置、状态统计及视频解码验证。
+preview_*.png、closeup_*.png：首帧、中间帧和末帧的预览。
+native_crop_*.png：首帧、中间帧和末帧的原分辨率无损裁剪，未经放大和平移插值。
+
+CSV 说明
+--------
+编码为 UTF-8 BOM，可用 Excel 打开。frame_index 从 0 开始。
+source_filename 对应原始文件名；文件按数字自然顺序排列，不生成中间假图像。
+playback_time_s 仅为视频播放时间。
+acquisition_time_s、fatigue_cycle_count 留空，因为尚未提供采样时间与循环数。
+detected_length_px：从缺口根部至当前追踪终点的估计中心线弧长，单位像素。
+detected_length_mm：标定换算后的裂纹长度，单位 mm。
+observed_path_length_mm、root_bridge_length_mm：对应观测路径与根部外推的 mm 长度。
+mm_per_pixel：本行使用的标定比例；原有 px 长度列保留供核查。
+observed_path_length_px：直接追踪路径的弧长。
+root_bridge_length_px：根部短段的外推长度。
+tip_x_px、tip_y_px：各自当前原图中的尖端估计；左上角为原点，x 向右、y 向下。
+tip_reference_x_px、tip_reference_y_px：消除估计平移后，参考图坐标系中的尖端位置。
+tracking_endpoint_x_px、tracking_endpoint_y_px：追踪终点，即使尖端未确认也会保留。
+status、stop_reason：检测状态与停止原因。
+tip_confirmed：仅表示算法获得可见裂纹段终点，不表示物理真值已经独立验证。
+compute_ms：仅包含配准、检测、路径测量，不含读图、绘图、视频编码和写盘。
+
+逐点 CSV 中的 segment_type：
+tracked_ridge：追踪中心线。
+interpolated_gap：短断点插值。
+inferred_root_bridge：根部短段外推。
+arc_length_from_root_mm：从根部至该点的累计弧长，单位 mm。
+所有 x/y 坐标列仍为像素坐标。
+
+无候选或读取失败的帧仍保留 CSV 行，长度留空；参考帧长度定义为 0。
+tracking_incomplete 保留已追踪的部分长度，尖端坐标留空，避免将截断当作尖端。
+本程序不强制长度单调、不做时间平滑，也不把未检测帧补成虚构测量值。
+图像上的小数坐标来自拟合，不等于已验证的亚像素准确度。
+当前追踪一条主裂纹；分叉、遮挡、裂纹闭合和极弱末端仍需核验。
+
+依赖与运行
+----------
+python -m pip install -r requirements.txt
+另外需要 FFmpeg（含 libx264 编码器）可从 PATH 调用。
+将 crack_video.py、crack_measurement.py、adaptive_crack.py、crack_realtime_demo.py、crack_inputs.py、
+crack_software_video.py 放在同一目录，并保留 assets/software_ui.png。
+直接运行 crack_video.py，或使用：
+  python crack_video.py --input "图像文件夹" --output "输出文件夹" --fps 15
+
+视频导出是离线任务。15 fps 播放视频不代表包含读图、绘制与编码的流程达到在线 15 Hz。
+更换输入路径、参考图或参数后重新运行，将覆盖同一输出目录中的同名结果文件。

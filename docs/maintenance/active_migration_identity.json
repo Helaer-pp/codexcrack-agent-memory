@@ -1,0 +1,12 @@
+{
+  "production_core_and_DLL_not_modified": true,
+  "baseline_python_class_AST_identical": true,
+  "ABI_module_byte_identical": true,
+  "reference_math_byte_identical": true,
+  "reference_math_sha256": "132fd6b9032af84557d704c51d4356f586f11b44b215e05e1902b3c75f6e62ff",
+  "path_changes_only": true,
+  "removed_unused_python_helpers": [
+    "dev",
+    "git"
+  ]
+}

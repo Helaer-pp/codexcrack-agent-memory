@@ -1,0 +1,10 @@
+{
+  "root_cause_computational_chain": "CONFIRMED",
+  "physical_material_distortion": "LOCAL_SUPPORT_NOT_SOLE_PROVEN_CAUSE",
+  "point_semantics": "UNRESOLVED",
+  "native_python_executions": 114,
+  "counterfactual_python_executions": 4,
+  "cpp_auxiliary_executions": 4,
+  "source_sha256": "2e2e5ebef80ab33e486c561b6dec09ee15d23033020cc1886a7de24c7ce2baf6",
+  "no_v2": true
+}

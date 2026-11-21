@@ -1,0 +1,12 @@
+{
+  "original_bytes": 50297056614,
+  "final_project_bytes": 8906333169,
+  "reclaimed_bytes": 41390723445,
+  "original_files": 95332,
+  "current_files": 4490,
+  "production_unchanged": true,
+  "standalone_post_cleanup_checks": "output/checks/latest.json",
+  "all_future_development_root": ".",
+  "all_future_generated_output": ".\\output",
+  "external_F_images_modified": false
+}

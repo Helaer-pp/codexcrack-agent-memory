@@ -1,0 +1,28 @@
+{
+  "dll": "baseline/frozen_a/bin/CrackV4.dll",
+  "dll_sha256": "c23498fcc660469927f63244b8e98e39b1eb86d542ec9a7b069d61fcf813654b",
+  "core_sha256": "4a774d93d9d1df19429bd4981e22b799d01b7e0a8826ffb006b13bf2378e143d",
+  "source_hashes": {
+    "baseline/frozen_a/bin/a_bench.exe": "99728a9422c3dfd15b858ac65472cea28f1833e766ca0e7df7d4f9db8cf66582",
+    "baseline/frozen_a/bin/CrackV4.dll": "c23498fcc660469927f63244b8e98e39b1eb86d542ec9a7b069d61fcf813654b",
+    "baseline/frozen_a/src/.clang-format": "2319be042bee92b3f3469944521e0b5d3ba13be58b46747aa06215b4c8ed9570",
+    "baseline/frozen_a/src/CMakeLists.txt": "09dd142ab409a736f02b1187636db87a19b85090a18a191f2cebae6d2299a60d",
+    "baseline/frozen_a/src/CrackV4.cpp": "4a774d93d9d1df19429bd4981e22b799d01b7e0a8826ffb006b13bf2378e143d",
+    "baseline/frozen_a/src/CrackV4.h": "76d33014f6d3249bff57dd8411b3198c0986fb0c18a381c25f651a02c791dd64",
+    "baseline/frozen_a/src/CrackV4.hpp": "5db8c1b3873a3a0de40000fe3775d88f0728890c16b8021d29f97ec1dcfd40ad",
+    "baseline/frozen_a/src/CrackV4_experiments.h": "820694714f40678dfde04d66f99425a51413369bf67aefe799c0c401e5313e02",
+    "baseline/frozen_a/src/CrackV4_v2.h": "4f236ea268e7f616b5a228cc2afef407edde7c08726ade9507a870ae940ae978",
+    "baseline/frozen_a/src/example.cpp": "22d534b6df60b83eccdf82809fea932d1edce4c87220587e6a6fb8250098aaf5",
+    "baseline/frozen_a/src/example_experiments.cpp": "e58145ae7ecabaaac399c32b18a21a63403fb1abc129780fd4edbedad109864f",
+    "baseline/frozen_a/src/example_v2.cpp": "f70fb5add9e17cefeb24f88d422821f3811ee60e4e972e9422c1280f69b55198",
+    "baseline/frozen_a/src/scipy_gaussian_kernels.h": "0e8e2148edc5070979431d3568b6c158bc69692d3d2d0196b02e9a643d3afa5f"
+  },
+  "flags": 3572,
+  "policy": 1,
+  "terminal_validation": 1,
+  "refine": true,
+  "native_threads": 4,
+  "opencv_native": "4.4.0",
+  "original_source": "D:/workspace\\crack_v4_cpp\\frozen_dp_tip_20261030\\baseline\\src",
+  "migration_changes_algorithm": false
+}

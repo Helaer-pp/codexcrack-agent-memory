@@ -1,0 +1,58 @@
+{
+  "default_mode": "C_DYNAMIC_CORRIDOR",
+  "groups": {
+    "group_a": 551,
+    "group_c": 562,
+    "three_point_bend": 520
+  },
+  "frames": 1633,
+  "predictions": 4899,
+  "visible": {
+    "group_a": 19,
+    "group_c": 20,
+    "three_point_bend": 15
+  },
+  "sequence": "unlabeled tests -> source/config freeze -> GROUP_A551 inference seal -> separate GROUP_A scoring -> frozen regression1082 seal -> separate regression scoring -> all-frame rendering and integrity",
+  "forbidden": [
+    "CT2",
+    "group_h",
+    "CT3",
+    "group_x",
+    "GT training",
+    "label fitting",
+    "changing frozen path engine"
+  ],
+  "primary": "public tip<=10 original px and observed-only path coverage/precision>=.8 at10px; fixed visible denominator",
+  "secondary": [
+    "tip3/5/10/20",
+    "public coverage",
+    "candidate and last-observed error100/500",
+    "GT excluded by each mask",
+    "path pool",
+    "paired frame wins/losses",
+    "mask area and actual runtime"
+  ],
+  "harmful": "Any per-frame newly GT-excluded tip, lost good candidate pool, lost actual tip/joint success, or new public>100/>500 error in GROUP_A or exposed regression makes that mode GEOMETRY_HARMFUL. Validation does not redesign parameters.",
+  "geometry_benefit": "Absent harmful events: GROUP_A actual hit10 AND joint increase; public coverage>=A; area<=.75*A; fewer nodes and nonincreasing unvisited path-budget routes. Only GEOMETRY_BENEFIT gives research GO.",
+  "compute_only": "Absent harm/accuracy benefit: area<=.75*A and median cached-path inference<=.85*A; other costs separate. Otherwise UNRESOLVED.",
+  "default_decision": "C predeclared; B always separately reported, never selected per group",
+  "source_sample_seed": 80517,
+  "source_recomputations_per_group": 10,
+  "GT_FPR": "N/A",
+  "production_approved": false,
+  "prelabel_smoke": "GROUP_A middle ordinal276, selected without labels",
+  "display_gray": [
+    0,
+    255
+  ],
+  "display_diff": [
+    -40,
+    40
+  ],
+  "render_only_sampling": [
+    100,
+    55
+  ],
+  "cache_policy": "Full original SHA and point source verification; shared frozen evidence cache; A/B/C genuinely re-run inference",
+  "scope_note": "Previous multi-group reports are required background, not new excluded-group experimental inputs"
+}

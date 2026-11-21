@@ -1,0 +1,62 @@
+{
+ "primary": "v4_2",
+ "run": "output/experiments/v42_hotfix_20261119_r03",
+ "groups": [
+  {
+   "group": "group_a",
+   "stage": "v4_2",
+   "mode": "full",
+   "visible": 19,
+   "valid": 19,
+   "hit": 19,
+   "joint": 19,
+   "severe": 0,
+   "median": 2.537167032989183,
+   "max": 9.851514024086864,
+   "hit5": 14,
+   "fps": 3.7638625765767646,
+   "ms": 265.68451415394145,
+   "timed": 551
+  },
+  {
+   "group": "three_point_bend",
+   "stage": "v4_2",
+   "mode": "full",
+   "visible": 15,
+   "valid": 15,
+   "hit": 10,
+   "joint": 10,
+   "severe": 0,
+   "median": 8.178374725383406,
+   "max": 65.90915232547832,
+   "hit5": 6,
+   "fps": 1.2121380941813544,
+   "ms": 824.9885098078477,
+   "timed": 520
+  },
+  {
+   "group": "group_c",
+   "stage": "v4_2",
+   "mode": "full",
+   "visible": 20,
+   "valid": 19,
+   "hit": 10,
+   "joint": 10,
+   "severe": 0,
+   "median": 9.714672548530297,
+   "max": 42.296196659978094,
+   "hit5": 6,
+   "fps": 2.5127049280166642,
+   "ms": 397.9774898556525,
+   "timed": 562
+  }
+ ],
+ "accuracy_gate": {
+  "group_a": true,
+  "three_point_bend": true,
+  "group_c": false
+ },
+ "negative_fp": 0,
+ "weak_pass": 89,
+ "severe": 0
+}

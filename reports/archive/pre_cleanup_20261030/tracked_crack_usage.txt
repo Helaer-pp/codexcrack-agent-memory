@@ -1,0 +1,96 @@
+逐帧两点驱动的裂纹追踪
+======================
+
+直接运行（不需要填写命令行）
+--------------------------
+静态汇总图与数据：打开 crack_measurement.py。
+连续视频与数据：打开 crack_video.py。
+视频入口默认还会导出软件截图背景、右侧图片列表滚动的版本，需保留
+crack_software_video.py 和 assets/software_ui.png；详见 software_ui_video_usage.txt。
+在文件顶部设置：
+
+  IMAGE_PATH = r"原始图像文件夹"
+  REFERENCE_IMAGE_PATH = r"参考图完整路径"
+  TRACKED_POINTS_CSV = r"逐帧基准点CSV完整路径"
+  REFERENCE_MODE = 'clean'
+  MM_PER_PIXEL = 1.0753469541668892e-02
+
+REFERENCE_IMAGE_PATH 留空时，取文件夹自然排序的第一张图。
+TRACKED_POINTS_CSV 留空时，保留旧版自动平移配准模式；有追踪点时应填写该路径。
+有 CSV 时，参考帧的两个点也从 CSV 读取，优先于 ANCHOR_POINTS。
+视频默认输出目录为脚本旁 crack_sequence_output_mm_sharp；可在顶部修改 OUTPUT_DIR。
+汇总图默认输出在参考帧文件夹下 crack_results_auto；可用 --output 指定。
+
+CSV 的格式
+----------
+必须含以下列，文件名应与实际图像文件名一致（包括扩展名）：
+  image,x0,y0,x1,y1
+
+每张图一行，必须包括参考图以及所有要处理的图像。
+x0,y0 是第 0 个追踪点，x1,y1 是第 1 个追踪点，坐标为各自原图像素坐标。
+同一物理点的编号不能在帧间交换；不是每帧重新按上下或左右排序。
+可以使用 UTF-8 或 UTF-8 BOM，支持中文路径。
+按文件名匹配，不依赖 CSV 行顺序；图片编号重复、漏帧、空坐标、非有限值会报错。
+tracked_points_template.csv 是待填写模板：21.bmp、350.bmp 的空值需换成追踪器实际输出。
+模板不是当前试验的逐帧实测基准点记录，请勿把空值或参考点重复填入变形帧充当实测点。
+
+两种参考帧模式
+--------------
+clean：明确参考图没有裂纹，默认模式。参考图的总长度为 0。
+cracked：参考图已有裂纹。先在缺口附近用噪声自适应暗线证据初始化完整基准路径。
+         初始化无法找到完整路径时会报错，不把初始裂纹长度默认为 0。
+         后续在基准路径附近验证已有裂纹，同时检查尖端前方的新增证据。
+         输出长度始终为根部到当前尖端的总弧长，包括已有裂纹部分。
+auto：尝试从参考图提取基准裂纹，未找到完整基准时按 clean 处理。
+      这是启发式判断，原有划痕与弱裂纹可能混淆，已知参考图状态时优先明确选择 clean/cracked。
+
+运动与测量
+----------
+两点先给出单位尺度的平移/旋转初值，附近纹理有可靠匹配时再校正。
+两点之间距离的变化保留为变形信息，不当作相机倍率变化，mm/pixel 不随开口变化。
+每组试验的参考分辨率可以不同；需要填写该组正确的参考点与 mm/pixel。
+有逐帧点时允许当前图像画布尺寸不同，但两图应保持相同像素物理标定。
+仅提供两点不能解决任意透视变化、倍率变化或复杂非刚性变形。
+裂纹在参考可见范围外继续生长时不能凭无参考区域推断，可能输出边界/未完成状态。
+上一帧已确认路径用于种子选择提示；每帧仍核验图像证据，不强制长度单调增长。
+局部移动窗口随裂纹方向不断前进，不把初始搜索框边界作为尖端。
+长断点、图像边界、根部连接异常等状态不输出确认尖端，保留部分路径供检查。
+目前追踪一条暗色主裂纹，复杂分叉、强反光或亮裂纹尚需场景验证。
+
+输出
+----
+crack_data.csv：仅四列：图片编号、尖端X坐标(px)、尖端Y坐标(px)、实际长度(mm)。
+无候选/未确认尖端的坐标留空。未完成时四列业务 CSV 中长度也留空，部分长度仅保留于详细诊断。
+measurements.json 或 sequence_manifest.json：保留基准长度、总长度、相对基准扩展长度和失败状态等诊断。
+视频/汇总图：长度使用 mm，尖端位置使用当前原图像素坐标，保留清晰版显示方式。
+旧版详细 CSV/逐点 CSV 仍保留，便于开发核查；交付业务数据使用 crack_data.csv。
+图像上小数坐标为拟合结果，不代表已验证的亚像素准确度。
+
+直接调用算法
+------------
+from adaptive_crack import AdaptiveCrackDetector, AdaptiveConfig
+
+detector = AdaptiveCrackDetector(
+    reference_gray,
+    AdaptiveConfig(anchors=reference_points, reference_mode='clean', mm_per_pixel=ratio)
+)
+result = detector.process(current_gray, current_points)
+extraction = result['extraction']
+if extraction is not None:
+    measurements = extraction['measurements']
+    tip_xy_px = measurements['tip_original_xy']  # 未完成时为 None
+    total_length_mm = measurements['total_length_mm']
+    extension_mm = measurements['extension_from_reference_mm']
+
+reference_gray/current_gray 为 uint8 灰度图；points 均为 ((x0,y0),(x1,y1))。
+同一序列复用 detector，按时间顺序输入；换序列时重新初始化。
+process 内部只采样移动小窗口，不先对整幅图做旋转缩放。
+
+命令行同样支持
+--------------
+python crack_measurement.py "图像文件夹" --reference "参考.bmp" --points "points.csv" --reference-mode clean
+python crack_video.py --input "图像文件夹" --reference "参考.bmp" --points "points.csv" --reference-mode cracked
+python -m unittest test_adaptive_crack test_tracked_inputs -v
+
+测试包含已知几何路径及已知逐帧点的平移、旋转、开口、已有裂纹初始化/扩展等。
+这些检查不等同于不同真实场景的识别准确率；15 Hz 仍需在目标图像与机器上实测。

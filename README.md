@@ -1,24 +1,20 @@
 # CodexCrack · 裂纹路径与尖端检测
 
-当前研究版本为原图灰度 V3（s3t），生产验收未通过。下一位 agent 从 [V3 接手规范](docs/V3_AGENT_SPEC.md) 开始，随后查看[分阶段开发报告](evidence/v3/REPORT.md)、[最新指标](evidence/latest_metrics.json)和[逐帧预测](evidence/v3/predictions.jsonl.gz)。
+当前研究版本为 **V6.3 S2**，软件集成库为 **GrayDetectionV2 2.2.0.0**。日常 Python 入口默认 V5.15 S2，可切换到当前研究候选。[V6.3 开发报告](evidence/v6_3/REPORT.md) · [失败帧审计](evidence/v6_3/FAILURES_AUDIT.md) · [开发过程总索引](reports/INDEX.md)
 
-1. 先读 [接手规则](AGENTS.md) 和 [阶段记录](docs/HISTORY.md)。
-2. 用 Python 3.12 安装依赖并运行合成检查。首轮会编译 Numba 函数。
-3. 对照 [方法和评价约定](docs/SPEC.md)、[未解决问题](docs/OPEN_PROBLEMS.md) 和[冻结指标](evidence/latest_metrics.json)设计新版本。
-
-```bash
-python -m pip install -r requirements.txt
-python research/raw_notch_trace_v2b/check.py
-python -m unittest research.unified_crack_tip_60q.tests
-```
-
-| 入口 | 用途 |
+| 入口 | 内容 |
 |---|---|
-| research/notch_identity_v3 | 当前研究核心、终止门、结构负例和可复跑探针 |
-| research/raw_notch_trace_v2b | 冻结双唇起点研究对照 r02 与合成样例 |
-| research/raw_notch_trace_v2 | 单起点对照 r01 |
-| research/unified_crack_tip_60q | 上一代多尺度灰度、双参考、图搜索、多轨迹与合成检查 |
-| research/p1p2_grayref_v2/algorithm.py | 单帧参考差分与候选对照实现 |
-| src/cpp/a | 历史 A 的 C++17 核心、头文件和示例。构建需要 Windows、MSVC 和外部 OpenCV 4.4.0 SDK，通过 OPENCV_ROOT 指定 |
+| [当前状态](docs/CURRENT_STATE.md) | 各轮方法、验证结论和局限 |
+| [算法源码](research/notch_identity_v63) | 材料带、白底漆配准、路径与尖端检测 |
+| [可配置运行入口](run_crack_tip.py) | 参考图、批量输入、基准点、保存路径及渲染选项 |
+| [Visual Studio 工程](GrayDetectionV2) | Windows x64 动态库、公开接口和版本资源 |
+| [当前发布头文件](output/releases/GrayDetectionV2-2.2.0.0/GrayDetectionV2.hpp) | C++ 类与 C 导出函数 |
+| [集成实测记录](output/verification/GrayDetectionV2_2_2_0_0/integration.json) | 导出表、实帧和调用测试 |
+| [最新指标](evidence/latest_metrics.json) | 逐组人工标注对照摘要 |
+| [历史归档](reports/archive) | 从既有交付包提取的阶段性报告与任务书 |
 
-公开快照通过合成图运行。实验原图、缓存、人工标注、视频和 DLL 保存在原工作区。完整序列复验需要获得该工作区的数据访问权限。版本与预测摘要哈希见 [provenance.json](evidence/provenance.json)。
+## 构建与回放
+
+使用 Visual Studio 2022、x64 Release，打开 GrayDetectionV2/GrayDetectionV2.sln。将 OpenCV 4.4.0 SDK 按项目所需布局提供在 third_party/opencv440 下，或通过 MSBuild 属性 OpenCV440Root 指向其 include、lib 和 bin 所在目录。VS 工程会生成 GrayDetectionV2.hpp、GrayDetectionV2.lib 和 GrayDetectionV2.dll。[工程说明](GrayDetectionV2/README.md)
+
+公开快照包含项目自有源码、报告正文及精选数值证据。外部原图、人工标注、媒体、编译器和第三方预编译依赖由数据持有方提供。原工作区中的媒体或私有数据链接需在本地打开。数据目录和工具路径请在配置中填写；公开版本使用匿名试验标识，原始冻结哈希对应本地封存文件。历史提交保留了上一版交接和可下载的诊断材料。

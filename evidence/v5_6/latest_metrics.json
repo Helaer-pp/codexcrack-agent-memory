@@ -1,0 +1,91 @@
+{
+ "primary": "v5_6",
+ "run": "output/experiments/v56_decoupled_20261120_r04",
+ "overall_full": {
+  "visible": 54,
+  "valid": 21,
+  "hit": 18,
+  "joint": 17,
+  "severe": 0,
+  "median": 2.9506015103502063,
+  "max": 18.847147949444906
+ },
+ "groups": [
+  {
+   "group": "group_a",
+   "stage": "v5_6",
+   "mode": "full",
+   "visible": 19,
+   "valid": 19,
+   "hit": 17,
+   "joint": 17,
+   "severe": 0,
+   "median": 2.8952956966102197,
+   "max": 18.847147949444906,
+   "hit5": 14,
+   "fps": 10.365018849234646,
+   "ms": 96.47835807590837,
+   "timed": 551
+  },
+  {
+   "group": "three_point_bend",
+   "stage": "v5_6",
+   "mode": "full",
+   "visible": 15,
+   "valid": 2,
+   "hit": 1,
+   "joint": 0,
+   "severe": 0,
+   "median": 10.430784934590003,
+   "max": 13.224389066537876,
+   "hit5": 0,
+   "fps": 0.5010147960273185,
+   "ms": 1995.9490376916408,
+   "timed": 520
+  },
+  {
+   "group": "group_c",
+   "stage": "v5_6",
+   "mode": "full",
+   "visible": 20,
+   "valid": 0,
+   "hit": 0,
+   "joint": 0,
+   "severe": 0,
+   "median": null,
+   "max": null,
+   "hit5": 0,
+   "fps": 0.8503537181795562,
+   "ms": 1175.9812165469302,
+   "timed": 562
+  }
+ ],
+ "gates": {
+  "group_a": false,
+  "three_point_bend": false,
+  "group_c": false
+ },
+ "jitter": {
+  "group_a": {
+   "conditions": 12,
+   "passed": 12,
+   "median": 0.0,
+   "maximum": 0.0,
+   "worst_joint": 17,
+   "base_joint": 17
+  },
+  "synthetic": {
+   "conditions": 12,
+   "passed": 12,
+   "median": 0.0,
+   "maximum": 0.0,
+   "worst_joint": 8,
+   "base_joint": 8
+  }
+ },
+ "negative_fp": 16,
+ "negatives": 432,
+ "weak_pass": 197,
+ "weak_wrong": 0,
+ "decision": "PRODUCTION_NO_GO"
+}

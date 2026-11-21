@@ -1,0 +1,232 @@
+{
+  "status": "RESEARCH_ONLY / NOT_PROVEN",
+  "production_default": "A",
+  "research_variant": "AE",
+  "real_precision": "N/A",
+  "table": [
+    {
+      "variant": "A",
+      "confirmed": 1786,
+      "total": 1987,
+      "new": 0,
+      "lost": 0,
+      "applied": 0,
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "wall_max_ms": 637.6466999936383,
+      "wall_over": 1,
+      "native_max_ms": 49.22610000357963,
+      "synthetic_tip_MAE": 11.285987840983642,
+      "synthetic_tip_P95": 60.828475716723695,
+      "synthetic_missed": 25,
+      "synthetic_false_tip_over8": 12,
+      "real_accuracy": "N/A"
+    },
+    {
+      "variant": "AM",
+      "confirmed": 1786,
+      "total": 1987,
+      "new": 0,
+      "lost": 0,
+      "applied": 0,
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "wall_max_ms": 340.7786000025226,
+      "wall_over": 2,
+      "native_max_ms": 48.44950000179373,
+      "synthetic_tip_MAE": 11.285987840983642,
+      "synthetic_tip_P95": 60.828475716723695,
+      "synthetic_missed": 25,
+      "synthetic_false_tip_over8": 12,
+      "real_accuracy": "N/A"
+    },
+    {
+      "variant": "AT",
+      "confirmed": 1786,
+      "total": 1987,
+      "new": 0,
+      "lost": 0,
+      "applied": 0,
+      "T_evaluable": 135,
+      "E_evaluable": 0,
+      "wall_max_ms": 536.9381999917096,
+      "wall_over": 3,
+      "native_max_ms": 48.95980000386182,
+      "synthetic_tip_MAE": 11.285987840983642,
+      "synthetic_tip_P95": 60.828475716723695,
+      "synthetic_missed": 25,
+      "synthetic_false_tip_over8": 12,
+      "real_accuracy": "N/A"
+    },
+    {
+      "variant": "AE",
+      "confirmed": 1786,
+      "total": 1987,
+      "new": 0,
+      "lost": 0,
+      "applied": 10,
+      "T_evaluable": 0,
+      "E_evaluable": 10,
+      "wall_max_ms": 53.17670000658836,
+      "wall_over": 0,
+      "native_max_ms": 49.93020000330768,
+      "synthetic_tip_MAE": 11.416049306958001,
+      "synthetic_tip_P95": 60.828475716723695,
+      "synthetic_missed": 25,
+      "synthetic_false_tip_over8": 13,
+      "real_accuracy": "N/A"
+    },
+    {
+      "variant": "ATE",
+      "confirmed": 1786,
+      "total": 1987,
+      "new": 0,
+      "lost": 0,
+      "applied": 6,
+      "T_evaluable": 135,
+      "E_evaluable": 10,
+      "wall_max_ms": 458.0184000078589,
+      "wall_over": 4,
+      "native_max_ms": 48.11849999438729,
+      "synthetic_tip_MAE": 11.416049306958001,
+      "synthetic_tip_P95": 60.828475716723695,
+      "synthetic_missed": 25,
+      "synthetic_false_tip_over8": 13,
+      "real_accuracy": "N/A"
+    }
+  ],
+  "holdout": {
+    "group_x": {
+      "A": {
+        "current": 523,
+        "confirmed": 263,
+        "coverage": 0.502868068833652,
+        "new_ids": [],
+        "lost_ids": [],
+        "tip_difference": {
+          "n": 263,
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "Max": 0.0,
+          "over_budget": 0
+        },
+        "absolute_length_difference": {
+          "n": 263,
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "Max": 0.0,
+          "over_budget": 0
+        },
+        "applied": 0,
+        "applied_ids": [],
+        "T_evaluable": 0,
+        "E_evaluable": 0,
+        "body_suspect": 0,
+        "endpoint_reasons": {
+          "NOT_ENABLED": 523
+        },
+        "temporal_reasons": {
+          "NOT_ENABLED": 523
+        },
+        "wall_timing": {
+          "n": 523,
+          "P50": 32.10300000500865,
+          "P95": 46.73707999900216,
+          "P99": 52.57515400240659,
+          "Max": 60.678900001221336,
+          "over_budget": 0
+        },
+        "native_process_plus_sidecar_timing": {
+          "n": 523,
+          "P50": 31.20699999271892,
+          "P95": 42.98511000088183,
+          "P99": 48.058992000005674,
+          "Max": 53.05740000039805,
+          "over_budget": 0
+        },
+        "sidecar_timing": {
+          "n": 523,
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "Max": 0.0,
+          "over_budget": 0
+        },
+        "T_unevaluable_fraction_of_A_confirmed": 1.0
+      },
+      "AE": {
+        "current": 523,
+        "confirmed": 263,
+        "coverage": 0.502868068833652,
+        "new_ids": [],
+        "lost_ids": [],
+        "tip_difference": {
+          "n": 263,
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "Max": 0.0,
+          "over_budget": 0
+        },
+        "absolute_length_difference": {
+          "n": 263,
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "Max": 0.0,
+          "over_budget": 0
+        },
+        "applied": 0,
+        "applied_ids": [],
+        "T_evaluable": 0,
+        "E_evaluable": 0,
+        "body_suspect": 166,
+        "endpoint_reasons": {
+          "NO_CONFIRMED_PATH_OR_SHORT": 260,
+          "NO_CLEAR_TERMINAL_CHANGE": 81,
+          "BODY_LOSS_OUTSIDE_BOUNDED_TAIL": 166,
+          "Q_UNMEASURABLE_SUFFIX": 15,
+          "INSUFFICIENT_PRE_ENDPOINT_SUPPORT": 1
+        },
+        "temporal_reasons": {
+          "NO_CONFIRMED_PATH_OR_SHORT": 260,
+          "NOT_ENABLED": 263
+        },
+        "wall_timing": {
+          "n": 523,
+          "P50": 32.44149999227375,
+          "P95": 46.84995999850798,
+          "P99": 52.80546600290104,
+          "Max": 62.09959999250714,
+          "over_budget": 0
+        },
+        "native_process_plus_sidecar_timing": {
+          "n": 523,
+          "P50": 31.398099996028094,
+          "P95": 42.72951999862622,
+          "P99": 47.01707999867841,
+          "Max": 54.94399999706931,
+          "over_budget": 0
+        },
+        "sidecar_timing": {
+          "n": 523,
+          "P50": 0.0216,
+          "P95": 0.18658999999999998,
+          "P99": 0.32073599999999997,
+          "Max": 0.3988,
+          "over_budget": 0
+        },
+        "T_unevaluable_fraction_of_A_confirmed": 1.0
+      }
+    }
+  },
+  "source_frozen": true,
+  "all_ablation_modes_wall_budget_pass": false,
+  "selected_AE_all_five_measured_wall_budget_pass": true,
+  "selected_AE_all_five_wall_max_ms": 62.09959999250714,
+  "pure_cpp_integrated_core_latency": "NOT_TESTED",
+  "precision_admission_pass": false,
+  "editorial_note": "Clarifies all-ablation worst timing vs selected AE timing; numerical results/decision unchanged."
+}

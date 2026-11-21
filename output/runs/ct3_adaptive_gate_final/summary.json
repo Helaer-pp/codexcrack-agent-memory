@@ -1,0 +1,276 @@
+{
+  "frames": 136,
+  "v1_confirmed": 114,
+  "adapted_confirmed": 125,
+  "added": [
+    [
+      11,
+      [
+        505.1031854235382,
+        587.2535725405603
+      ],
+      "short_seed"
+    ],
+    [
+      12,
+      [
+        505.98626346660217,
+        587.2502629021527
+      ],
+      "short_seed"
+    ],
+    [
+      13,
+      [
+        510.97387297486,
+        582.0056167086195
+      ],
+      "short_seed"
+    ],
+    [
+      14,
+      [
+        515.2123717396707,
+        581.2752119049011
+      ],
+      "short_seed"
+    ],
+    [
+      16,
+      [
+        520.9592708939483,
+        578.7516726745139
+      ],
+      "short_seed"
+    ],
+    [
+      67,
+      [
+        583.5482216871643,
+        556.6689037343455
+      ],
+      "verified_local_tail"
+    ],
+    [
+      69,
+      [
+        586.8678522949398,
+        553.338570267919
+      ],
+      "verified_local_tail"
+    ],
+    [
+      91,
+      [
+        604.1351412341194,
+        543.7509375818623
+      ],
+      "verified_local_tail"
+    ],
+    [
+      122,
+      [
+        641.702326187188,
+        534.9985117190638
+      ],
+      "verified_local_tail"
+    ],
+    [
+      130,
+      [
+        646.6076073157633,
+        532.9305370373777
+      ],
+      "verified_local_tail"
+    ],
+    [
+      133,
+      [
+        657.5580845042871,
+        529.0052311037022
+      ],
+      "verified_local_tail"
+    ]
+  ],
+  "controls": [
+    {
+      "case": "real_control",
+      "previous": [
+        627.8158581912503,
+        532.5817011641614
+      ],
+      "adapted": [
+        627.8158581912503,
+        532.5817011641614
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "remove_distal",
+      "previous": [
+        491.3,
+        598.64
+      ],
+      "adapted": [
+        491.3,
+        598.64
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "static_scratch_both",
+      "previous": [
+        487.08,
+        595.29
+      ],
+      "adapted": [
+        487.08,
+        595.29
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "competing_parallel",
+      "previous": [
+        627.6655911115066,
+        532.6773153847682
+      ],
+      "adapted": [
+        627.6655911115066,
+        532.6773153847682
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "interrupted_visible_path",
+      "previous": [
+        628.3120457144962,
+        532.4545289584557
+      ],
+      "adapted": [
+        628.3120457144962,
+        532.4545289584557
+      ],
+      "action": "previous"
+    },
+    {
+      "case": "new_collinear_scratch_only",
+      "previous": [
+        617.6624665765911,
+        536.6356893936766
+      ],
+      "adapted": [
+        617.6624665765911,
+        536.6356893936766
+      ],
+      "action": "previous"
+    }
+  ],
+  "gate_fixtures": {
+    "short_new_line": {
+      "action": "short_seed",
+      "tip": [
+        80.0,
+        91.0
+      ],
+      "known_tip": [
+        79,
+        91
+      ],
+      "error_px": 1.0
+    },
+    "static_feature": {
+      "action": "no_exterior_seed",
+      "tip": null,
+      "known_tip": null,
+      "error_px": null
+    },
+    "identity": {
+      "action": "no_exterior_seed",
+      "tip": null,
+      "known_tip": null,
+      "error_px": null
+    },
+    "exposure_step": {
+      "action": "no_exterior_seed",
+      "tip": null,
+      "known_tip": null,
+      "error_px": null
+    },
+    "foreign_line_far_from_notch": {
+      "action": "no_exterior_seed",
+      "tip": null,
+      "known_tip": null,
+      "error_px": null
+    },
+    "single_dark_dot": {
+      "action": "no_exterior_seed",
+      "tip": null,
+      "known_tip": null,
+      "error_px": null
+    },
+    "new_scratch_at_notch": {
+      "action": "short_seed",
+      "tip": [
+        80.0,
+        91.0
+      ],
+      "known_tip": null,
+      "error_px": null
+    },
+    "terminal_strength_supported": {
+      "action": "verified_local_tail",
+      "tip": [
+        140.0,
+        92.0
+      ],
+      "known_tip": [
+        139,
+        92
+      ],
+      "error_px": 1.0
+    },
+    "terminal_strength_no_history": {
+      "action": "weak_tip_history",
+      "tip": null,
+      "known_tip": [
+        139,
+        92
+      ],
+      "error_px": null
+    },
+    "terminal_strength_erased": {
+      "action": "local_endpoint_unresolved",
+      "tip": null,
+      "known_tip": null,
+      "error_px": null
+    },
+    "possible_forward_continuation_supported": {
+      "action": "verified_local_tail",
+      "tip": [
+        140.0,
+        92.0
+      ],
+      "known_tip": [
+        139,
+        92
+      ],
+      "error_px": 1.0
+    },
+    "possible_forward_continuation_no_history": {
+      "action": "weak_tip_history",
+      "tip": null,
+      "known_tip": [
+        139,
+        92
+      ],
+      "error_px": null
+    },
+    "possible_forward_continuation_erased": {
+      "action": "local_endpoint_unresolved",
+      "tip": null,
+      "known_tip": null,
+      "error_px": null
+    }
+  }
+}

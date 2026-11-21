@@ -1,0 +1,21 @@
+{
+  "output": ".\\output\\runs\\r05_annotation_audit_20261111_154722",
+  "expected": 140,
+  "saved_json": 139,
+  "status_counts": {
+    "UNCERTAIN": 11,
+    "VISIBLE_PATH_AND_TIP": 122,
+    "MULTIPLE_MAIN_TIPS": 6,
+    "MISSING_OR_INVALID": 1
+  },
+  "issue_counts": {
+    "UNSUPPORTED_LABEL_OR_TYPE": 1,
+    "MULTIPLE_MAIN_TIPS": 6,
+    "MISSING_JSON": 1
+  },
+  "error_frames": 2,
+  "review_frames": 6,
+  "geometry_clean_visible": 122,
+  "concurrent_edits": [],
+  "annotation_files_modified": false
+}

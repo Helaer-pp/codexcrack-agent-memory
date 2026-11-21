@@ -1,0 +1,35 @@
+# One-time cleanup, only after checked standalone migration. No cross-shell deletes.
+$ErrorActionPreference='Stop'
+$projectRoot=[IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot)).TrimEnd('\')
+$oldRoot=[IO.Path]::GetFullPath((Split-Path -Parent $projectRoot)).TrimEnd('\')
+if ($projectRoot -ne '.' -or $oldRoot -ne 'D:/workspace') {throw 'Unexpected migration roots'}
+$proof=Get-Content -Raw -LiteralPath (Join-Path $projectRoot 'docs/maintenance/preparation_complete.json') | ConvertFrom-Json
+$check=Get-Content -Raw -LiteralPath (Join-Path $projectRoot 'output/checks/latest.json') | ConvertFrom-Json
+if (-not $proof.complete -or -not $proof.archive_crc_and_every_member_sha_verified -or -not $check.passed -or -not $check.no_legacy_workspace_imports) {throw 'Preparation or verification incomplete'}
+$summary=Get-Content -Raw -LiteralPath (Join-Path $projectRoot 'docs/maintenance/retention_summary.json') | ConvertFrom-Json
+$archive=Join-Path $projectRoot 'archive/history_source_and_numeric_20261105.zip'
+if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $summary.archive_sha256) {throw 'History archive changed'}
+$targets=Get-Content -Raw -LiteralPath (Join-Path $projectRoot 'docs/maintenance/original_top_level.json') | ConvertFrom-Json
+$validated=@()
+foreach ($target in $targets) {
+ $resolved=[IO.Path]::GetFullPath($target).TrimEnd('\')
+ # Only original direct children, never the workspace/project itself or hidden configuration.
+ if ((Split-Path -Parent $resolved) -ne $oldRoot -or $resolved -eq $projectRoot -or $resolved -eq $oldRoot) {throw "Unsafe target: $resolved"}
+ if ((Split-Path -Leaf $resolved) -in @('CodexCrack','.git','.agents','.codex','.aws','AGENTS.md')) {throw "Protected target: $resolved"}
+ if (Test-Path -LiteralPath $resolved) {
+  $item=Get-Item -LiteralPath $resolved -Force
+  if ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) {throw "Refusing reparse point: $resolved"}
+  $validated+=$resolved
+ }
+}
+$removed=@()
+foreach ($target in $validated) {
+ # Final path check immediately before mutation.
+ $final=[IO.Path]::GetFullPath($target).TrimEnd('\')
+ if ((Split-Path -Parent $final) -ne $oldRoot -or $final -eq $projectRoot) {throw 'Path escaped workspace'}
+ Remove-Item -LiteralPath $final -Force -Recurse
+ $removed+=$final
+ Write-Output ('CLEANED '+(Split-Path -Leaf $final))
+}
+$result=[ordered]@{complete=$true;utc=[DateTime]::UtcNow.ToString('o');removed_original_top_level=$removed;archive_sha256=$summary.archive_sha256;external_original_datasets_modified=$false;production_DLL_sha256=$summary.production_DLL_sha256;active_project_root=$projectRoot}
+$result | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath (Join-Path $projectRoot 'docs/maintenance/cleanup_result.json') -Encoding utf8

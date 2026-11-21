@@ -1,0 +1,17 @@
+{
+  "project_root_before": "D:/workspace",
+  "active_project_root": ".",
+  "latest_results": {
+    "D:/workspace\\A_prime_reference_joint_20261105\\run01": "output/aprime_20261105/run01"
+  },
+  "original_frozen_source": {
+    "D:/workspace\\crack_v4_cpp\\frozen_dp_tip_20261030\\baseline\\src": "baseline/frozen_a/src"
+  },
+  "original_DLL": {
+    "D:/workspace\\output\\frozen_dp_tip_measurement_study\\02_source\\binaries\\A\\CrackV4.dll": "baseline/frozen_a/bin/CrackV4.dll"
+  },
+  "historical_loose_files": "archive/history_source_and_numeric_20261105.zip::<old project-relative path>",
+  "old_packages": "docs/maintenance/file_disposition.csv maps by SHA",
+  "external_original_images": "F: paths remain read-only; not relocated",
+  "historical_absolute_paths": "Frozen evidence retains original strings; use migration map, never run it as current code."
+}

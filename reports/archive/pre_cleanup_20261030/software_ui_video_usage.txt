@@ -1,0 +1,36 @@
+软件界面版裂纹视频
+================
+
+软件界面来源：用户提供的 Visual Extensometer2D 截图，保存在 assets/software_ui.png。
+这是基于截图合成的离线序列回放，不是对真实软件运行过程的录屏。
+
+本次完整视频：software_ui_video/crack_growth_software_ui.mp4。
+分辨率 1920×1032，帧率沿用测量记录；当前序列 562 张、15 fps。
+主图使用原始 BMP 的局部整数像素裁剪和最近邻放大。
+红线为已有测量记录中的裂纹路径，黄圈/十字为已确认尖端；长度单位 mm，坐标单位像素。
+右侧图片列表按真实序列更新、高亮当前帧并自动滚动，滚动条同步移动。
+列表第二行显示实际源文件名，未生成不存在的采集时间或疲劳循环数。
+裂纹测量数据直接读取已有结果，界面导出不重新识别或修改测量值。
+
+后续自动生成
+------------
+正常运行 crack_video.py，会在结果文件夹下 software_ui/ 中额外生成软件界面版视频。
+原有视频和四列 crack_data.csv 仍保留。
+SOFTWARE_UI_BACKGROUND_PATH 指定背景截图，设为空字符串时不额外导出软件界面版。
+逐帧基准点与 clean/cracked 模式仍按 tracked_crack_usage.txt 配置。
+
+仅更换界面、不重新检测
+--------------------
+打开 crack_software_video.py，修改顶部：
+  RESULTS_DIR：已有 crack_video.py 输出文件夹，需有 sequence_manifest.json 和 crack_centerline_data.csv。
+  UI_BACKGROUND_PATH：软件背景截图路径。
+  OUTPUT_DIR：输出目录。
+  IMAGE_DIRECTORY_OVERRIDE：原图路径改变时指定新目录，否则留空。
+  MAX_IMAGE_ZOOM：默认最大 3 倍整数像素放大；改为 1 可显示更宽的视野。
+然后直接运行。
+
+也可使用命令行：
+  python crack_software_video.py --results "测量结果目录" --output "输出目录"
+
+当前截图的主图和侧栏边界已写入 VIEWPORT、SEQUENCE、SCROLLBAR 常量。
+更换为不同布局或不同尺寸的软件截图时，需要相应调整这些边界。

@@ -1,0 +1,14 @@
+{
+  "group": "group_c",
+  "mode": "clean",
+  "frames": 562,
+  "verified_video_frames": 562,
+  "exact_A_frames": 562,
+  "A": 543,
+  "V1": 543,
+  "latest": 543,
+  "gap_add": 0,
+  "adapt_add": 0,
+  "missing": 19,
+  "complete_lengths": 543
+}

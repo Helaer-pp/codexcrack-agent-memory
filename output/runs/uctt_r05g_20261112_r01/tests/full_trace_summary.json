@@ -1,0 +1,16 @@
+{
+  "frames": 1565,
+  "variants": 4,
+  "seed_pairs": 4695,
+  "seed_pairs_equal": 4695,
+  "different_pairs": [],
+  "all_selected_chain_dependency_verified": true,
+  "all_branches_step_max": "rule bound from frozen native implementation; exhaustive actual per-branch node verification in640 detailed traces",
+  "first_formal_lock": null,
+  "first_proposed": {
+    "group_a": 45,
+    "ct2": 2,
+    "group_h": 87,
+    "ct3": null
+  }
+}

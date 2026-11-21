@@ -1,0 +1,27 @@
+{
+  "groups": [
+    "group_a",
+    "ct2",
+    "ct3",
+    "group_h",
+    "three_point_bend",
+    "group_c"
+  ],
+  "count": 120,
+  "status_counts": {
+    "UNCERTAIN": 9,
+    "VISIBLE": 111
+  },
+  "label_counts": {
+    "uncertain_region": 9,
+    "crack_path": 111,
+    "crack_tip": 111
+  },
+  "production_updated": false,
+  "training_performed": false,
+  "parameter_fitting": false,
+  "excluded_group_x": 20,
+  "tip_accuracy": "NOT_COMPUTED_NO_TIP_PREDICTIONS",
+  "negative_metrics": "N/A_NO_NO_VISIBLE_CRACK_LABELS",
+  "interference_metrics": "N/A_NO_INTERFERENCE_LABELS"
+}

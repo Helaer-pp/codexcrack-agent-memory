@@ -1,0 +1,81 @@
+{
+ "primary": "v5_3",
+ "run": "output/experiments/v53_local_peaks_20261119_r03",
+ "report": "evidence/v5_3/REPORT.md",
+ "failures": "evidence/v5_3/FAILURES_AUDIT.md",
+ "lengths": "output/experiments/v53_local_peaks_20261119_r03/crack_lengths.csv",
+ "groups": [
+  {
+   "group": "group_a",
+   "stage": "v5_3",
+   "mode": "full",
+   "visible": 19,
+   "valid": 19,
+   "hit": 18,
+   "joint": 18,
+   "severe": 0,
+   "median": 2.9506015103502063,
+   "max": 12.099602074049516,
+   "hit5": 14,
+   "fps": 15.039442890316254,
+   "ms": 66.49182468347215,
+   "timed": 551
+  },
+  {
+   "group": "three_point_bend",
+   "stage": "v5_3",
+   "mode": "full",
+   "visible": 15,
+   "valid": 15,
+   "hit": 8,
+   "joint": 0,
+   "severe": 0,
+   "median": 8.66843083111292,
+   "max": 85.76486602856629,
+   "hit5": 3,
+   "fps": 3.4798408569933184,
+   "ms": 287.36946345989753,
+   "timed": 520
+  },
+  {
+   "group": "group_c",
+   "stage": "v5_3",
+   "mode": "full",
+   "visible": 20,
+   "valid": 20,
+   "hit": 17,
+   "joint": 17,
+   "severe": 0,
+   "median": 2.3134513695666703,
+   "max": 16.95031172841122,
+   "hit5": 12,
+   "fps": 7.624221432994142,
+   "ms": 131.16093345249098,
+   "timed": 562
+  }
+ ],
+ "overall_full": {
+  "visible": 54,
+  "valid": 54,
+  "hit": 43,
+  "joint": 35,
+  "severe": 0,
+  "median": 3.957143976759129,
+  "max": 85.76486602856629
+ },
+ "accuracy_gate": {
+  "group_a": true,
+  "three_point_bend": false,
+  "group_c": true
+ },
+ "group_a_first": "no_tip",
+ "weak_pass": 216,
+ "weak_wrong": 0,
+ "negative_fp": 0,
+ "negative_count": 324,
+ "controls_pass": 180,
+ "controls_count": 180,
+ "all_negative_fp": 0,
+ "all_negative_count": 360,
+ "decision": "PRODUCTION_NO_GO"
+}

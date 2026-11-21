@@ -1,0 +1,14 @@
+{
+  "group": "group_x",
+  "mode": "auto",
+  "frames": 524,
+  "verified_video_frames": 524,
+  "exact_A_frames": 524,
+  "A": 269,
+  "V1": 269,
+  "latest": 269,
+  "gap_add": 0,
+  "adapt_add": 0,
+  "missing": 255,
+  "complete_lengths": 263
+}

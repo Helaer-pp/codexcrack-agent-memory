@@ -1,0 +1,13 @@
+{
+  "synthetic_cases": 34,
+  "passed": 31,
+  "failed": [
+    "coherent_wrong_first_lock",
+    "reference_preexisting_scratch",
+    "parallel_scratch_beam"
+  ],
+  "R03_exit": 2,
+  "G3": "FAIL",
+  "history": "disabled by missing independent identity, NOT evidence of safety success",
+  "real_no_visible_crack_FPR": "N/A;4 UNCERTAIN are not negatives"
+}

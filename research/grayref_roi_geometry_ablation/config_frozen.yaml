@@ -1,0 +1,23 @@
+{
+  "version": "roi_geometry_r01",
+  "band_half_fraction": 0.15,
+  "half_min": 12,
+  "corridor_half_fraction": 0.06,
+  "corridor_half_min": 8,
+  "corridor_max_fraction": 0.3,
+  "safe_height_cap": 0.4,
+  "step": 8,
+  "branches": 3,
+  "widen_factor": 1.25,
+  "shrink_factor": 0.8,
+  "stable_deviation": 2.0,
+  "seed_span_fraction": 0.1,
+  "seed_span_min": 16,
+  "branch_separation_fraction": 0.03,
+  "branch_separation_min": 4,
+  "support_columns": 2,
+  "boundary_margin": 2,
+  "display_diff": 40,
+  "surface_cols": 100,
+  "surface_rows": 55
+}

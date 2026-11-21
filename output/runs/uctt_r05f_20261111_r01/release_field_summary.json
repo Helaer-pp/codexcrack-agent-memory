@@ -1,0 +1,38 @@
+{
+  "frames": 1565,
+  "formal_exact": 1162,
+  "geometry_exact": 0,
+  "full_digest_equivalence": {
+    "status": "FAIL",
+    "frames": 1565,
+    "exact": 0,
+    "release_sha": "1c74283c53eb99479190df47daea2c4d061f7ba90bb81acd7a847b9aa3b8e21f",
+    "frozen_build_sha": "55a0e7a79162da79e691ede9ff58229e59a56fdd1e0b1e3f609dc51128860402"
+  },
+  "formal_difference_fields": {
+    "/confirmed_tip": 104,
+    "/path_point_count": 311,
+    "/raw_path": 400,
+    "/terminal_reason": 107,
+    "/tip": 277,
+    "/confirmed": 13,
+    "/length_px": 13,
+    "/path": 13,
+    "/valid_full_length": 13
+  },
+  "geometry_difference_fields": {
+    "/current_anchor_invalid": 1565,
+    "/tip_registration_inliers": 1565,
+    "/tip_registration_valid": 1565
+  },
+  "sample_difference_fields": {
+    "/geometry/current_anchor_invalid": 12,
+    "/geometry/tip_registration_inliers": 12,
+    "/geometry/tip_registration_valid": 12,
+    "/native/terminal_audit/tip_measure_reason": 12,
+    "/native/terminal_audit/divergence": 1,
+    "/native/terminal_audit/endpoint_hits": 1,
+    "/native/terminal_audit/shadow_tip": 1
+  },
+  "scope": "all1565 formal+geometry comparison; native JSON compared for first3 frames pergroup only; no binary equivalence claim"
+}

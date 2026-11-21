@@ -1,0 +1,11 @@
+# 冻结身份与输入审计
+
+生产提交c0233eb97b742b70976719a09375aff41e0ae8f8，DLL SHA256 `c23498fcc660469927f63244b8e98e39b1eb86d542ec9a7b069d61fcf813654b`。参数flags3572、SHADOW1、terminal_validation1、refine=true、ratio=1、OpenCV4线程。CT2 auto参考，其余clean。真实源文件与DLL均只读；source_hashes记录依赖。研究仅编译EXE，无新生产DLL。
+
+DEV1987帧+4参考，最终第五523帧+1参考，共2510变形帧/2515图。第五坐标num0…523按文件名数字顺序对应，num524按用户确认忽略。input_manifest含BMP位深、尺寸、逐帧锚点和全文件SHA，不裁剪不缩放的原图坐标。
+
+frozen_replay_diff逐条比较确认标志、尖端、长度、双精度全路径及归一化状态，0差异。原图像、坐标和既有冻结报告未被修改。
+
+prior_artifact_audit逐项列实际旧文件存在性；原first-failure数据来源为上轮逐次match_attempts，缺失精确命名的registration_failure_reasons不伪造为存在。metadata_correction仅修正已知GT标签：恰好±radius是边界而非窗外；匹配决策和选择未重跑/未变。
+
+无真实物理尖端GT，不需要也未索取人工逐帧裂纹标注。全部真实精度N/A。

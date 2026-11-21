@@ -1,0 +1,18 @@
+{
+  "frames": 216,
+  "observable_positive": 168,
+  "A_correct_le8": 118,
+  "Aprime_correct_le8": 118,
+  "A_correct_changed_wrong": 0,
+  "A_correct_revoked": 0,
+  "negatives": 36,
+  "A_negative_FP": 12,
+  "Aprime_negative_FP": 12,
+  "unobservable_positive": 12,
+  "unobservable_confirmed": 0,
+  "local_alignment_supported": 186,
+  "false_alignment_supported_gt_error_over1": 0,
+  "joint_supported": 180,
+  "independent_TEST_status": "NOT_GENERATED_NOT_EXECUTED",
+  "accuracy_claim": "No new endpoint decision was tested; A-prime is exact legacy fallback. No improvement demonstrated."
+}

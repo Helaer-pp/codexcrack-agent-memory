@@ -1,0 +1,31 @@
+{
+  "frames": 2647,
+  "result_rows": 15882,
+  "parity_cases": 15882,
+  "exact_tips": 15867,
+  "array_cases": 960,
+  "exact_arrays": 960,
+  "protected_files_unchanged": {
+    "output\\build\\src\\cpp\\a\\Release\\CrackV4.dll": true,
+    "output\\releases\\A_Win64_OpenCV440\\bin\\CrackV4.dll": true,
+    "src\\cpp\\a\\check_example.py": true,
+    "src\\cpp\\a\\CMakeLists.txt": true,
+    "src\\cpp\\a\\CrackV4.cpp": true,
+    "src\\cpp\\a\\INTEGRATION.md": true,
+    "src\\cpp\\a\\package.py": true,
+    "src\\cpp\\a\\report.py": true,
+    "src\\cpp\\a\\roi_tip.inc": true,
+    "src\\cpp\\a\\segments.inc": true,
+    "src\\cpp\\a\\verify.py": true,
+    "src\\cpp\\a\\example\\main.cpp": true,
+    "src\\cpp\\a\\example\\SDK.cmake": true,
+    "src\\cpp\\a\\include\\CrackV4.h": true,
+    "src\\cpp\\a\\include\\CrackV4.hpp": true,
+    "src\\cpp\\a\\internal\\CrackV4_experiments.h": true,
+    "src\\cpp\\a\\internal\\CrackV4_v2.h": true,
+    "src\\cpp\\a\\internal\\scipy_gaussian_kernels.h": true,
+    "src\\cpp\\a\\__pycache__\\check_example.cpython-312.pyc": true
+  },
+  "source_unchanged": true,
+  "decision": "KEEP_A_V1_RESEARCH_ONLY_ACCURACY_FAIL"
+}

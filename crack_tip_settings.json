@@ -1,0 +1,41 @@
+{
+  "reference_image": "D:/datasets\\裂纹数据\\CT裂纹\\开发组A\\测试-1/20240328171125068-2.bmp",
+  "image_input": "D:/datasets\\裂纹数据\\CT裂纹\\开发组A\\测试-1",
+  "output_dir": "output/crack_tip_runs",
+  "reference_points": [
+    [
+      863.185,
+      996.521
+    ],
+    [
+      874.065,
+      1281.66
+    ]
+  ],
+  "point_mode": "table",
+  "current_points": null,
+  "points_file": "data/anchors/开发组A_基准点坐标.txt",
+  "table_first_index": 0,
+  "ncc_radius": 15,
+  "ncc_search": 32,
+  "ncc_min": 0.65,
+  "bright_profile": "auto",
+  "roi": null,
+  "feature_scale_px": null,
+  "extensions": [
+    ".bmp",
+    ".png",
+    ".tif",
+    ".tiff",
+    ".jpg",
+    ".jpeg"
+  ],
+  "first_frame": 1,
+  "last_frame": null,
+  "title": "裂纹识别",
+  "save_comparisons": true,
+  "save_differences": true,
+  "save_video": true,
+  "video_fps": 10,
+  "ffmpeg": "third_party/ffmpeg/ffmpeg.exe"
+}

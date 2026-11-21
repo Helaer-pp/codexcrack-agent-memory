@@ -1,0 +1,16 @@
+{
+  "n": 519,
+  "mean": 7.836768593448941,
+  "P50": 7.7323,
+  "P95": 11.35467,
+  "P99": 12.09102,
+  "Max": 12.8709,
+  "over_66_67": 0,
+  "scope": "Process+GetResultV2+CopyPath+necessary allocation; predecoded, isolated native run; B/display/IO excluded",
+  "peak_RSS_bytes": 13682323456,
+  "RSS_includes_predecoded_all_520_images": true,
+  "total_process_wall_s": 70.69975059997523,
+  "opencv": "4.4.0",
+  "threads": 4,
+  "reference_excluded_from_timing": true
+}

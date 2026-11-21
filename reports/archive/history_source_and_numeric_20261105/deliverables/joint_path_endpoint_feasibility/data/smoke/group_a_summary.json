@@ -1,0 +1,273 @@
+{
+  "group": "group_a",
+  "images": 12,
+  "modes": {
+    "M0_BASE_STABLE": {
+      "current_frames": 11,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 11,
+        "p50": 3.886100006639026,
+        "p95": 4.196450005110819,
+        "p99": 4.3707299992092885,
+        "max": 4.414299997733906,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 11,
+        "p50": 3.8819,
+        "p95": 4.19105,
+        "p99": 4.36485,
+        "max": 4.4083,
+        "over66": 0
+      },
+      "queries": {
+        "n": 11,
+        "p50": 0.06479999865405262,
+        "p95": 0.07465000817319378,
+        "p99": 0.07837000739527866,
+        "max": 0.07930000720079988,
+        "over66": 0
+      },
+      "max_frame_id": 1,
+      "over_budget": [],
+      "initialization_ms": 1.4588,
+      "statuses": {
+        "no_candidate": 12
+      },
+      "multi_candidates": 0
+    },
+    "OFF_COMPAT": {
+      "current_frames": 11,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 11,
+        "p50": 3.893400004017167,
+        "p95": 4.16399999812711,
+        "p99": 4.307599997264333,
+        "max": 4.343499997048639,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 11,
+        "p50": 3.8884,
+        "p95": 4.159,
+        "p99": 4.3030800000000005,
+        "max": 4.3391,
+        "over66": 0
+      },
+      "queries": {
+        "n": 11,
+        "p50": 0.06690000009257346,
+        "p95": 0.06890000076964498,
+        "p99": 0.06906000198796391,
+        "max": 0.06910000229254365,
+        "over66": 0
+      },
+      "max_frame_id": 1,
+      "over_budget": [],
+      "initialization_ms": 1.3456,
+      "statuses": {
+        "no_candidate": 12
+      },
+      "multi_candidates": 0
+    },
+    "M2_EVIDENCE_ONLY": {
+      "current_frames": 11,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 11,
+        "p50": 3.9200999890454113,
+        "p95": 4.167449995293282,
+        "p99": 4.2722900019725785,
+        "max": 4.298500003642403,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 11,
+        "p50": 3.9158,
+        "p95": 4.16225,
+        "p99": 4.26693,
+        "max": 4.2931,
+        "over66": 0
+      },
+      "queries": {
+        "n": 11,
+        "p50": 0.0703999976394698,
+        "p95": 0.07700001151533797,
+        "p99": 0.07948001293698326,
+        "max": 0.08010001329239458,
+        "over66": 0
+      },
+      "max_frame_id": 1,
+      "over_budget": [],
+      "initialization_ms": 1.3841,
+      "statuses": {
+        "no_candidate": 12
+      },
+      "multi_candidates": 0
+    },
+    "M3_LLR_BG": {
+      "current_frames": 11,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 11,
+        "p50": 3.947699995478615,
+        "p95": 4.153900001256261,
+        "p99": 4.246700003568549,
+        "max": 4.269900004146621,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 11,
+        "p50": 3.9431,
+        "p95": 4.1489,
+        "p99": 4.24186,
+        "max": 4.2651,
+        "over66": 0
+      },
+      "queries": {
+        "n": 11,
+        "p50": 0.06810000922996551,
+        "p95": 0.07270000060088933,
+        "p99": 0.07366000791080296,
+        "max": 0.07390000973828137,
+        "over66": 0
+      },
+      "max_frame_id": 1,
+      "over_budget": [],
+      "initialization_ms": 1.4167,
+      "statuses": {
+        "no_candidate": 12
+      },
+      "multi_candidates": 0
+    },
+    "M4_JOINT_K1": {
+      "current_frames": 11,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 11,
+        "p50": 3.9363999967463315,
+        "p95": 4.201900002954062,
+        "p99": 4.3259799989755265,
+        "max": 4.356999997980893,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 11,
+        "p50": 3.9312,
+        "p95": 4.1973,
+        "p99": 4.32146,
+        "max": 4.3525,
+        "over66": 0
+      },
+      "queries": {
+        "n": 11,
+        "p50": 0.06829999620094895,
+        "p95": 0.06964999920455739,
+        "p99": 0.06968999368837103,
+        "max": 0.06969999230932444,
+        "over66": 0
+      },
+      "max_frame_id": 1,
+      "over_budget": [],
+      "initialization_ms": 1.4247,
+      "statuses": {
+        "no_candidate": 12
+      },
+      "multi_candidates": 0
+    },
+    "M5_JOINT_K2": {
+      "current_frames": 11,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 11,
+        "p50": 3.895600006217137,
+        "p95": 4.196850008156616,
+        "p99": 4.341290007869247,
+        "max": 4.377400007797405,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 11,
+        "p50": 3.8901,
+        "p95": 4.19205,
+        "p99": 4.33665,
+        "max": 4.3728,
+        "over66": 0
+      },
+      "queries": {
+        "n": 11,
+        "p50": 0.07059999916236848,
+        "p95": 0.07229999755509198,
+        "p99": 0.07261999999172986,
+        "max": 0.07270000060088933,
+        "over66": 0
+      },
+      "max_frame_id": 1,
+      "over_budget": [],
+      "initialization_ms": 1.4094,
+      "statuses": {
+        "no_candidate": 12
+      },
+      "multi_candidates": 0
+    },
+    "M5_JOINT_K3": {
+      "current_frames": 11,
+      "tip": 0,
+      "full": 0,
+      "errors": 0,
+      "timing": {
+        "n": 11,
+        "p50": 3.901400006725453,
+        "p95": 4.249600002367515,
+        "p99": 4.479440000432078,
+        "max": 4.5368999999482185,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 11,
+        "p50": 3.8964,
+        "p95": 4.24375,
+        "p99": 4.47387,
+        "max": 4.5314,
+        "over66": 0
+      },
+      "queries": {
+        "n": 11,
+        "p50": 0.0692999892635271,
+        "p95": 0.0747500016586855,
+        "p99": 0.075430006836541,
+        "max": 0.07560000813100487,
+        "over66": 0
+      },
+      "max_frame_id": 1,
+      "over_budget": [],
+      "initialization_ms": 1.4386,
+      "statuses": {
+        "no_candidate": 12
+      },
+      "multi_candidates": 0
+    }
+  },
+  "compatibility_differences": [],
+  "invariant_violations": [],
+  "decode_ms": 505.1392000023043,
+  "private_memory_preloaded_start": 885547008,
+  "private_memory_peak": 899805184,
+  "private_memory_after_handles_close": 857796608,
+  "real_gt_available": false,
+  "fifth_read": false
+}

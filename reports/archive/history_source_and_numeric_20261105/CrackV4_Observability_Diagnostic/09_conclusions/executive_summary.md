@@ -1,0 +1,21 @@
+# DIAGNOSTIC_COMPLETE / NO_NEW_ALGORITHM
+
+保留冻结A；新生产DLL：NO。真实尖端精度 N/A。本轮完成诊断不代表算法精度提升。
+
+# 五组量化诊断（分母均为当前帧，类别可重叠）
+
+|组|N|A完整确认|成像基础可用|局部配准条件可用|诊断可评价|主体证据分歧|
+|---|---:|---:|---:|---:|---:|---:|
+|group_a|550|496|0|0|0|0|
+|group_c|561|543|561|237|226|1|
+|ct2|467|403|0|0|0|118|
+|group_h|409|344|0|0|0|67|
+|group_x|523|263|0|348|0|249|
+
+成像“基础可用”指固定掩膜和截断阈值通过，不等于能识别裂纹。诊断可评价要求独立材料匹配、光度和有效路径剖面同时可用；不能将未通过解释为裂纹不存在。
+
+位深是文件/解码容器事实，ADC有效位数 UNKNOWN。曝光/加载相位/相机真实MTF/实际运动模糊幅度 N/A；噪声、纹理、拉普拉斯方差只是代理。灰度直方图和暗背景不是物理无裂纹真值。
+
+H1-H6见 hypothesis_matrix.csv；已给出每组分母、对照、反例和不确定性。CT2 refine与开发组H自动配准见 special_registration_cases.md；第五组51/473只在冻结后一次检查。
+
+[计时完整报告](../07_performance/performance_report.md) · [研发优先级](decision_matrix.md) · [未知项](uncertainty_and_unmeasurable_items.md) · [最小实验](next_minimal_experiments.md)

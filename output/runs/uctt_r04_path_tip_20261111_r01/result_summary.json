@@ -1,0 +1,97 @@
+{
+  "R04_RESULT": "PARTIAL",
+  "replace_production": false,
+  "N_cases": 642,
+  "N_unique_frames": 472,
+  "selected_cases": 235,
+  "N_base_observed": 268,
+  "N_D1_observed": 159,
+  "N_D2_observed": 21,
+  "D2_coverage_delta_pp": -38.47352024922118,
+  "synthetic": [
+    {
+      "method": "1",
+      "N": 30,
+      "constructed_visible_positives": 11,
+      "true_candidate_retained": 11,
+      "constructed_negatives": 8,
+      "false_candidate_admission": 6,
+      "wrong_first_lock": 0,
+      "contract_failures": 6,
+      "failed_cases": [
+        "isolated_dark_line",
+        "isolated_bright_line",
+        "near_parallel_scratch",
+        "weak_true_strong_artifact",
+        "short_gap_then_impostor",
+        "connected_false_branch"
+      ]
+    },
+    {
+      "method": "2",
+      "N": 30,
+      "constructed_visible_positives": 11,
+      "true_candidate_retained": 10,
+      "constructed_negatives": 8,
+      "false_candidate_admission": 1,
+      "wrong_first_lock": 0,
+      "contract_failures": 2,
+      "failed_cases": [
+        "connected_false_branch",
+        "connected_false_branch"
+      ]
+    }
+  ],
+  "real_human_label_count": 0,
+  "GT": "GT_UNAVAILABLE",
+  "E2": "BLOCKED_BY_E1_GATE",
+  "E3": "BLOCKED_BY_E1_GATE",
+  "B3_B4_B5": "NOT_EXECUTED",
+  "T2_B_REAL": "BLOCKED",
+  "full_R03_fraction": 0.4495798319327731,
+  "full_R02_fraction": 0.04061234817813765,
+  "full_R02_variants": "11 of 112 initializations, truncated windows",
+  "video": "R04_results.mp4",
+  "exact_R03_fixture": [
+    {
+      "candidate": "R03_original_unverified_candidate",
+      "method": "1",
+      "observed": "1",
+      "history_written": "1",
+      "raw_support": "0.913043",
+      "prefix_support": "0.923404",
+      "overlap": "1",
+      "reason": "PREFIX_CONNECTED_PROXY"
+    },
+    {
+      "candidate": "R03_original_unverified_candidate",
+      "method": "2",
+      "observed": "1",
+      "history_written": "1",
+      "raw_support": "0.913043",
+      "prefix_support": "0.923404",
+      "overlap": "1",
+      "reason": "PREFIX_CONNECTED_PROXY"
+    },
+    {
+      "candidate": "R03_exact_shifted_distractor",
+      "method": "1",
+      "observed": "0",
+      "history_written": "0",
+      "raw_support": "0",
+      "prefix_support": "0.923404",
+      "overlap": "0",
+      "reason": "RAW_STRUCTURE_UNSUPPORTED"
+    },
+    {
+      "candidate": "R03_exact_shifted_distractor",
+      "method": "2",
+      "observed": "0",
+      "history_written": "0",
+      "raw_support": "0",
+      "prefix_support": "0.923404",
+      "overlap": "0",
+      "reason": "RAW_STRUCTURE_UNSUPPORTED"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "frames": 216,
+  "cases": 72,
+  "A_correct": 118,
+  "Aprime_correct": 118,
+  "A_correct_changed_wrong": 0,
+  "A_correct_revoked": 0,
+  "endpoint_replacement_enabled": false,
+  "real_gate1_passed": false,
+  "strong_false_tail_activated": 0,
+  "paired_frames": 12,
+  "source": "engineering only, no confirmatory TEST",
+  "utc": "2026-11-05T03:40:36.479667+00:00"
+}

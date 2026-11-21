@@ -1,0 +1,28 @@
+#include <winver.h>
+LANGUAGE 0x04, 0x02
+1 VERSIONINFO
+ FILEVERSION @VERSION_NUMBERS@
+ PRODUCTVERSION @VERSION_NUMBERS@
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+ FILEFLAGS 0
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_DLL
+ FILESUBTYPE 0
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "080404b0"
+    BEGIN
+      VALUE "FileDescription", "GrayDetectionV2 crack tip detection"
+      VALUE "FileVersion", "@version@"
+      VALUE "InternalName", "GrayDetectionV2"
+      VALUE "OriginalFilename", "GrayDetectionV2.dll"
+      VALUE "ProductName", "GrayDetectionV2"
+      VALUE "ProductVersion", "@version@"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0804, 1200
+  END
+END

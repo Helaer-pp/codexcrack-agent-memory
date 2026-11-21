@@ -72,6 +72,7 @@ CV4_API int CrackV4GetDebugImage(CrackV4Handle handle, int index, float *data, i
 }
 #endif
 
+#ifdef __cplusplus
 #include <opencv2/core.hpp>
 #include <stdexcept>
 #include <string>
@@ -210,4 +211,4 @@ class CrackV4Detector {
         return segments;
     }
 };
-
+#endif // __cplusplus

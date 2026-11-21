@@ -1,0 +1,26 @@
+{
+  "reference_box": [
+    2229,
+    2259,
+    2876,
+    2431
+  ],
+  "fixed_band": [
+    2229,
+    2274,
+    2876,
+    2429
+  ],
+  "fixed_floor": 180.15,
+  "reference_virtual_points": [
+    [
+      2248,
+      2278
+    ],
+    [
+      2263,
+      2423
+    ]
+  ],
+  "reference_sha": "cfe718b7a6e4f255e999a00bba270a619576c8c62bc969d9f21edc912fb80862"
+}

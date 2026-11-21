@@ -1,0 +1,19 @@
+{
+  "group": "group_h",
+  "current": 409,
+  "attempted": 9448,
+  "texture_eligible": 0,
+  "matched": 0,
+  "independent_validation_pass": 0,
+  "heldout_matched": 0,
+  "first_failure_counts": {
+    "CLIPPED_OR_LOW_DYNAMIC_RANGE": 7812,
+    "OUT_OF_BOUNDS": 1636
+  },
+  "photo_interpretations": {
+    "CASE_P3_INSUFFICIENT_EVIDENCE": 55,
+    "CASE_P1_OVERCONSERVATIVE_FOR_CURRENT_LINE": 354
+  },
+  "baseline_reproduction": "PASS",
+  "real_error": "N/A"
+}

@@ -1,0 +1,87 @@
+{
+ "primary": "v5_0",
+ "run": "output/experiments/v50_global_dp_20261119_r06",
+ "report": "evidence/v5_0/REPORT.md",
+ "failures": "evidence/v5_0/FAILURES_AUDIT.md",
+ "groups": [
+  {
+   "group": "group_a",
+   "stage": "v5_0",
+   "mode": "full",
+   "visible": 19,
+   "valid": 19,
+   "hit": 18,
+   "joint": 18,
+   "severe": 0,
+   "median": 2.9506015103502063,
+   "max": 12.099602074049516,
+   "hit5": 13,
+   "fps": 31.030987260966704,
+   "ms": 32.225851907002685,
+   "timed": 551
+  },
+  {
+   "group": "three_point_bend",
+   "stage": "v5_0",
+   "mode": "full",
+   "visible": 15,
+   "valid": 15,
+   "hit": 0,
+   "joint": 0,
+   "severe": 12,
+   "median": 197.04182834770316,
+   "max": 284.09911340619345,
+   "hit5": 0,
+   "fps": 5.952565055306832,
+   "ms": 167.99480403972737,
+   "timed": 520
+  },
+  {
+   "group": "group_c",
+   "stage": "v5_0",
+   "mode": "full",
+   "visible": 20,
+   "valid": 19,
+   "hit": 14,
+   "joint": 14,
+   "severe": 1,
+   "median": 2.4244585358305204,
+   "max": 2069.9925355590735,
+   "hit5": 10,
+   "fps": 13.851386663603162,
+   "ms": 72.19493789944278,
+   "timed": 562
+  }
+ ],
+ "overall_full": {
+  "visible": 54,
+  "valid": 53,
+  "hit": 32,
+  "joint": 32,
+  "severe": 13,
+  "median": 6.964652005019441,
+  "max": 2069.9925355590735
+ },
+ "hit5": 23,
+ "accuracy_gate": {
+  "group_a": true,
+  "three_point_bend": false,
+  "group_c": false
+ },
+ "speed_gate": {
+  "group_a": true,
+  "three_point_bend": false,
+  "group_c": false
+ },
+ "weak_pass": 160,
+ "weak_crossed": 216,
+ "weak_wrong": 32,
+ "negative_fp": 0,
+ "negative_count": 216,
+ "delivery": {
+  "group_a": 551,
+  "three_point_bend": 520,
+  "group_c": 562
+ },
+ "decision": "PRODUCTION_NO_GO"
+}

@@ -1,0 +1,11 @@
+# 字段与时延范围
+
+主键case_id/frame_id/side/algorithm；input_sha256关联原始字节。空值代表N/A，不能填0作为精度。A只支持right，left标A_UNSUPPORTED_SIDE，不能当原A新增漏检。
+
+A_confirmed/A_tip_valid指原生tip确认；A_arc_px只在原生完整长度有效时赋值。tip/arc_px在DG未确认时仍可能保留候选值，必须结合confirmed/DG_evaluable使用。ordered候选弧长不补未观察根部间隙。arc_error_px是输出路径相对程序可见范围中心线的几何误差，未确认完整长度时不是正式物理长度测量。
+
+程序visible_path是到最后一个编码暗线证据≥3灰度码的几何前缀，可以包含内部亮缺口；不是把所有暗像素逐一加总。formed_tip为已形成潜在几何，闭合时可不可见。twin_true/false包含同图像不同潜在物理解释，challenge明确NOT_IDENTIFIABLE_FROM_ENCODED_INPUTS。真实physical_tip_accuracy均N/A。
+
+03_results合成core_latency_ms：A行为的Python封装Process调用墙钟，未包含外侧CopyPath；DG为同次Python旁路含控制分支的总耗时，不是每个消融的单独时延。合成案例多进程执行，这些值不可作为原生15Hz证据。唯一完整native A核心计时在06_performance/native_all_frames.csv，范围Process+GetResultV2+CopyPath+必要分配，预解码不计IO/编码；五组共2510当前帧。完整A+DG C++核心NOT_TESTED_IN_CPP。
+
+AUTO和WIDE会按320000像素预算独立降采样。不同step的比较混合了视野及采样影响，不能纯归因ROI；matched_sampling_grid列提供明确标识。

@@ -1,0 +1,135 @@
+{
+ "primary": "v5_1",
+ "run": "output/experiments/v51_dp_fix_20261119_r08",
+ "report": "evidence/v5_1/REPORT.md",
+ "failures": "evidence/v5_1/FAILURES_AUDIT.md",
+ "groups": [
+  {
+   "group": "group_a",
+   "stage": "v5_1",
+   "mode": "full",
+   "visible": 19,
+   "valid": 19,
+   "hit": 18,
+   "joint": 18,
+   "severe": 0,
+   "median": 2.9506015103502063,
+   "max": 12.099602074049516,
+   "hit5": 14,
+   "fps": 15.983027011481076,
+   "ms": 62.56637114369329,
+   "timed": 551
+  },
+  {
+   "group": "three_point_bend",
+   "stage": "v5_1",
+   "mode": "full",
+   "visible": 15,
+   "valid": 15,
+   "hit": 8,
+   "joint": 8,
+   "severe": 0,
+   "median": 8.66843083111292,
+   "max": 85.76486602856629,
+   "hit5": 3,
+   "fps": 3.7440629044538625,
+   "ms": 267.08952961511943,
+   "timed": 520
+  },
+  {
+   "group": "group_c",
+   "stage": "v5_1",
+   "mode": "full",
+   "visible": 20,
+   "valid": 20,
+   "hit": 17,
+   "joint": 17,
+   "severe": 0,
+   "median": 2.3134513695666703,
+   "max": 16.95031172841122,
+   "hit5": 12,
+   "fps": 8.293532775369846,
+   "ms": 120.5758784687995,
+   "timed": 562
+  }
+ ],
+ "overall_full": {
+  "visible": 54,
+  "valid": 54,
+  "hit": 43,
+  "joint": 43,
+  "severe": 0,
+  "median": 3.957143976759129,
+  "max": 85.76486602856629
+ },
+ "hit5": 29,
+ "accuracy_gate": {
+  "group_a": true,
+  "three_point_bend": false,
+  "group_c": true
+ },
+ "speed_gate": {
+  "group_a": true,
+  "three_point_bend": false,
+  "group_c": false
+ },
+ "weak_pass": 216,
+ "weak_crossed": 216,
+ "weak_wrong": 0,
+ "negative_fp": 0,
+ "negative_count": 288,
+ "delivery": {
+  "group_a": 551,
+  "three_point_bend": 520,
+  "group_c": 562
+ },
+ "decision": "PRODUCTION_NO_GO",
+ "legacy_negative_fp": 0,
+ "legacy_negative_count": 216,
+ "background": {
+  "group_a": {
+   "raw_mean": -0.535306893329655,
+   "difference_mean": -0.8776055083491585,
+   "raw_frames": 551,
+   "inside_target": 551
+  },
+  "three_point_bend": {
+   "raw_mean": -0.55681160229903,
+   "difference_mean": -0.8218862770380083,
+   "raw_frames": 520,
+   "inside_target": 520
+  },
+  "group_c": {
+   "raw_mean": -0.5199713922268131,
+   "difference_mean": -0.8298678265926533,
+   "raw_frames": 562,
+   "inside_target": 562
+  }
+ },
+ "first_frames": {
+  "group_a": {
+   "label": "UNCERTAIN",
+   "status": "no_tip",
+   "tip": null,
+   "error_px": null
+  },
+  "three_point_bend": {
+   "label": "VISIBLE",
+   "status": "VALID",
+   "tip": [
+    1552,
+    2709
+   ],
+   "error_px": "64.03583206951036"
+  },
+  "group_c": {
+   "label": "VISIBLE",
+   "status": "VALID",
+   "tip": [
+    2275,
+    2337
+   ],
+   "error_px": "1.259946966777697"
+  }
+ }
+}

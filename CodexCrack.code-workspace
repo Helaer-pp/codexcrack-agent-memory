@@ -1,0 +1,8 @@
+{
+  "folders": [{"path": "."}],
+  "settings": {
+    "cmake.buildDirectory": "${workspaceFolder}/output/build",
+    "files.exclude": {"**/__pycache__": true},
+    "search.exclude": {"archive/**": true, "output/**": true, "third_party/**": true}
+  }
+}

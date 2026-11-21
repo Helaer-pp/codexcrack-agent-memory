@@ -1,0 +1,2 @@
+PASS: reversed and missing anchors, padded row stride, no tip and no notch, uncalibrated length, size negotiation, cached baseline after process, rejected call preserves path, undersized copy buffer.
+PASS: SDK-only CMake downstream clean build and example call (GROUP_A frame 299). baseline_status=1 status=2 tip=(1248,1160) arc_px=319.875 projected_px=378.795 points=289

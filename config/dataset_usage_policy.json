@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "effective_date": "2026-11-11",
+  "authority": "Explicit user instruction: exclude group_x; group_c and three-point-bend validation only; human annotations comparison only, never model training",
+  "groups": {
+    "group_a": "DEVELOPMENT",
+    "ct2": "DEVELOPMENT",
+    "group_h": "DEVELOPMENT",
+    "ct3": "DEVELOPMENT",
+    "group_c": "VALIDATION_ONLY",
+    "three_point_bend": "VALIDATION_ONLY",
+    "group_x": "EXCLUDED"
+  },
+  "annotations": {
+    "allowed_uses": ["annotation_qc", "comparison"],
+    "model_training": false,
+    "parameter_fitting": false,
+    "automatic_threshold_search": false,
+    "runtime_reference_selection": false,
+    "pseudo_label_training": false
+  },
+  "validation_rules": {
+    "lock_before_scoring": true,
+    "validation_used_for_parameter_selection": false,
+    "historical_development_labels_in_manifests_are_overridden": true,
+    "independent_unexposed_test_claim": false
+  },
+  "excluded_data": "Preserve historical group_x files, but do not load its images/annotations into new development, evaluation, validation, training or tuning runs. Metadata may identify exclusions.",
+  "legacy_runners": "Historical seven-group runners must be policy-filtered before reuse. Sealed output remains historical evidence."
+}

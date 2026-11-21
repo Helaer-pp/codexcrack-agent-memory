@@ -1,0 +1,110 @@
+CrackV4 C++ x64 动态库接入说明
+
+一、交付物
+bin/CrackV4.dll：原生C++17检测库；运行时无需Python、NumPy、SciPy或模型文件。
+bin/opencv_world4120.dll：与验证结果对应的OpenCV 4.12运行库。
+bin/msvcp140.dll、vcruntime140.dll、vcruntime140_1.dll、concrt140.dll：随包提供的VC运行库。
+lib/CrackV4.lib：MSVC x64导入库。
+include/CrackV4.h：稳定C接口，输入像素缓冲区及两个基准点。
+include/CrackV4.hpp：方便现有OpenCV工程调用的C++封装，输出cv::Point2d。
+src/：完整C++算法、数值核及CMake工程。
+examples/example.cpp：完整调用示例；examples/下附带已知几何的测试图。
+validation/：逐帧验证结果、单帧耗时、Python算法源码快照及数据清单。
+
+二、现有GrayDetection工程的调用方式
+在项目包含目录加入include，链接目录加入lib，附加依赖项加入CrackV4.lib。
+把bin中的DLL复制到你的软件EXE同目录。使用x64、Release、MSVC运行库/MD。
+本库使用C ABI传递图像地址、行跨度和数值，不让cv::Mat或STL对象跨DLL边界。
+你的宿主工程可以继续使用OpenCV 4.4；DLL内部使用4.12以保持已验证数值行为。
+已提供并测试OpenCV 4.4宿主调用示例，两套OpenCV DLL可在同一进程内工作。
+
+使用示例：
+
+    #include "CrackV4.hpp"
+
+    // 每一路试验保留一个对象；逐帧复用，不要在每帧重新构造。
+    CrackV4Detector detector;
+
+    // 参考帧只初始化一次；p1/p2是参考帧中的两个对应基准点。
+    double initMs = detector.initialize(
+        referenceGray, referenceP1, referenceP2,
+        CrackV4Detector::ReferenceMode::Auto, mmPerPixel);
+
+    // 在你已有的逐帧循环中调用；当前点必须与参考点一一对应。
+    CrackV4Result detail{};
+    cv::Point2d tip = detector.getCrackTipPointCirculate(
+        currentGray, currentP1, currentP2, &detail);
+
+    // tip是原始变形图坐标，x向右、y向下；保留原算法两位小数输出。
+    // detail.tip_confirmed==0时，tip=(0,0)。
+    // detail.detector_ms：单帧检测计算时间。
+    // detail.api_ms：C接口内耗时，包含等待本实例锁的时间。
+    // detail.length_px：已确认完整长度；未确认时为0。
+    // detail.length_confirmed与tip_confirmed独立，存在只确认尖端的情况。
+
+    std::cout << "tip=" << tip
+              << " valid=" << detail.tip_confirmed
+              << " compute_ms=" << detail.detector_ms << std::endl;
+
+    // 换参考帧/试验时重新initialize，或reset后再初始化。
+
+初始化和处理失败时，C++封装抛出std::runtime_error，调用方捕获后记录该帧失败。
+如果直接使用CrackV4.h，失败返回-1，检测失败帧的有效标志和数值均清零；
+可用CrackV4LastJson读取错误及停止原因。
+
+三、输入要求与模式
+输入原图CV_8UC1，不需要用户裁剪ROI。支持带行填充的图像缓冲区。
+参考点间距至少16px；当前点至少相距2px，均应有限且位于各自图像内。
+两个点的顺序在参考帧和变形帧中保持对应。开口变化不作为图像缩放比例。
+传入当前点时保留原算法的刚体运动先验及默认图像细配准。
+没有逐帧点时，可调用getCrackTipPointCirculate(currentGray,&detail)，使用自动平移配准。
+自动平移分支要求图像与参考图尺寸相同；传入对应当前点时可支持不同画布尺寸。
+
+ReferenceMode::Clean：明确参考帧无裂纹。
+ReferenceMode::Cracked：明确参考帧已有裂纹，无法可靠初始化则报错。
+ReferenceMode::Auto：调用现有自动参考裂纹初始化分支，兼容上述两种情况。
+初始裂纹不会自动归零；完整长度包含参考帧已有段。
+如需显示参考帧结果，可在初始化后、处理后续帧前调用referenceResult()。
+未检出候选、待时序确认、追踪不完整和配准失败仍保留原算法判定。
+
+需要完整等价的连续结果，应按相同顺序输入同一序列，不跳帧，不每帧重置对象。
+算法包含5帧时序窗口、3次证据确认及历史路径软先验；无状态的独立两帧调用不能代替序列状态。
+默认仍只选择一个追踪方向；双侧试样的适用边界与原V4一致。
+
+四、标定、精度与计时
+initialize中的mmPerPixel仅影响长度换算；无本组标定时传1.0，读取length_px即可。
+tip使用double及原图坐标，不要为了沿用旧cv::Point返回类型而截成整数。
+检测耗时不含读图、相机采集、绘图、编码和可选诊断JSON序列化。
+初始化耗时单独返回。单帧完整长度及尖端的有效性应分别检查。
+同一对象的Process调用串行执行；不同采集流使用不同对象。销毁前等待本实例处理结束。
+默认不改进程OpenCV线程数；可显式调用CrackV4SetNumThreads(4)复现本次4线程测试设置。
+LastJson返回的字符串在本实例下一次诊断查询/销毁前有效，调用者需要持久保存时立即复制。
+
+五、独立运行与复核
+在SDK目录运行：
+bin\CrackV4Example.exe examples\reference.bmp examples\current.bmp 150 280 150 400 150 280 150 400
+
+程序输出尖端、有效标志、长度、detector_ms、api_ms和初始化耗时，支持中文图像路径。
+CrackV4Example_OpenCV440.exe是OpenCV 4.4宿主兼容性样例；运行时还需你的opencv_world440.dll。
+
+重新编译检测DLL时使用OpenCV 4.12.0 SDK：
+cmake -S src -B build -G "Visual Studio 17 2022" -A x64 -T v142 -DOpenCV_DIR=<OpenCV4.12的build目录>
+cmake --build build --config Release --parallel 1 -- /nr:false
+
+验证工具单独使用Python 3.12，本次环境为numpy 1.26.4、SciPy 1.17.1、OpenCV-Python 4.12.0.88。
+如需复现此数值环境，可在独立Python环境执行：
+python -m pip install --no-deps numpy==1.26.4 scipy==1.17.1 opencv-python==4.12.0.88
+这里固定NumPy 1.x的数值提升行为；不要直接用NumPy 2.x替换后声称逐项相同。
+验证时保留validation/python_oracle中的源码快照，不替换成其他版本。
+python validate_tracked.py
+python validate_fresh.py --dataset all
+后者需要原始图片；可修改validation/datasets.json中的directory，保留文件名时序。
+这些Python文件仅用于对照验证，软件运行DLL不依赖它们。
+
+OpenCV官方C++包来源：
+https://github.com/opencv/opencv/releases/download/4.12.0/opencv-4.12.0-windows.exe
+其许可及第三方声明见licenses目录。
+
+
+2026-10-28优化版：接口及检测逻辑不变。大区域的独立行使用OpenCV并行，固定参考数据按实例缓存。
+复现测试性能请在处理序列前调用CrackV4SetNumThreads(4)。新旧逐帧对比及15Hz验证见优化与验证报告.txt。

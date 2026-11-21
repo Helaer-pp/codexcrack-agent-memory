@@ -1,0 +1,171 @@
+{
+  "modes": {
+    "A": {
+      "images": 468,
+      "current": 467,
+      "full": 403,
+      "coverage": 0.8629550321199143,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 467,
+        "P50": 18.657300010090694,
+        "P95": 26.389259997813497,
+        "P99": 28.03115400107344,
+        "Max": 637.6466999936383,
+        "over_budget": 1
+      },
+      "baseline_native_timing": {
+        "n": 467,
+        "P50": 16.28799999889452,
+        "P95": 22.483890000148676,
+        "P99": 24.196416002814654,
+        "Max": 34.0314000059152,
+        "over_budget": 0
+      },
+      "over_budget": [
+        {
+          "frame_id": 419,
+          "image_filename": "20241101165325544-1245.bmp",
+          "process_core_ms": 637.6466999936383
+        }
+      ]
+    },
+    "AM": {
+      "images": 468,
+      "current": 467,
+      "full": 403,
+      "coverage": 0.8629550321199143,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 467,
+        "P50": 18.936299995402806,
+        "P95": 26.961339989793487,
+        "P99": 30.178172006562807,
+        "Max": 48.25140000320971,
+        "over_budget": 0
+      },
+      "baseline_native_timing": {
+        "n": 467,
+        "P50": 16.308100006426685,
+        "P95": 22.476820001611486,
+        "P99": 24.937270001973946,
+        "Max": 39.94729999976698,
+        "over_budget": 0
+      },
+      "over_budget": []
+    },
+    "AT": {
+      "images": 468,
+      "current": 467,
+      "full": 403,
+      "coverage": 0.8629550321199143,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 467,
+        "P50": 19.150100008118898,
+        "P95": 27.36088998935884,
+        "P99": 31.819819993397648,
+        "Max": 536.9381999917096,
+        "over_budget": 2
+      },
+      "baseline_native_timing": {
+        "n": 467,
+        "P50": 16.34590000321623,
+        "P95": 22.440119997190777,
+        "P99": 24.85401600017212,
+        "Max": 28.655999994953163,
+        "over_budget": 0
+      },
+      "over_budget": [
+        {
+          "frame_id": 167,
+          "image_filename": "20241101163719904-3351.bmp",
+          "process_core_ms": 324.0929000021424
+        },
+        {
+          "frame_id": 348,
+          "image_filename": "20241101164957881-622.bmp",
+          "process_core_ms": 536.9381999917096
+        }
+      ]
+    },
+    "AE": {
+      "images": 468,
+      "current": 467,
+      "full": 403,
+      "coverage": 0.8629550321199143,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 467,
+        "P50": 19.42589999816846,
+        "P95": 27.470229999744333,
+        "P99": 28.28070200048386,
+        "Max": 35.29359999811277,
+        "over_budget": 0
+      },
+      "baseline_native_timing": {
+        "n": 467,
+        "P50": 16.41419999941718,
+        "P95": 22.45501000288641,
+        "P99": 23.34597799432231,
+        "Max": 28.231500007677823,
+        "over_budget": 0
+      },
+      "over_budget": []
+    },
+    "ATE": {
+      "images": 468,
+      "current": 467,
+      "full": 403,
+      "coverage": 0.8629550321199143,
+      "new_ids": [],
+      "lost_ids": [],
+      "applied_ids": [],
+      "T_evaluable": 0,
+      "E_evaluable": 0,
+      "timing": {
+        "n": 467,
+        "P50": 19.492599996738136,
+        "P95": 27.20474999077851,
+        "P99": 29.741705991618787,
+        "Max": 458.0184000078589,
+        "over_budget": 1
+      },
+      "baseline_native_timing": {
+        "n": 467,
+        "P50": 16.411999997217208,
+        "P95": 22.382459993241355,
+        "P99": 23.79248599376296,
+        "Max": 28.493699996033683,
+        "over_budget": 0
+      },
+      "over_budget": [
+        {
+          "frame_id": 289,
+          "image_filename": "20241101164658221-83.bmp",
+          "process_core_ms": 458.0184000078589
+        }
+      ]
+    }
+  },
+  "A_differences": [],
+  "decode_ms": 69797.49010001251,
+  "private_bytes_preloaded": 14443356160,
+  "private_bytes_after": 15135916032
+}

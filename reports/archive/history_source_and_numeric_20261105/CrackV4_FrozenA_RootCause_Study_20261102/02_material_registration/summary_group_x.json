@@ -1,0 +1,23 @@
+{
+  "group": "group_x",
+  "current": 523,
+  "attempted": 12288,
+  "texture_eligible": 12219,
+  "matched": 3393,
+  "independent_validation_pass": 1377,
+  "heldout_matched": 1694,
+  "first_failure_counts": {
+    "VALID_MATCH": 3393,
+    "CLIPPED_OR_LOW_DYNAMIC_RANGE": 8842,
+    "AMBIGUOUS_PEAK": 18,
+    "GEOMETRIC_CONFLICT": 20,
+    "NCC_BELOW_THRESHOLD": 9,
+    "SEARCH_EDGE_OR_RANGE": 6
+  },
+  "photo_interpretations": {
+    "CASE_P3_INSUFFICIENT_EVIDENCE": 313,
+    "CASE_P1_OVERCONSERVATIVE_FOR_CURRENT_LINE": 210
+  },
+  "baseline_reproduction": "PASS",
+  "real_error": "N/A"
+}

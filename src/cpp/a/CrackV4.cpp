@@ -1,3 +1,9 @@
+#ifdef CRACK_V512_BACKEND
+#include "../v512/internal.hpp"
+#ifdef CRACK_V63_BACKEND
+#include "../v63/internal.hpp"
+#endif
+#endif
 #include "CrackV4_experiments.h"
 #include "scipy_gaussian_kernels.h"
 #include <algorithm>
@@ -506,6 +512,10 @@ class Detector {
     Result baseline, reference_result, last;
     std::string json;
     std::mutex mutex;
+#ifdef CRACK_V512_BACKEND
+    std::optional<v512::MaterialPolicy> materialPolicy;
+    Result run512(const cv::Mat&,const std::array<P,2>*,bool);
+#endif
     Detector(const cv::Mat &ref, std::array<P, 2> ap, Config config)
         : cfg(config), reference(ref.clone()), anchors(ap) {
         width = ref.cols;
@@ -517,6 +527,27 @@ class Detector {
         origin = (ap[0] + ap[1]) * .5;
         across = unit(ap[1] - ap[0]);
         forward = {across.y, -across.x};
+#ifdef CRACK_V512_BACKEND
+        if(ap[1].y<=ap[0].y)throw std::runtime_error("Expected upper P1 and lower P2");
+        materialPolicy=v512::loadMaterialPolicy(ref.size());
+        normal={-forward.y,forward.x};
+        choosePatches();
+        if(cfg.mode) {
+            reference_result=run512(reference,&anchors,true);
+            baseline_exists=reference_result.tip;
+            if(!baseline_exists && cfg.mode==1)throw std::runtime_error("Cannot initialize a complete reference crack");
+            reference_state=baseline_exists?1:2;
+            reference_reason=baseline_exists?"complete_reference_crack":"reference_crack_not_confirmed";
+            baseline_length=reference_result.total;
+            reference_result.initial=baseline_length;
+        }
+        reference_result.reference_state=reference_state;
+        reference_result.reference_reason=reference_reason;
+        reference_result.status=baseline_exists?"reference_cracked":"reference";
+        last=baseline=reference_result;
+        if(last.tip)segments.push_back(last.observed);
+        return;
+#endif
         auto brightness = [&](int sign) {
             Grid g;
             g.x.create(12, 20, CV_64F);
@@ -2194,6 +2225,13 @@ bool validCurrentPoints(const std::array<P, 2> &p, cv::Size size) {
     return norm(p[1] - p[0]) >= 2.;
 }
 #include "roi_tip.inc"
+#ifdef CRACK_V512_BACKEND
+#ifdef CRACK_V63_BACKEND
+#include "../v63/adapter.inc"
+#else
+#include "../v512/adapter.inc"
+#endif
+#endif
 } // namespace
 
 extern "C" {
@@ -2268,16 +2306,26 @@ int CrackV4Process(CrackV4Handle h, const CrackV4Image *current, const CrackV4Po
         d.current_anchor_invalid = cp && !validCurrentPoints(ap, frame.size());
         const std::array<P, 2> *current_points =
             d.current_anchor_invalid ? nullptr : (cp ? &ap : nullptr);
+#ifdef CRACK_V512_BACKEND
+        d.last = d.run512(frame,current_points,false);
+#else
         d.last = d.process(frame, current_points);
+#endif
         d.last_anchors_supplied = cp != nullptr;
         // Current P1/P2 remain a localization/registration prior only.  The
         // measured result is placed from the fixed reference geometry after
         // motion estimation, so changing tracked anchor coordinates cannot
         // move or rotate the endpoint ROI independently of the image.
+#ifndef CRACK_V512_BACKEND
         d.measureTip(d.last,frame,d.tipCenter(),d.tipDirection(),false);
+#endif
         d.gate_started=true;
         d.segments.clear();
+#ifdef CRACK_V512_BACKEND
+        if(d.last.tip) d.segments.push_back(d.last.observed);
+#else
         if(d.last.tip) d.segments.push_back(d.last.path);
+#endif
         d.last.detector_ms = elapsed(detect_begin);
         d.last.api_ms = elapsed(begin);
         output(d.last, result, d.cfg.ratio);
@@ -2501,6 +2549,11 @@ void CrackV4Destroy(CrackV4Handle h) {
     delete static_cast<Detector *>(h);
 }
 const char *CrackV4BuildInfo() {
+#ifdef CRACK_V63_BACKEND
+    return "GrayDetectionV2 V6.3 S2; API GrayDetectionV2; native C++17; OpenCV " CV_VERSION "; DLL " GRAYDETECTION_FILE_VERSION;
+#elif defined(CRACK_V512_BACKEND)
+    return "CrackV4 V5.12 S4 r01; native C++17; OpenCV " CV_VERSION;
+#endif
     return "CrackV4 A ROI-local endpoint r01, C++17; pixel V2; OpenCV " CV_VERSION;
 }
 void CrackV4SetNumThreads(int threads) {

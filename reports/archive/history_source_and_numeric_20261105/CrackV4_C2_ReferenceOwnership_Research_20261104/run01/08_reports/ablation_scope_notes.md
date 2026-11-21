@@ -1,0 +1,11 @@
+# 消融范围和对照边界
+
+主版本（A、POOL、CURRENT_TERMINALITY、OWNERSHIP_VALIDATED/UNVALIDATED、SEARCH_AUDIT_SPLIT、FULL）均按全486帧评价。REF控制只用于同当前/异参考配对54帧，不与378全正例分母混比。
+
+同配对54帧：FULL正确47；REF_UNVALIDATED/REF_MASKED各27；REF_SHUFFLED为5；CURRENT_ONLY为0。后者从无A候选的独立当前图种子搜索开始，候选池不同，定位本身未达A水平；不能用0→47全部归因为参考判决改善。真正固定A来源的参考证据关闭对照27→47更直接，但也应承认参考变化点候选随验证开放而新增。
+
+POOL只输出A，完整候选上界仅作离线指标；CURRENT_TERMINALITY在相同联合池中不使用归属排序，并不是纯当前输入的端到端算法。UNVALIDATED输出A保底，完整池保留用于比较。OWNERSHIP_VALIDATED、SEARCH_AUDIT_SPLIT和FULL在本原型中是相同最终决策路径的别名，不当作三次独立成功实验；真正审核解耦由固定候选窗口反事实与接口测试验证。
+
+REF_MASKED是所有权参考通道/关键带屏蔽，不改动用于独立背景校验的像素；它返回UNKNOWN而不读取关键带。SHUFFLED在每一匹配对中交换两张reference，保留当前和A来源作负控。CURRENT_ONLY完全禁止参考和参考依赖A，配对输出逐点一致。
+
+本轮强化假尾是连续原有弱暗线变强的受控机制；未穷尽多块复杂假桥、多裂纹根源或真实材料语义。即使新TEST平均风险改善，也不绕过DEV失败、2帧A误伤、真实证据低覆盖、独立物理holdout缺失等门槛。

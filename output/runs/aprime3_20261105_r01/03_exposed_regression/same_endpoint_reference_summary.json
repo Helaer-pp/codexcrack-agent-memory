@@ -1,0 +1,205 @@
+[
+  {
+    "group": "group_a",
+    "method": "OLD_V3_ENDPOINT",
+    "n": 550,
+    "cached": 152,
+    "geometry": 0,
+    "joint": 0,
+    "reasons": {
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 550
+    },
+    "patch_reasons": {
+      "MATCH_ACCEPTED": 578,
+      "LOW_NCC": 222
+    }
+  },
+  {
+    "group": "group_a",
+    "method": "AP3_ENDPOINT",
+    "n": 550,
+    "cached": 152,
+    "geometry": 0,
+    "joint": 0,
+    "reasons": {
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 550
+    },
+    "patch_reasons": {
+      "MATCH_ACCEPTED": 346,
+      "LOW_NCC": 25
+    }
+  },
+  {
+    "group": "group_c",
+    "method": "OLD_V3_ENDPOINT",
+    "n": 561,
+    "cached": 100,
+    "geometry": 196,
+    "joint": 196,
+    "reasons": {
+      "CANDIDATE_AUDIT_NOT_COVERED_BY_HOLDOUT": 4,
+      "HOLDOUT_RESIDUAL_FAILED": 175,
+      "FIT_NOT_RIGID_WITHIN_ONE_PIXEL": 116,
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 70
+    },
+    "patch_reasons": {
+      "CRACK_BAND_EXCLUDED": 3182,
+      "MATCH_ACCEPTED": 10102,
+      "LOW_NCC": 6173,
+      "REPEATED_OR_AMBIGUOUS_TEXTURE": 4827,
+      "SEARCH_BOUNDARY": 158
+    }
+  },
+  {
+    "group": "group_c",
+    "method": "AP3_ENDPOINT",
+    "n": 561,
+    "cached": 100,
+    "geometry": 194,
+    "joint": 194,
+    "reasons": {
+      "CANDIDATE_AUDIT_NOT_COVERED_BY_HOLDOUT": 1,
+      "HOLDOUT_RESIDUAL_FAILED": 180,
+      "FIT_NOT_RIGID_WITHIN_ONE_PIXEL": 116,
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 70
+    },
+    "patch_reasons": {
+      "MATCH_ACCEPTED": 10892,
+      "LOW_NCC": 6252,
+      "REPEATED_OR_AMBIGUOUS_TEXTURE": 5065,
+      "SEARCH_BOUNDARY": 158
+    }
+  },
+  {
+    "group": "ct2",
+    "method": "OLD_V3_ENDPOINT",
+    "n": 467,
+    "cached": 480,
+    "geometry": 0,
+    "joint": 0,
+    "reasons": {
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 467
+    },
+    "patch_reasons": {
+      "CRACK_BAND_EXCLUDED": 2405,
+      "LOW_NCC": 19393,
+      "MATCH_ACCEPTED": 574,
+      "REPEATED_OR_AMBIGUOUS_TEXTURE": 33,
+      "SEARCH_BOUNDARY": 1
+    }
+  },
+  {
+    "group": "ct2",
+    "method": "AP3_ENDPOINT",
+    "n": 467,
+    "cached": 480,
+    "geometry": 0,
+    "joint": 0,
+    "reasons": {
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 467
+    },
+    "patch_reasons": {
+      "LOW_NCC": 21611,
+      "MATCH_ACCEPTED": 733,
+      "REPEATED_OR_AMBIGUOUS_TEXTURE": 56,
+      "SEARCH_BOUNDARY": 2
+    }
+  },
+  {
+    "group": "group_h",
+    "method": "OLD_V3_ENDPOINT",
+    "n": 409,
+    "cached": 6,
+    "geometry": 0,
+    "joint": 0,
+    "reasons": {
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 409
+    },
+    "patch_reasons": {}
+  },
+  {
+    "group": "group_h",
+    "method": "AP3_ENDPOINT",
+    "n": 409,
+    "cached": 6,
+    "geometry": 0,
+    "joint": 0,
+    "reasons": {
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 409
+    },
+    "patch_reasons": {}
+  },
+  {
+    "group": "group_x",
+    "method": "OLD_V3_ENDPOINT",
+    "n": 523,
+    "cached": 47,
+    "geometry": 0,
+    "joint": 0,
+    "reasons": {
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 523
+    },
+    "patch_reasons": {
+      "MATCH_ACCEPTED": 189,
+      "REPEATED_OR_AMBIGUOUS_TEXTURE": 285,
+      "SEARCH_BOUNDARY": 2
+    }
+  },
+  {
+    "group": "group_x",
+    "method": "AP3_ENDPOINT",
+    "n": 523,
+    "cached": 47,
+    "geometry": 0,
+    "joint": 0,
+    "reasons": {
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 523
+    },
+    "patch_reasons": {
+      "MATCH_ACCEPTED": 119,
+      "REPEATED_OR_AMBIGUOUS_TEXTURE": 285,
+      "SEARCH_BOUNDARY": 1
+    }
+  },
+  {
+    "group": "three_point_bend",
+    "method": "OLD_V3_ENDPOINT",
+    "n": 519,
+    "cached": 360,
+    "geometry": 181,
+    "joint": 181,
+    "reasons": {
+      "CANDIDATE_AUDIT_NOT_COVERED_BY_HOLDOUT": 2,
+      "HOLDOUT_RESIDUAL_FAILED": 59,
+      "FIT_NOT_RIGID_WITHIN_ONE_PIXEL": 9,
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 268
+    },
+    "patch_reasons": {
+      "CRACK_BAND_EXCLUDED": 1439,
+      "MATCH_ACCEPTED": 8006,
+      "LOW_NCC": 15072,
+      "REPEATED_OR_AMBIGUOUS_TEXTURE": 393,
+      "SEARCH_BOUNDARY": 2
+    }
+  },
+  {
+    "group": "three_point_bend",
+    "method": "AP3_ENDPOINT",
+    "n": 519,
+    "cached": 360,
+    "geometry": 181,
+    "joint": 181,
+    "reasons": {
+      "CANDIDATE_AUDIT_NOT_COVERED_BY_HOLDOUT": 3,
+      "HOLDOUT_RESIDUAL_FAILED": 70,
+      "FIT_NOT_RIGID_WITHIN_ONE_PIXEL": 7,
+      "INSUFFICIENT_SPATIAL_FIT_HOLDOUT": 258
+    },
+    "patch_reasons": {
+      "MATCH_ACCEPTED": 8140,
+      "LOW_NCC": 16342,
+      "REPEATED_OR_AMBIGUOUS_TEXTURE": 428,
+      "SEARCH_BOUNDARY": 2
+    }
+  }
+]

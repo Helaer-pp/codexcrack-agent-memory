@@ -1,0 +1,8 @@
+{
+  "traces": 640,
+  "dependent_scans": 672948,
+  "max_residual": 1.363040856157567e-08,
+  "max_step": 3.0000000098115613,
+  "status": "PASS",
+  "auto_greedy_bootstrap": "up to3 origin hypotheses expanded once, thereafter width1; E0 uses one independent seed and is strict width1"
+}

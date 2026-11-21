@@ -1,0 +1,23 @@
+; Use the target DLL filename for the import library.
+EXPORTS
+    CrackV4BuildInfo @1
+    CrackV4CopyPath @2
+    CrackV4Create @3
+    CrackV4CreateExtended @4
+    CrackV4DefaultConfig @5
+    CrackV4DefaultExperimentOptions @6
+    CrackV4DefaultOptionsV2 @7
+    CrackV4Destroy @8
+    CrackV4GetBaseline @9
+    CrackV4GetDebugImage @10
+    CrackV4GetResultV2 @11
+    CrackV4LastDebugJson @12
+    CrackV4LastGeometryJson @13
+    CrackV4LastJson @14
+    CrackV4LastQualityJson @15
+    CrackV4Process @16
+    CrackV4ResetTemporal @17
+    CrackV4SetNumThreads @18
+    CrackV4SetOptionsV2 @19
+    CrackV4CopySegment @20
+    CrackV4SegmentCount @21

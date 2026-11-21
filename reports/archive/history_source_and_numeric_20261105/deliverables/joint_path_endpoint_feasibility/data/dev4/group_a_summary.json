@@ -1,0 +1,416 @@
+{
+  "group": "group_a",
+  "images": 551,
+  "modes": {
+    "M0_BASE_STABLE": {
+      "current_frames": 550,
+      "tip": 497,
+      "full": 496,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 8.10240000282647,
+        "p95": 10.479199995461384,
+        "p99": 12.210395996225996,
+        "max": 12.744799998472445,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 8.09385,
+        "p95": 10.465809999999998,
+        "p99": 12.188686999999998,
+        "max": 12.7223,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 0.9481500019319355,
+        "p95": 1.7471150000346822,
+        "p99": 2.09308600766235,
+        "max": 12.012699997285381,
+        "over66": 0
+      },
+      "max_frame_id": 531,
+      "over_budget": [],
+      "initialization_ms": 2.2198,
+      "statuses": {
+        "no_candidate": 50,
+        "terminal_supported": 448,
+        "possible_forward_continuation": 47,
+        "weak_terminal_support": 6
+      },
+      "multi_candidates": 0
+    },
+    "M1_BASE_FAILED_RESEARCH": {
+      "current_frames": 550,
+      "tip": 497,
+      "full": 496,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 9.754600003361702,
+        "p95": 12.366925000242183,
+        "p99": 13.37998799586785,
+        "max": 14.961599998059683,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 9.585650000000001,
+        "p95": 12.287909999999998,
+        "p99": 13.353814999999999,
+        "max": 14.9424,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 3.903549993992783,
+        "p95": 6.239900003129149,
+        "p99": 7.379314998979679,
+        "max": 15.449200000148267,
+        "over66": 0
+      },
+      "max_frame_id": 366,
+      "over_budget": [],
+      "initialization_ms": 2.2012,
+      "statuses": {
+        "no_candidate": 50,
+        "terminal_supported": 439,
+        "possible_forward_continuation": 42,
+        "local_relocated_terminal": 14,
+        "weak_terminal_support": 6
+      },
+      "multi_candidates": 0
+    },
+    "OFF_COMPAT": {
+      "current_frames": 550,
+      "tip": 497,
+      "full": 496,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 8.107649999146815,
+        "p95": 10.341394994611619,
+        "p99": 11.55518299958203,
+        "max": 13.077600000542589,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 8.0975,
+        "p95": 10.33036,
+        "p99": 11.539634,
+        "max": 13.0578,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 0.9722999893710949,
+        "p95": 1.7324599983112419,
+        "p99": 1.977622996782884,
+        "max": 2.3190999927464873,
+        "over66": 0
+      },
+      "max_frame_id": 532,
+      "over_budget": [],
+      "initialization_ms": 2.727,
+      "statuses": {
+        "no_candidate": 50,
+        "terminal_supported": 448,
+        "possible_forward_continuation": 47,
+        "weak_terminal_support": 6
+      },
+      "multi_candidates": 0
+    },
+    "V3_REJECTED": {
+      "current_frames": 550,
+      "tip": 428,
+      "full": 427,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 8.164699996996205,
+        "p95": 10.337719992821803,
+        "p99": 11.77995799924247,
+        "max": 12.57360000454355,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 8.155899999999999,
+        "p95": 10.322874999999998,
+        "p99": 11.764779,
+        "max": 12.554,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 0.9561000042594969,
+        "p95": 1.7135749993030902,
+        "p99": 1.9907070038607337,
+        "max": 2.5088999973377213,
+        "over66": 0
+      },
+      "max_frame_id": 452,
+      "over_budget": [],
+      "initialization_ms": 2.3608,
+      "statuses": {
+        "no_candidate": 50,
+        "current_trace_continues": 54,
+        "current_trace_terminal_uncertain": 17,
+        "current_trace_terminal_supported": 428,
+        "trace_support_lost": 2
+      },
+      "multi_candidates": 0
+    },
+    "M2_EVIDENCE_ONLY": {
+      "current_frames": 550,
+      "tip": 497,
+      "full": 496,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 12.336949999735225,
+        "p95": 15.386605000821874,
+        "p99": 17.1382259929669,
+        "max": 22.62410000548698,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 12.3054,
+        "p95": 15.354814999999999,
+        "p99": 16.588484,
+        "max": 18.695,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 3.2174500011024065,
+        "p95": 5.729975004214793,
+        "p99": 7.100911998568328,
+        "max": 15.684400001191534,
+        "over66": 0
+      },
+      "max_frame_id": 408,
+      "over_budget": [],
+      "initialization_ms": 2.4244,
+      "statuses": {
+        "no_candidate": 50,
+        "terminal_supported": 448,
+        "possible_forward_continuation": 47,
+        "weak_terminal_support": 6
+      },
+      "multi_candidates": 0
+    },
+    "M3_LLR_BG": {
+      "current_frames": 550,
+      "tip": 497,
+      "full": 496,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 8.153249997121748,
+        "p95": 13.594830007059496,
+        "p99": 15.12901500245789,
+        "max": 16.431200012448244,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 8.14555,
+        "p95": 13.539574999999992,
+        "p99": 15.120133,
+        "max": 16.4209,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 1.6341000009560958,
+        "p95": 3.2587150017206943,
+        "p99": 4.453726000356253,
+        "max": 11.481599998660386,
+        "over66": 0
+      },
+      "max_frame_id": 236,
+      "over_budget": [],
+      "initialization_ms": 2.2945,
+      "statuses": {
+        "no_candidate": 50,
+        "terminal_supported": 150,
+        "possible_forward_continuation": 350,
+        "weak_terminal_support": 1
+      },
+      "multi_candidates": 0
+    },
+    "M4_JOINT_K1": {
+      "current_frames": 550,
+      "tip": 124,
+      "full": 123,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 8.691900002304465,
+        "p95": 14.48319499759236,
+        "p99": 16.50814700304181,
+        "max": 21.18460000201594,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 8.679400000000001,
+        "p95": 14.474359999999997,
+        "p99": 16.499230999999998,
+        "max": 21.1596,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 1.4421999949263409,
+        "p95": 3.6290200092480513,
+        "p99": 4.604009000904623,
+        "max": 6.664100001216866,
+        "over66": 0
+      },
+      "max_frame_id": 452,
+      "over_budget": [],
+      "initialization_ms": 2.5072,
+      "statuses": {
+        "no_candidate": 50,
+        "joint_absorbing_stop": 128,
+        "joint_stop_forward_conflict": 355,
+        "joint_tip_uncertain": 18
+      },
+      "multi_candidates": 0
+    },
+    "M5_JOINT_K2": {
+      "current_frames": 550,
+      "tip": 124,
+      "full": 123,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 9.71939999726601,
+        "p95": 16.65035000478383,
+        "p99": 18.728954994294327,
+        "max": 24.138199994922616,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 9.71135,
+        "p95": 16.641019999999997,
+        "p99": 18.718583,
+        "max": 24.124,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 1.5514999977312982,
+        "p95": 3.90198999884887,
+        "p99": 4.754013000056147,
+        "max": 12.06090000050608,
+        "over66": 0
+      },
+      "max_frame_id": 452,
+      "over_budget": [],
+      "initialization_ms": 2.4278,
+      "statuses": {
+        "no_candidate": 50,
+        "joint_absorbing_stop": 128,
+        "joint_stop_forward_conflict": 355,
+        "joint_tip_uncertain": 18
+      },
+      "multi_candidates": 105
+    },
+    "M5_JOINT_K3": {
+      "current_frames": 550,
+      "tip": 124,
+      "full": 123,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 9.813600001507439,
+        "p95": 16.982635000022125,
+        "p99": 18.81472100125393,
+        "max": 24.14360000693705,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 9.79425,
+        "p95": 16.974279999999997,
+        "p99": 18.805463999999997,
+        "max": 24.1173,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 1.4459499943768606,
+        "p95": 3.710139998293015,
+        "p99": 4.627482996584149,
+        "max": 9.127900004386902,
+        "over66": 0
+      },
+      "max_frame_id": 452,
+      "over_budget": [],
+      "initialization_ms": 2.3432,
+      "statuses": {
+        "no_candidate": 50,
+        "joint_absorbing_stop": 128,
+        "joint_stop_forward_conflict": 355,
+        "joint_tip_uncertain": 18
+      },
+      "multi_candidates": 105
+    },
+    "ANCHOR_NO_REFINE": {
+      "current_frames": 550,
+      "tip": 497,
+      "full": 497,
+      "errors": 0,
+      "timing": {
+        "n": 550,
+        "p50": 7.169550000980962,
+        "p95": 9.289309990708716,
+        "p99": 10.32846400688868,
+        "max": 11.417799993068911,
+        "over66": 0
+      },
+      "detector_timing": {
+        "n": 550,
+        "p50": 7.1608,
+        "p95": 9.282039999999999,
+        "p99": 10.319234,
+        "max": 11.397,
+        "over66": 0
+      },
+      "queries": {
+        "n": 550,
+        "p50": 0.9321000034105964,
+        "p95": 1.7396799936250313,
+        "p99": 2.101058000116608,
+        "max": 13.93380000081379,
+        "over66": 0
+      },
+      "max_frame_id": 452,
+      "over_budget": [],
+      "initialization_ms": 2.6859,
+      "statuses": {
+        "no_candidate": 48,
+        "terminal_supported": 435,
+        "possible_forward_continuation": 62,
+        "weak_terminal_support": 6
+      },
+      "multi_candidates": 0
+    }
+  },
+  "compatibility_differences": [],
+  "invariant_violations": [],
+  "decode_ms": 19867.765900009545,
+  "private_memory_preloaded_start": 2975649792,
+  "private_memory_peak": 3013767168,
+  "private_memory_after_handles_close": 2947399680,
+  "real_gt_available": false,
+  "fifth_read": false
+}

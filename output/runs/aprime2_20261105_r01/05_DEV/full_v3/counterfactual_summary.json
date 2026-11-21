@@ -1,0 +1,10 @@
+{
+  "rows": 216,
+  "effects": {
+    "REFERENCE_EVIDENCE_MASKED": 9,
+    "REFERENCE_SWAP": 14,
+    "REMOVE_EVERY_FIFTH_MATERIAL_BLOCK": 1
+  },
+  "ROI_fixed_window": "No ROI parameter in evidence/decision; candidate audit windows remain explicit and fixed. Not counted as rerun experiment.",
+  "ROI_search_rerun": "NOT_EXECUTED: frozen public ABI has no independent ROI override; Gate B failed before advancing full Gate C validation."
+}

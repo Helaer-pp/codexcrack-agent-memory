@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-02T09:48:30.088820+00:00",
+  "groups": [
+    "group_a",
+    "group_c",
+    "ct2",
+    "group_h",
+    "group_x"
+  ],
+  "production": "KEEP_FROZEN_A"
+}

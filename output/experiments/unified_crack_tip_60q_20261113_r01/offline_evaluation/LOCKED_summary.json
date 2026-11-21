@@ -1,0 +1,30 @@
+[
+  {
+    "group": "group_c",
+    "arm": "FULL",
+    "frames": 562,
+    "visible": 20,
+    "valid": 20,
+    "null": 0,
+    "hit3": 1,
+    "hit5": 3,
+    "hit10": 12,
+    "hit20": 19,
+    "over100": 0,
+    "over500": 0,
+    "coverage": 1.0,
+    "hit10_rate": 0.6,
+    "severe100_rate": 0.0,
+    "mean_error": 9.520212062433203,
+    "median_error": 8.733486430907812,
+    "p95_error": 16.492070640888716,
+    "max_error": 22.00093199995825,
+    "oracle_hit10": 17,
+    "preferred_uncertain_hit10": 0,
+    "full_sequence_budget": 0,
+    "full_sequence_valid": 541,
+    "states": "{\"VALID\": 541, \"IDENTITY_UNCERTAIN\": 21}",
+    "passes_frozen_thresholds": false,
+    "oracle_generated_hit10": 17
+  }
+]

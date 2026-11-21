@@ -1,0 +1,173 @@
+"""One-time, non-destructive preparation. Deletion is a separate checked PS step.
+Preserves production bytes; only ports paths/imports in active research tooling.
+"""
+from pathlib import Path
+import sys,os,json,csv,hashlib,shutil,zipfile,time,datetime
+sys.dont_write_bytecode=True
+P=Path(__file__).resolve().parents[1];OLD=P.parent
+assert P.name=='CodexCrack' and OLD==Path('D:/workspace').resolve()
+def sha(p):
+ h=hashlib.sha256()
+ with Path(p).open('rb')as f:
+  for b in iter(lambda:f.read(4*1024**2),b''):h.update(b)
+ return h.hexdigest()
+def save(p,x):
+ p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,ensure_ascii=False,indent=2),encoding='utf8')
+def write(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s,encoding='utf8')
+def copy(a,b):
+ a=Path(a);b=Path(b);b.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(a,b);assert sha(a)==sha(b),(a,b)
+def csvout(p,r):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('w',encoding='utf-8-sig',newline='')as f:
+  w=csv.DictWriter(f,fieldnames=list(dict.fromkeys(k for x in r for k in x)));w.writeheader();w.writerows(r)
+def rows(p):
+ with p.open(encoding='utf-8-sig',newline='')as f:return list(csv.DictReader(f))
+marker=P/'docs/maintenance/preparation_complete.json'
+assert not marker.exists(),'Preparation already complete'
+for d in ['archive/packages','assets','baseline/frozen_a/src','baseline/frozen_a/bin','config','data/anchors','data/frozen_a_replay','data/inputs','data/smoke','docs/specifications','docs/maintenance','output','research/aprime/experiments','research/aprime/tests','src/python/crackv4','src/cpp','tests','third_party/opencv440/bin','third_party/opencv440/lib','third_party/ffmpeg']:(P/d).mkdir(parents=True,exist_ok=True)
+latest=OLD/'A_prime_reference_joint_20261105/run01'
+source=OLD/'crack_v4_cpp/frozen_dp_tip_20261030/baseline/src';dll=OLD/'output/frozen_dp_tip_measurement_study/02_source/binaries/A/CrackV4.dll'
+assert sha(dll)=='c23498fcc660469927f63244b8e98e39b1eb86d542ec9a7b069d61fcf813654b'
+assert sha(source/'CrackV4.cpp')=='4a774d93d9d1df19429bd4981e22b799d01b7e0a8826ffb006b13bf2378e143d'
+oldtops=[p for p in OLD.iterdir()if p.name not in ['CodexCrack','AGENTS.md']and p.name not in ['.git','.agents','.codex','.aws']]
+save(P/'docs/maintenance/original_top_level.json',[str(p)for p in oldtops])
+for f in source.iterdir():
+ if f.is_file():copy(f,P/'baseline/frozen_a/src'/f.name)
+copy(dll,P/'baseline/frozen_a/bin/CrackV4.dll')
+copy(OLD/'crack_v4_cpp/observability_diagnostic_20261102/build/Release/a_bench.exe',P/'baseline/frozen_a/bin/a_bench.exe')
+copy(OLD/'crack_v4_cpp/observability_diagnostic_20261102/a_bench.cpp',P/'src/cpp/read_only_bench.cpp')
+identity_files=[p for p in (P/'baseline/frozen_a').rglob('*')if p.is_file()and p.name!='identity.json']
+save(P/'baseline/frozen_a/identity.json',dict(dll='baseline/frozen_a/bin/CrackV4.dll',dll_sha256=sha(dll),core_sha256=sha(source/'CrackV4.cpp'),source_hashes={p.relative_to(P).as_posix():sha(p)for p in identity_files},flags=3572,policy=1,terminal_validation=1,refine=True,native_threads=4,opencv_native='4.4.0',original_source=str(source),migration_changes_algorithm=False))
+for f in OLD.glob('*_基准点坐标.txt'):copy(f,P/'data/anchors'/f.name)
+for f in OLD.glob('*Agent_Prompt.md'):copy(f,P/'docs/specifications'/f.name)
+copy(OLD/'tracked_points_template.csv',P/'data/anchors/tracked_points_template.csv')
+shutil.copytree(OLD/'assets',P/'assets',dirs_exist_ok=True)
+mm=rows(latest/'00_protocol/inputs_manifest.csv')
+for x in mm:x['anchor_file']='data/anchors/'+Path(x['anchor_file']).name
+csvout(P/'data/inputs/six_groups_manifest.csv',mm)
+for g in dict.fromkeys(x['dataset_alias']for x in mm):
+ for ext in ['csv','jsonl','pathbin']:copy(latest/f'07_performance/native/{g}_A.{ext}',P/f'data/frozen_a_replay/{g}_A.{ext}')
+# C++ OpenCV 4.4 dependencies are project-local. Python/compiler stay tools.
+for a,b in [('D:/opencv-4.4.0/build/x64/vc15/bin/opencv_world440.dll','third_party/opencv440/bin/opencv_world440.dll'),('D:/opencv-4.4.0/build/x64/vc15/lib/opencv_world440.lib','third_party/opencv440/lib/opencv_world440.lib'),('D:/opencv-4.4.0/build/LICENSE','third_party/opencv440/LICENSE'),('D:/external_tools/ffmpeg-master-latest-win64-gpl/bin/ffmpeg.exe','third_party/ffmpeg/ffmpeg.exe'),('D:/external_tools/ffmpeg-master-latest-win64-gpl/bin/ffprobe.exe','third_party/ffmpeg/ffprobe.exe'),('D:/external_tools/ffmpeg-master-latest-win64-gpl/LICENSE.txt','third_party/ffmpeg/LICENSE.txt')]:copy(Path(a),P/b)
+shutil.copytree('D:/opencv-4.4.0/build/include',P/'third_party/opencv440/include',dirs_exist_ok=True)
+print('COPIED local native SDK and frozen A',flush=True)
+api_dir=OLD/'crack_v4_cpp/frozen_dp_tip_20261030/tests'
+copy(api_dir/'abi.py',P/'src/python/crackv4/abi.py')
+s=(api_dir/'common.py').read_text(encoding='utf8').replace('from abi import','from .abi import')
+start=s.index('W=Path(__file__)');end=s.index('\ndef sha(',start)
+s=s[:start]+'''from .paths import ROOT
+W=ROOT;D=ROOT/'data/frozen_a_replay';GROUPS=('group_a','group_c','ct2','group_h')
+BASE=ROOT/'baseline/frozen_a/bin/CrackV4.dll';EXPECTED_BASE='c23498fcc660469927f63244b8e98e39b1eb86d542ec9a7b069d61fcf813654b'
+_dll_dirs=[os.add_dll_directory(str(ROOT/'third_party/opencv440/bin'))];_base=None
+'''+s[end:]
+write(P/'src/python/crackv4/frozen_a.py',s)
+write(P/'src/python/crackv4/__init__.py','"""CodexCrack local runtime; frozen A is production, A-prime is research only."""\n')
+write(P/'src/python/crackv4/paths.py','''from pathlib import Path
+import os
+ROOT=Path(__file__).resolve().parents[3]
+def run_output():
+ name=os.environ.get('CRACK_RUN_ID','workspace_check')
+ if not name or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-'for c in name):raise ValueError('Invalid CRACK_RUN_ID')
+ return ROOT/'output/runs'/name
+def require_output(p):
+ p=Path(p).resolve()
+ if not p.is_relative_to((ROOT/'output').resolve()):raise ValueError('Output must remain in CodexCrack/output')
+ return p
+''')
+copy(latest/'02_source/experiments/local_reference.py',P/'research/aprime/experiments/local_reference.py')
+for f in (latest/'02_source/experiments').glob('*.py'):
+ if f.name in ['local_reference.py','common_ap.py']:continue
+ s=f.read_text(encoding='utf8')
+ s=s.replace("ROOT/'CrackV4_Aprime_ReferenceDeformed_TraditionalTip_Agent_Prompt.md'","ROOT/'docs/specifications/CrackV4_Aprime_ReferenceDeformed_TraditionalTip_Agent_Prompt.md'")
+ s=s.replace("ROOT/'crack_v4_cpp/frozen_dp_tip_20261030/baseline/src'","ROOT/'baseline/frozen_a/src'")
+ s=s.replace("C/'00_protocol/inputs_manifest.csv'","ROOT/'data/inputs/six_groups_manifest.csv'")
+ s=s.replace("OLD/f'06_performance/native/{g}_A'","ROOT/f'data/frozen_a_replay/{g}_A'")
+ s=s.replace("'D:/opencv-4.4.0/build/x64/vc15/bin;'","str(ROOT/'third_party/opencv440/bin')+';'")
+ s=s.replace("ROOT/'crack_v4_cpp/observability_diagnostic_20261102/build/Release/a_bench.exe'","ROOT/'baseline/frozen_a/bin/a_bench.exe'")
+ s=s.replace("FF='D:/external_tools/ffmpeg-master-latest-win64-gpl/bin/ffmpeg.exe'","FF=str(ROOT/'third_party/ffmpeg/ffmpeg.exe')")
+ write(P/'research/aprime/experiments'/f.name,s)
+s=(latest/'02_source/experiments/common_ap.py').read_text(encoding='utf8');a=s.index('S=Path(__file__)');b=s.index('\nsha=api.sha',a)
+s=s[:a]+'''S=Path(__file__).resolve().parent
+ROOT=S.parents[2]
+sys.path.insert(0,str(ROOT/'src/python'))
+from crackv4 import frozen_a as api
+from crackv4.paths import run_output
+O=run_output()
+'''+s[b:]
+a=s.index('def guard():');b=s.index('\ndef utc()',a)
+s=s[:a]+'''def guard():
+ x=json.loads((ROOT/'baseline/frozen_a/identity.json').read_text(encoding='utf8'))
+ for p,h in x['source_hashes'].items():assert sha(ROOT/p)==h,('FROZEN_A_CHANGED',p)
+ return x
+'''+s[b:]
+write(P/'research/aprime/experiments/common_ap.py',s)
+copy(latest/'02_source/tests/test_contracts.py',P/'research/aprime/tests/test_contracts.py')
+assert sha(latest/'02_source/experiments/local_reference.py')==sha(P/'research/aprime/experiments/local_reference.py')
+print('PORTED runtime paths/imports; reference math file byte-identical',flush=True)
+# Minimal local real-image smoke set: pixel-equal 8-bit decodes, no F: needed for smoke.
+import numpy as np,cv2
+sm=[]
+for g in dict.fromkeys(x['dataset_alias']for x in mm):
+ for x in [x for x in mm if x['dataset_alias']==g][:3]:
+  im=cv2.imdecode(np.fromfile(x['input_image'],np.uint8),0);assert im is not None
+  out=P/f'data/smoke/{g}/{int(x["frame_id"]):03d}.png';out.parent.mkdir(parents=True,exist_ok=True);ok,b=cv2.imencode('.png',im);assert ok;b.tofile(str(out))
+  verify=cv2.imdecode(np.fromfile(str(out),np.uint8),0);assert np.array_equal(im,verify)
+  r=dict(x);r['source_input_image']=r['input_image'];r['source_file_sha256']=r['input_sha256'];r['input_image']=out.relative_to(P).as_posix();r['input_sha256']=sha(out);r['decoded_pixel_sha256']=hashlib.sha256(im.tobytes()).hexdigest();sm.append(r)
+csvout(P/'data/smoke/manifest.csv',sm)
+groups=[]
+for g in dict.fromkeys(x['dataset_alias']for x in mm):
+ q=[x for x in mm if x['dataset_alias']==g];groups.append(dict(id=g,role='RETIRED_EXPOSED_HISTORY'if g=='group_x'else'EXPOSED_VALIDATION_NO_TUNING'if g=='three_point_bend'else'EXPOSED_DEVELOPMENT_REGRESSION',images=str(Path(q[0]['input_image']).parent),anchors=q[0]['anchor_file'],mode=q[0]['mode'],frames=len(q),physical_GT=None,used_for_parameter_tuning=False))
+save(P/'config/datasets.json',dict(groups=groups,new_real_holdout_available=False,phase='PHASE_UNKNOWN',external_original_images='READ_ONLY_INPUTS; generated data only in output/'))
+save(P/'config/project.json',dict(name='CodexCrack',schema=1,root='.',production='FROZEN_A',research='A_PRIME_RESEARCH_ONLY',default_output='output',archived_code_is_runtime_dependency=False,python_executable='D:/ProgramData/anaconda3/python.exe',cmake_executable='D:/CMake/bin/cmake.exe',opencv_native='third_party/opencv440',latest_results='output/aprime_20261105/run01/index.html'))
+dst=P/'output/aprime_20261105/run01'
+shutil.copytree(latest,dst,dirs_exist_ok=True)
+latest_map=[]
+for f in latest.rglob('*'):
+ if f.is_file():
+  target=dst/f.relative_to(latest);assert sha(f)==sha(target),f
+  latest_map.append(dict(original=str(f),destination=target.relative_to(P).as_posix(),sha256=sha(f)))
+csvout(P/'docs/maintenance/latest_output_exact_copy.csv',latest_map)
+print('LATEST OUTPUT copied byte-identically',len(latest_map),flush=True)
+# Exhaustive disposition before removal. Retain old source + numerical evidence;
+# rendered/controlled image copies are regenerable, external originals untouched.
+discard={'.png','.bmp','.jpg','.jpeg','.tif','.tiff','.webp','.mp4','.avi','.mov','.gif'}
+caches={'.pyc','.obj','.pdb','.ilk','.idb','.pch','.lastbuildstate'}
+disposition=[];metadata=[];packages={};archive=P/'archive/history_source_and_numeric_20261105.zip'
+with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=3,allowZip64=True)as z:
+ for top in oldtops:
+  paths=[top]if top.is_file()else top.rglob('*')
+  for f in paths:
+   if not f.is_file():continue
+   assert f.resolve().is_relative_to(OLD)and not f.resolve().is_relative_to(P)
+   rel=f.relative_to(OLD).as_posix();size=f.stat().st_size
+   if f.is_relative_to(latest):action='KEEP_LATEST_EXACT_COPY';dest='output/aprime_20261105/run01/'+f.relative_to(latest).as_posix();h=None
+   elif f.suffix.lower()=='.zip':
+    h=sha(f)
+    if h not in packages:
+     target=P/'archive/packages'/f.name
+     if target.exists():target=target.with_name(h[:10]+'_'+f.name)
+     copy(f,target);packages[h]=target.relative_to(P).as_posix()
+    dest=packages[h];action='KEEP_PACKAGE_DEDUP_BY_SHA'
+   elif f.suffix.lower()in caches or '__pycache__'in f.parts or 'CMakeFiles'in f.parts or '.vs'in f.parts:action='REMOVE_REBUILDABLE_CACHE';dest='';h=None
+   elif f.suffix.lower()in discard:
+    action='KEEP_IMPORTED_ASSET'if f.is_relative_to(OLD/'assets')else'REMOVE_OLD_GENERATED_IMAGE_OR_VIDEO';dest='assets/'+f.relative_to(OLD/'assets').as_posix()if action=='KEEP_IMPORTED_ASSET'else'';h=None
+   else:
+    h=sha(f);z.write(f,rel);action='ARCHIVE_SOURCE_OR_NUMERIC_EVIDENCE';dest=archive.relative_to(P).as_posix()+'::'+rel;metadata.append(dict(member=rel,sha256=h,bytes=size))
+   disposition.append(dict(original=rel,bytes=size,action=action,destination=dest,sha256=h or''))
+   if len(disposition)%10000==0:print('ARCHIVE scanned',len(disposition),flush=True)
+csvout(P/'docs/maintenance/file_disposition.csv',disposition)
+save(P/'archive/history_archive_manifest.json',dict(archive=archive.relative_to(P).as_posix(),files=metadata))
+print('VERIFY archive CRC+SHA',len(metadata),flush=True)
+with zipfile.ZipFile(archive)as z:
+ assert z.testzip()is None
+ for x in metadata:
+  h=hashlib.sha256()
+  with z.open(x['member'])as f:
+   for b in iter(lambda:f.read(4*1024**2),b''):h.update(b)
+  assert h.hexdigest()==x['sha256'],x['member']
+from collections import Counter,defaultdict
+counts=Counter(x['action']for x in disposition);sizes=defaultdict(int)
+for x in disposition:sizes[x['action']]+=x['bytes']
+save(P/'docs/maintenance/retention_summary.json',dict(files=len(disposition),original_bytes=sum(x['bytes']for x in disposition),counts=dict(counts),bytes_by_action=dict(sizes),packages=len(packages),archive_sha256=sha(archive),archive_bytes=archive.stat().st_size,latest_output_files=len(latest_map),production_DLL_sha256=sha(P/'baseline/frozen_a/bin/CrackV4.dll')))
+save(marker,dict(complete=True,archive_crc_and_every_member_sha_verified=True,old_files_not_yet_deleted=True,utc=datetime.datetime.now(datetime.timezone.utc).isoformat()))
+print('PREPARATION_COMPLETE',dict(counts),flush=True)

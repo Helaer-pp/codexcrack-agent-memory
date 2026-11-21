@@ -1,0 +1,34 @@
+--- historical/common.py
++++ src/python/crackv4/frozen_a.py
+@@ -1,10 +1,12 @@
+ from pathlib import Path
+ import ctypes as C,os,json,time,hashlib,csv,subprocess
+ import numpy as np,cv2
+-from abi import Point,Image,Config,Experiment,Options,Result,image,points,normalized
+-W=Path(__file__).resolve().parent.parent;ROOT=W.parent.parent;D=ROOT/'output/frozen_dp_tip_measurement_study';GROUPS=('group_a','group_c','ct2','group_h')
+-BASE=D/'02_source/binaries/A/CrackV4.dll';EXPECTED_BASE='c23498fcc660469927f63244b8e98e39b1eb86d542ec9a7b069d61fcf813654b'
+-_dll_dirs=[os.add_dll_directory('D:/opencv-4.4.0/build/x64/vc15/bin')];_base=None
++from .abi import Point,Image,Config,Experiment,Options,Result,image,points,normalized
++from .paths import ROOT
++W=ROOT;D=ROOT/'data/frozen_a_replay';GROUPS=('group_a','group_c','ct2','group_h')
++BASE=ROOT/'baseline/frozen_a/bin/CrackV4.dll';EXPECTED_BASE='c23498fcc660469927f63244b8e98e39b1eb86d542ec9a7b069d61fcf813654b'
++_dll_dirs=[os.add_dll_directory(str(ROOT/'third_party/opencv440/bin'))];_base=None
++
+ def sha(p):
+  h=hashlib.sha256()
+  with Path(p).open('rb')as f:
+@@ -25,9 +27,6 @@
+ def arc(p):return float(np.linalg.norm(np.diff(np.asarray(p),axis=0),axis=1).sum())if len(p)>1 else 0.
+ def stats(v):
+  return dict(n=len(v),**dict(zip(['P50','P95','P99','Max'],map(float,np.percentile(v,[50,95,99,100])))),over_budget=sum(t>1000/15 for t in v))if v else dict(n=0)
+-def dev():
+- x=json.loads((D/'01_baseline/manifest_dev4.json').read_text(encoding='utf-8'));assert tuple(x)==GROUPS
+- return x
+ class V2(C.Structure):
+  _fields_=[('struct_size',C.c_uint32),('api_version',C.c_uint32),('frame_index',C.c_uint64),('reference_state',C.c_int),('decision_policy',C.c_int),*[(k,C.c_int)for k in ['has_candidate','root_confirmed','terminal_verified','path_quality_valid','tip_confirmed','complete_length_valid','legacy_tip_confirmed','shadow_tip_confirmed']],('tip_px',Point),('root_px',Point),('tracking_endpoint_px',Point),*[(k,C.c_double)for k in ['observed_length_px','root_to_tip_length_px','root_bridge_length_px','path_support_fraction','tail_support_fraction','tail_median_score','path_width_median_px','tail_width_median_px','detector_ms','api_ms']],*[(k,C.c_int)for k in ['longest_gap_samples','sharp_bend_count','endpoint_temporal_hits','probe_samples']],('terminal_reason',C.c_char*64),('stop_reason',C.c_char*48),('divergence_reason',C.c_char*64)]
+ def base_library():
+@@ -61,4 +60,3 @@
+  def close(self):
+   if self.handle:self.lib.CrackV4Destroy(self.handle);self.handle=None
+  def __del__(self):self.close()
+-def git(*args):return subprocess.check_output(['git','-c',f'safe.directory={W.as_posix()}','-C',str(W),*args],text=True).strip()
